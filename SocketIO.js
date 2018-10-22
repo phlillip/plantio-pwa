@@ -10,6 +10,8 @@ const robot = require("robotjs")
 const os = require('os')
 const ifaces = os.networkInterfaces()
 
+const JohnnyFive = require('./JohnnyFive')
+
 let keyboardActive = false
 
 class SocketIO {
@@ -64,28 +66,18 @@ class SocketIO {
    * @param  {Object} socket event info
    */
   onHardware (socket) {
+
+    let self = this
+
     return function(payload) {
       console.log(payload);
       socket.broadcast.emit('hardware', payload);
-      if(payload.type === 'led')this.triggerLED();
 
+      if(payload.type === 'light-on') JohnnyFive.lightOn()
+      if(payload.type === 'light-off') JohnnyFive.lightOff()
+      if(payload.type === 'water-on') JohnnyFive.waterOn(payload.duration)
 
-      // used for presentation purposes - cheesy but fun
-      // if (keyboardActive && payload.type === 'morsecode'){
-      //   if (payload.letter === '.') {
-      //     robot.keyTap('right');
-      //     console.log('right');
-      //   }
-      //   if (payload.letter === '-') {
-      //     robot.keyTap('left');
-      //     console.log('left');
-      //   }
-      // }
     }
-  }
-
-  triggerLED (){
-    console.log("PHILLIP");
   }
 
   /**
