@@ -1,23 +1,20 @@
 {
-  "name": "led",
+  "name": "plantio-pwa",
   "version": "0.0.0",
+  "engines": {
+    "node": "8.12.0"
+  },
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "start-hoodie": "hoodie"
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
     "cryptiles": "^4.1.2",
     "debug": "~2.6.9",
     "express": "~4.16.0",
-    "firebase": "^5.3.1",
-    "firebase-admin": "^5.13.1",
-    "firebase-messaging": "^1.0.6",
     "googleapis": "^32.0.0",
-    "hoodie": "^28.2.6",
     "http-errors": "~1.6.2",
-    "jade": "~1.11.0",
     "johnny-five": "^0.15.0",
     "morgan": "~1.9.0",
     "normalize.css": "^8.0.0",
@@ -26,21 +23,21 @@
     "shortid": "^2.2.12",
     "socket.io": "^2.1.1"
   },
-  "description": "led prototype",
+  "description": "PlantIO prototype",
   "main": "app.js",
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/phlillip/led.git"
+    "url": "git+https://github.com/phlillip/plantio-pwa.git"
   },
   "keywords": [
-    "led",
+    "socket.io",
     "arduino"
   ],
   "author": "Phillip Penny",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/phlillip/led/issues"
+    "url": "https://github.com/phlillip/plantio-pwa/issues"
   },
-  "homepage": "https://github.com/phlillip/led#readme"
+  "homepage": "https://github.com/phlillip/plantio-pwa#readme"
 }
