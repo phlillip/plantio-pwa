@@ -1,2 +1,2 @@
-# myapp
-Created with [hoodie](https://github.com/hoodiehq)
+# PlantIO PWA
+See the main PlantIO readme for information.
