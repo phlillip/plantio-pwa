@@ -2,8 +2,14 @@
 <head>
   <title>PlantNation</title>
   <meta name=viewport content="width=device-width, initial-scale=1">
-  <link href="/stylesheets/style.css" rel="stylesheet">
+
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <!-- Slick slider for onboarding -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+  <link href="/stylesheets/style.css" rel="stylesheet">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js" ></script>
 </head>
 <body>
@@ -54,6 +60,37 @@
   </footer>
   </div>
 
+<div id="skip">skip</div>
+  <div class="onboarding">
+    <div><h3>Welcome to PlantIO</h3><p>Grow food, automatically.</p></div>
+    <div>
+      <h3>Choose seed</h3>
+      <p>First you need to pick a seed to grow. Here, try this free starting seed we found in our lab...</p>
+      <input type="radio"><label class="mysterious">&hellip;unknown seed&hellip;</label>
+    </div>
+    <div>
+      <h3>Choose recipe</h3>
+      <p>Now you need to decide what kind of harvest you want. There are many different ways to grow a single plant, you can focus on size, yield, tase, all sorts.</p>
+      <p>Erm, unfortunately we only have one recipe for this <span class="mysterious">unknown seed</span>, we found it on a scrap of paper on the floor of our lab&hellip;</p>
+      <input type="radio"><label class="mysterious">&hellip;scrappy recipe&hellip;</label>
+    </div>
+    <div>
+      <h3>Connect to your PlantIO system</h3>
+      <p>Nearly there! Just connect to your PlantIO system and&hellip;oh, you don't have one yet.</p>
+      <p>Not to worry, you can connect to our <span class="mysterious">cloud system</span> for now.</p>
+      <button>Connect to CloudPlantIO</button>
+    </div>
+    <div>
+      <h3>Plant your seed</h3>
+      <p>Here's where you would place your seed inside your PlantIO system, and wait.</p>
+      <p>Your <span class="mysterious">unknown seed</span> just vanished. It must have teleported into the CloudPlantIO. Wait, why is that clock going round so fast&hellip;</p>
+      <button>Setup complete!</button>
+    </div>
+
+  </div>
+
+
+  <!-- START  SCRIPTS-->
   <script>
   /* TODO: Read up on: */
   // http://markdalgleish.com/2011/03/self-executing-anonymous-functions/
@@ -164,5 +201,25 @@
   })(window, document);
 
   </script>
+
+<script type="text/javascript">
+//onboarding
+$(document).ready(function(){
+$('.onboarding').slick({
+dots: true,
+arrows: false,
+draggable: true,
+mobileFirst: true,
+infinite: false
+});
+
+let skipButton = document.getElementById('skip');
+skipButton.addEventListener('click', function(){
+  document.querySelector('.onboarding').style.display = 'none';
+  skipButton.style.display = "none";
+});
+
+});
+</script>
 </body>
 </html>
