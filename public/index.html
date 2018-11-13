@@ -82,42 +82,40 @@
     </div>
     <div>
       <h3>Plant your seed</h3>
-      <p>Here's where you would place your seed inside your PlantIO system, and wait.</p>
+      <p>Now it's time to place your seed inside your PlantIO system, and wait for it to begin sprouting.</p>
       <p>Your <span class="mysterious">unknown seed</span> just vanished. It must have teleported into the CloudPlantIO. Wait, why is that clock going round so fast&hellip;</p>
-      <button>Setup complete!</button>
+      <button id="tatty-old-recipe">Setup complete!</button>
     </div>
 
   </div>
 
 
   <!-- START  SCRIPTS-->
-  <script>
-  /* TODO: Read up on: */
-  // http://markdalgleish.com/2011/03/self-executing-anonymous-functions/
+   <script>
 
-  (function(window, document, undefined){
+   /* TODO: Read up on: */
+   // http://markdalgleish.com/2011/03/self-executing-anonymous-functions/
 
-    let socket = null
+   (function(window, document, undefined){
 
-    let port = ':3000'
 
-    // get the UI elements
-    let connectButton = document.getElementById('connect')
-    let connectIcon = document.getElementById('connect-icon')
+  let socketOpen = false;
+  let socket = null;
+  let port = ':3000';
 
-    //connect to plant
-    connectButton.addEventListener('click', function(){
+  function connectPlantio(){
 
-      if (this.classList.contains('active') == true){
+      if (socketOpen === true){
         console.log('disconnecting...')
         document.getElementById('shield').classList.toggle('hidden')
         connectIcon.classList.replace("fa-toggle-on", "fa-toggle-off")
-        socket = null
+        socket = null;
+        socketOpen = false;
       }
       else {
         console.log('connecting...')
         document.getElementById('shield').classList.toggle('hidden')
-        connectIcon.classList.replace("fa-toggle-off", "fa-toggle-on")
+        socketOpen = true;
 
         //get internal ip automatically:
         //https://stackoverflow.com/questions/32837471/how-to-get-local-internal-ip-with-javascript
@@ -133,18 +131,85 @@
             //console.log('my IP: ', myIP);
             pc.onicecandidate = noop;
 
-            let ip = myIP + port
-            console.log(ip)
-            socket = io(ip)
-
+            let ip = myIP + port;
+            socket = io(ip);
         };
-
       }
-      this.classList.toggle('active');
+    }
 
-    })
+    //light plant recipe control
+    var therebelight = 0;
 
-    // water plant
+    function lightPlantRecipe() {
+
+      if (therebelight === 0){
+        console.log('turning on')
+        socket.emit('hardware', {type: 'light-on'});
+        toggleLightBars();
+        therebelight = 1;
+        console.log(therebelight);
+      }
+      else if (therebelight === 1){
+        console.log('turning off')
+        socket.emit('hardware', {type: 'light-off'});
+        toggleLightBars();
+        therebelight = 0;
+        console.log(therebelight);
+      }
+
+    }
+
+    // Tatty old recipe
+    let tattyOldRecipeButton = document.getElementById('tatty-old-recipe');
+
+    tattyOldRecipeButton.addEventListener('click', function(){
+
+      //1. connect to plant if not connected
+      connectPlantio();
+
+      console.log('starting recipe&hellip;');
+
+      //2. Light plant for 12 hours, every 12 hours
+      function lightController(){
+        lightPlantRecipe();
+        setTimeout(lightPlantRecipe, 1000);
+        setTimeout('lightController()',1000);
+      }
+
+      if (this.classList.contains('active') == true){
+        console.log('turning off')
+        socket.emit('hardware', {type: 'water-off', duration: 0});
+      }
+      else{
+        console.log('turning on')
+        socket.emit('hardware', {type: 'water-on', duration: 10});
+      }
+    this.classList.toggle('active');
+    });
+
+   })(window, document);
+
+
+
+    // get the UI elements
+    let connectButton = document.getElementById('connect');
+    let connectIcon = document.getElementById('connect-icon');
+
+    //connect to plant manually
+    //connectButton.addEventListener('click', connectPlantio() );
+
+
+
+
+
+
+
+
+
+
+
+
+    // water plant manually
     let waterOnButton = document.getElementById('water-on')
 
     waterOnButton.addEventListener('click', function(){
@@ -163,7 +228,7 @@
         socket.emit('hardware', {type: 'water-on', duration: 10});
       }
     this.classList.toggle('active');
-    })
+  });
 
     let lightButton = document.getElementById('light')
     let modalWindow = document.getElementById('modal')
@@ -174,8 +239,8 @@
       modalWindow.classList.toggle('hidden')
     }
 
-    //light plant
-    lightButton.onclick = function() {
+    //light plant manually
+    lightButton.onclick = function lightPlant() {
       if(connectButton.classList.contains('active') == false){
         let modalMessage = document.querySelector(".message");
         modalMessage.innerHTML = "plant not connected"
@@ -198,7 +263,17 @@
     }
 }
 
-  })(window, document);
+// toggle light visuals
+function toggleLightBars() {
+  document.getElementById('lightfade').classList.toggle('power');
+  barlist = document.getElementsByClassName('bars');
+  for (var i = 0; i < barlist.length; i++) {
+    barlist[i].classList.toggle('hidden')
+  }
+}
+
+
+
 
   </script>
 
