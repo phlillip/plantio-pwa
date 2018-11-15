@@ -96,12 +96,14 @@
    /* TODO: Read up on: */
    // http://markdalgleish.com/2011/03/self-executing-anonymous-functions/
 
-   (function(window, document, undefined){
+(function(window, document, undefined){
 
 
   let socketOpen = false;
   let socket = null;
   let port = ':3000';
+
+
 
   function connectPlantIO() {
 
@@ -129,7 +131,7 @@
           socket = io(ip);
           socketOpen = true;
           console.log('Connected!');
-          resolve();
+          resolve({name: 'alcwyn', hobby: 'coding'});
       };
 
 
@@ -160,35 +162,47 @@ else {
     let therebelight = 0;
     let cycles = 0;
 
-    function lightPlantRecipe(){
-      while (cycles < 10){
-        if (therebelight === 0){
-          console.log('turning on')
-          socket.emit('hardware', {type: 'light-on'});
-          toggleLightBars();
-          therebelight = 1;
-          console.log(therebelight);
-        }
-        else if (therebelight === 1){
-          console.log('turning off')
-          socket.emit('hardware', {type: 'light-off'});
-          toggleLightBars();
-          therebelight = 0;
-          console.log(therebelight);
-        }
-        cycles++;
-      }
-    }
+
 
     // Tatty old recipe
     let tattyOldRecipeButton = document.getElementById('tatty-old-recipe');
 
     tattyOldRecipeButton.addEventListener('click', function(){
 
-      connectPlantIO()
-      .then(setInterval('lightPlantRecipe()', 3000))
+      connectPlantIO().then( (results, anotherval) => {
+
+        function lightPlantRecipe(){
+          if (therebelight === 0){
+            console.log('turning on')
+            socket.emit('hardware', {type: 'light-on'});
+            toggleLightBars();
+            therebelight = 1;
+            console.log(therebelight);
+          }
+          else if (therebelight === 1){
+            console.log('turning off')
+            socket.emit('hardware', {type: 'light-off'});
+            toggleLightBars();
+            therebelight = 0;
+            console.log(therebelight);
+          }
+          cycles++;
+
+        }
+
+        setInterval(lightPlantRecipe, 3000)
+
+      })
 
     });
+
+
+// Basic arrow functions (more detail needed)
+// function shout(volume, sentence){
+//  console.log(sentence)
+// }
+
+// (volume, sentence) => { console.log(sentence) }
 
 
 

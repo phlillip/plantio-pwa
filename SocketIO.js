@@ -6,15 +6,14 @@
  */
 const io = require('socket.io')(process.env.PORT || 3000)
 const shortid = require('shortid')
-const robot = require("robotjs")
+
 const os = require('os')
 const ifaces = os.networkInterfaces()
-
-const JohnnyFive = require('./JohnnyFive')
 
 let keyboardActive = false
 
 class SocketIO {
+
   constructor() {
     this.systemInfo() // legacy from original code (NICE TO HAVE!)
 
@@ -73,9 +72,9 @@ class SocketIO {
       console.log(payload);
       socket.broadcast.emit('hardware', payload);
 
-      if(payload.type === 'light-on') JohnnyFive.lightOn()
-      if(payload.type === 'light-off') JohnnyFive.lightOff()
-      if(payload.type === 'water-on') JohnnyFive.waterOn(payload.duration)
+      //if(payload.type === 'light-on') JohnnyFive.lightOn()
+    //  if(payload.type === 'light-off') JohnnyFive.lightOff()
+      //if(payload.type === 'water-on') JohnnyFive.waterOn(payload.duration)
 
     }
   }
