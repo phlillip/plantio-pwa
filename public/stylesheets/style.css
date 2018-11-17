@@ -581,6 +581,47 @@ label{display: block;}
 	fill: #d2f191;
 }
 
+/* --- Temperature UI --- */
+.thermometer{
+  position: absolute;
+  z-index: 999;
+  display: flex;
+  flex-direction: column-reverse;
+  right: 0;
+  bottom: 0;
+  width: 1em;
+  height: 100%;
+  background: white;
+  border: 1px solid black;
+}
+.mercury{
+  width: 100%;
+  height: 20%;
+  background: silver;
+  border: 2px solid white;
+}
+.mercury span{
+  position: absolute;
+      right: 1.5rem;
+      top: 80%;
+      margin-top: -0.5em;
+      width: 2em;
+      height: 1em;
+      content: '47°';
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      font-size: 2em;
+      line-height: 1;
+      color: white;
+}
+.target{
+  position: absolute;
+  width: calc(1em + 2px);
+  height: 2px;
+  background: red;
+  right: 0;
+}
 /* Onboarding */
 .onboarding {
   position: absolute;

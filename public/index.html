@@ -36,6 +36,10 @@
     <div class="bars bar2 hidden"></div>
     <div class="bars bar3 hidden"></div>
     <div class="bars bar4 hidden"></div>
+    <div class="thermometer">
+      <div class="mercury"><span>47&deg;</span></div>
+      <div class="target"></div>
+    </div>
   <div class="plant">
     <svg id="plant" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
    viewBox="0 0 1024 1024">
@@ -229,6 +233,18 @@ function daysToMilliseconds (days) {
           console.log('turning on thermostat')
           socket.emit('hardware', {type: 'thermostat-on', duration: 'UNKNOWN'});
           //update UI
+          let mercury = document.querySelector('.mercury');
+          let mercuryValue = document.querySelector('.mercury span');
+          let targetValue = document.querySelector('.target');
+          convertedTemp = (ambient * 2) + 20; //consider negative values
+          targetTop = 100 - ((target * 2) + 20);
+          topValue = 100 - convertedTemp;
+          targetValue.style.top = targetTop + '%';
+          mercury.style.height = convertedTemp + '%';
+          mercuryValue.innerHTML = ambient + '&deg;';
+          mercuryValue.style.top = topValue + '%';
+
+
           ambient++;
         }
         else {
