@@ -51,10 +51,30 @@
 
   </div>
   </div>
-  <div class="content-footer">
+  <!-- MANUAL MODE FOOTER
+  <div class="content-footer manual" style="opacity: 0; pointer-events:none;">
     <a id="connect" class="btn" href="#"><span id="connect-icon" class="fas fa-toggle-off"></span></a>
     <a id="water-on" class="btn" href="#"><span class="fas fa-tint"></span></a>
     <a id="light" class="btn" href="#"><span class="fas fa-sun"></span></a>
+  </div> -->
+
+  <!-- AUTOMATIC MODE FOOTER -->
+  <div class="content-footer auto">
+    <div class="footer-header">
+    <a id="openMenu" class="btn" href="#"><span id="menuIcon" class="fas fa-bars"></span></a>
+    <span class="chosenRecipe">Plant Status</span>
+  </div>
+
+  <dl>
+    <dt>Recipe</dt>
+    <dd>
+    <strong>filsToms</strong><br />
+    No prey, no pay lugger scurvy flogging jury mast reef sails me sutler ye interloper.
+    </dd>
+    <dt>700</dt><dd>Lumens</dd>
+    <dt>3mg</dt><dd>Feed</dd>
+    <dt>20&deg;</dt><dd>Ambient temperature</dd>
+  </dl>
   </div>
   </div>
   <footer>
@@ -62,7 +82,6 @@
       <a href="index.html" class="active">Garden</a>
       <a href="info.html">Info</a>
   </footer>
-  </div>
 
 <div id="skip">skip</div>
   <div class="onboarding">
@@ -116,6 +135,7 @@
 
       console.log('connecting to CloudPlantIO...')
       document.getElementById('shield').classList.toggle('hidden')
+      document.querySelector('.content-footer').classList.toggle('active');
 
       //get internal ip automatically:
       //https://stackoverflow.com/questions/32837471/how-to-get-local-internal-ip-with-javascript
@@ -168,9 +188,9 @@ function Recipe(name, duration, light, feed, temperature) {
 }
 
 //Recipe objects
-var filsToms = new Recipe('filsToms', 30, 5000, 1000, 20);
-var disco = new Recipe('disco', 30, 500, 500, 30);
-var temp = new Recipe('disco', 30, 10000, 10000, 10);
+var filsToms = new Recipe('filsToms', 30, 5, 10, 20);
+var disco = new Recipe('disco', 30, 0.5, 1, 30);
+var temp = new Recipe('temp', 30, 15, 15, 10);
 
 function daysToMilliseconds (days) {
   ms = days * 24 * 60 * 60 * 1000
@@ -211,17 +231,22 @@ function daysToMilliseconds (days) {
       console.log('Expected harvest: ' + finishTime)
       console.log('Harvest info: ' + durationLength)
 
+      let lightMilliseconds = (Object.values(chosen)[2] * 1000);
+      let feedMilliseconds = (Object.values(chosen)[3] * 1000);
+
       //light
       let lightLoop = setTimeout(function tick() {
         controller(Object.keys(chosen)[2]);
-        lightLoop = setTimeout(tick, Object.values(chosen)[2]);
-      }, Object.values(chosen)[2]);
+        lightLoop = setTimeout(tick, lightMilliseconds);
+      }, lightMilliseconds);
 
       //feed
+      /*
       let feedLoop = setTimeout(function tick() {
         controller(Object.keys(chosen)[3]);
-        feedLoop = setTimeout(tick, Object.values(chosen)[3]);
-      }, Object.values(chosen)[3]);
+        feedLoop = setTimeout(tick, feedMilliseconds);
+      }, feedMilliseconds);
+      */
 
       //temperature
       function thermostat(){
@@ -267,9 +292,23 @@ function daysToMilliseconds (days) {
     tattyOldRecipeButton.addEventListener('click', function(){
 
       connectPlantIO().then( (results, anotherval) => {
-        startRecipe(temp);
+        startRecipe(filsToms);
       })
 
+    });
+
+    // Automatic menu
+    let menuBtn = document.getElementById('openMenu');
+    menuBtn.addEventListener('click', function(){
+      document.querySelector('.content-footer.auto').classList.toggle('menu-open');
+
+      if(document.querySelector('.content-footer.auto').classList.contains('menu-open'))
+      {
+        document.querySelector('#menuIcon').classList.replace('fa-bars', 'fa-times')
+      }
+      else {
+        document.querySelector('#menuIcon').classList.replace('fa-times', 'fa-bars')
+      }
     });
 
 
@@ -332,7 +371,7 @@ else { console.log('Socket closed :(')};
 
     // water plant manually
     let waterOnButton = document.getElementById('water-on')
-
+/*
     waterOnButton.addEventListener('click', function(){
       if(connectButton.classList.contains('active') == false){
         let modalMessage = document.querySelector(".message");
@@ -350,6 +389,7 @@ else { console.log('Socket closed :(')};
       }
     this.classList.toggle('active');
   });
+  */
 
     let lightButton = document.getElementById('light')
     let modalWindow = document.getElementById('modal')
@@ -361,6 +401,7 @@ else { console.log('Socket closed :(')};
     }
 
     //light plant manually
+    /*
     lightButton.onclick = function lightPlant() {
       if(connectButton.classList.contains('active') == false){
         let modalMessage = document.querySelector(".message");
@@ -383,6 +424,7 @@ else { console.log('Socket closed :(')};
       barlist[i].classList.toggle('hidden')
     }
 }
+*/
 
 // toggle light visuals
 function toggleLightBars() {
