@@ -157,15 +157,16 @@ else {
 //Recipe constructor
 function Recipe(name, duration, light, feed, temperature) {
   this.name = name;
-  this.duration = duration;
-  this.light = light;
-  this.feed = feed;
+  this.duration = duration; // days
+  this.light = light; //milliseconds [TODO: convert to seconds]
+  this.feed = feed; // milliseconds [TODO: convert to seconds]
   this.temperature = temperature;
 }
 
 //Recipe objects
 var filsToms = new Recipe('filsToms', 30, 5000, 1000, 20);
 var disco = new Recipe('disco', 30, 500, 500, 30);
+var temp = new Recipe('disco', 30, 10000, 10000, 10);
 
 function daysToMilliseconds (days) {
   ms = days * 24 * 60 * 60 * 1000
@@ -175,18 +176,19 @@ function daysToMilliseconds (days) {
     // Generic controller
 
     let power = false;
+    let ambient = 0;
 
     function controller(element){
       if (power === false){
         console.log('turning on ' + element)
-        socket.emit('hardware', {type: element + '-on' });
+        socket.emit('hardware', {type: element + '-on', duration: 'UNKNOWN' });
         toggleLightBars();
         power = true;
         console.log(power);
       }
       else if (power === true){
         console.log('turning off ' + element)
-        socket.emit('hardware', {type: element + '-off'});
+        socket.emit('hardware', {type: element + '-off', duration: 'UNKNOWN'});
         toggleLightBars();
         power = false;
         console.log(power);
@@ -205,10 +207,42 @@ function daysToMilliseconds (days) {
       console.log('Expected harvest: ' + finishTime)
       console.log('Harvest info: ' + durationLength)
 
-        let timerId = setTimeout(function tick() {
-          controller(Object.keys(chosen)[2]); // light. [TODO: loop through all 3 elements]
-          timerId = setTimeout(tick, Object.values(chosen)[2]);
-        }, Object.values(chosen)[2]);
+      //light
+      let lightLoop = setTimeout(function tick() {
+        controller(Object.keys(chosen)[2]);
+        lightLoop = setTimeout(tick, Object.values(chosen)[2]);
+      }, Object.values(chosen)[2]);
+
+      //feed
+      let feedLoop = setTimeout(function tick() {
+        controller(Object.keys(chosen)[3]);
+        feedLoop = setTimeout(tick, Object.values(chosen)[3]);
+      }, Object.values(chosen)[3]);
+
+      //temperature
+      function thermostat(){
+        target = Object.values(chosen)[4];
+
+        if (ambient <= target){
+          console.log('Ambient temperature: ' + ambient);
+          console.log('Target temperature: ' + target);
+          console.log('turning on thermostat')
+          socket.emit('hardware', {type: 'thermostat-on', duration: 'UNKNOWN'});
+          //update UI
+          ambient++;
+        }
+        else {
+          console.log('Ambient temperature: ' + ambient);
+          console.log('Target temperature: ' + target);
+          console.log('turning off thermostat')
+          socket.emit('hardware', {type: 'thermostat-off', duration: 'UNKNOWN'});
+          //update UI
+          ambient--;
+        }
+      }
+
+      let temperatureLoop = setInterval(thermostat, 1000);
+
     }
 
     // Tatty old recipe
@@ -217,7 +251,7 @@ function daysToMilliseconds (days) {
     tattyOldRecipeButton.addEventListener('click', function(){
 
       connectPlantIO().then( (results, anotherval) => {
-        startRecipe(disco);
+        startRecipe(temp);
       })
 
     });
