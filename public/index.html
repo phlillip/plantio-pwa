@@ -62,7 +62,7 @@
   <div class="content-footer auto">
     <div class="footer-header">
     <a id="openMenu" class="btn" href="#"><span id="menuIcon" class="fas fa-bars"></span></a>
-    <span class="chosenRecipe">Plant Status</span>
+    <span class="chosenRecipe">Plant#1</span>
   </div>
 
   <dl>
@@ -85,20 +85,28 @@
 
 <div id="skip">skip</div>
   <div class="onboarding">
-    <div><h3>Welcome to PlantIO</h3><p>Grow food, automatically.</p></div>
     <div>
-      <h3>Choose seed</h3>
+      <h3>Welcome to</h3>
+      <h1>Plant<strong>IO</strong></h1>
+      <h3 class="mb--3">Grow food, automatically.</h3>
+      <h2>Choose seed</h2>
       <p>First you need to pick a seed to grow. Here, try this free starting seed we found in our lab...</p>
-      <input type="radio"><label class="mysterious">&hellip;unknown seed&hellip;</label>
+      <p class="form__answer">
+      <input type="radio" name="mysterious-seed" value="mysterious-seed" id="mysterious-seed">
+      <label class="mysterious" for="mysterious-seed" >
+<svg xmlns="http://www.w3.org/2000/svg" width="512px" height="512px" viewBox="0 0 512 512"><path d="M256 256c0-174.4 150.6-150.6 150.6-150.6-65.8-65.8-186.3-51.5-269.6 31.7-83.2 83.2-97.5 203.8-31.7 269.6.1-.1 150.7 23.7 150.7-150.7z" class="a"/><path d="M406.6 105.4S256 81.6 256 256 105.4 406.6 105.4 406.6c65.8 65.8 186.3 51.5 269.6-31.7 83.2-83.2 97.4-203.7 31.6-269.5z" class="a"/></svg>
+        &hellip;unknown seed&hellip;
+      </label>
+      </p>
     </div>
     <div>
-      <h3>Choose recipe</h3>
+      <h2>Choose recipe</h2>
       <p>Now you need to decide what kind of harvest you want. There are many different ways to grow a single plant, you can focus on size, yield, tase, all sorts.</p>
       <p>Erm, unfortunately we only have one recipe for this <span class="mysterious">unknown seed</span>, we found it on a scrap of paper on the floor of our lab&hellip;</p>
       <input type="radio"><label class="mysterious">&hellip;scrappy recipe&hellip;</label>
     </div>
     <div>
-      <h3>Connect to your PlantIO system</h3>
+      <h2>Connect to your PlantIO system</h2>
       <p>Nearly there! Just connect to your PlantIO system and&hellip;oh, you don't have one yet.</p>
       <p>Not to worry, you can connect to our <span class="mysterious">cloud system</span> for now.</p>
       <button id="tatty-old-recipe">Connect to CloudPlantIO</button>
@@ -107,7 +115,7 @@
       <h3>Plant your seed</h3>
       <p>Now it's time to place your seed inside your PlantIO system, and wait for it to begin sprouting.</p>
       <p>Your <span class="mysterious">unknown seed</span> just vanished. It must have teleported into the CloudPlantIO. Wait, why is that clock going round so fast&hellip;</p>
-      <button>Setup complete!</button>
+      <button class="finished-onboarding">Setup complete!</button>
     </div>
 
   </div>
@@ -292,6 +300,7 @@ function daysToMilliseconds (days) {
     tattyOldRecipeButton.addEventListener('click', function(){
 
       connectPlantIO().then( (results, anotherval) => {
+        setTimeout(tattyOldRecipeButton.innerHTML="Connected to CloudPlantIO!", 3000)
         startRecipe(filsToms);
       })
 
@@ -453,6 +462,12 @@ infinite: false
 
 let skipButton = document.getElementById('skip');
 skipButton.addEventListener('click', function(){
+  document.querySelector('.onboarding').style.display = 'none';
+  skipButton.style.display = "none";
+});
+
+let finishedButton = document.querySelector('.finished-onboarding');
+finishedButton.addEventListener('click', function(){
   document.querySelector('.onboarding').style.display = 'none';
   skipButton.style.display = "none";
 });
