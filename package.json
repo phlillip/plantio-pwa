@@ -10,22 +10,21 @@
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
-    "cryptiles": "^4.1.2",
     "debug": "~2.6.9",
     "express": "~4.16.0",
     "googleapis": "^32.0.0",
     "http-errors": "~1.6.2",
-    "johnny-five": "^0.15.0",
+    "jade": "~1.11.0",
     "morgan": "~1.9.0",
     "normalize.css": "^8.0.0",
-    "pubnub": "^4.21.2",
-    "robotjs": "^0.5.1",
     "shortid": "^2.2.12",
     "socket.io": "^2.1.1"
   },
   "description": "PlantIO prototype",
   "main": "app.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/phlillip/plantio-pwa.git"
