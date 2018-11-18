@@ -13,6 +13,10 @@
     "debug": "~2.6.9",
     "express": "~4.16.0",
     "googleapis": "^32.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.1",
     "http-errors": "~1.6.2",
     "jade": "~1.11.0",
     "morgan": "~1.9.0",
@@ -23,7 +27,7 @@
   "description": "PlantIO prototype",
   "main": "app.js",
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^4.0.0"
   },
   "repository": {
     "type": "git",
