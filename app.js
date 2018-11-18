@@ -1,3 +1,7 @@
+// Run as background service
+//https://stackoverflow.com/questions/4681067/how-do-i-run-a-node-js-application-as-its-own-process/28542093#28542093
+#!/usr/bin/env node
+
 const Sockets = require('./SocketIO')
 
 const express = require('express')
