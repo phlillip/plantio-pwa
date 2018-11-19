@@ -1,15 +1,23 @@
-a, a:hover, a:active, a:focus{
- text-decoration: none;
+a,
+a:active,
+a:focus,
+a:hover {
+  text-decoration: none;
 }
-a, input[type=button] {
-  color: #3dc895;
+
+a,
+input[type=button] {
+  color: $green;
 }
-a.btn, input[type=button].btn{
-	display: inline-block;
-	margin: 0 .25em;
-	padding: .5em;
+
+a.btn,
+input[type=button].btn {
+  display: inline-block;
+  margin: 0 .25em;
+  padding: .5em;
 }
-a.active{
-	color: white;
-	background: #3dc895;
+
+a.active {
+  color: white;
+  background: $green;
 }

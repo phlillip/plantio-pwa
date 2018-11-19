@@ -1,4 +1,5 @@
 /* Onboarding */
+
 .onboarding {
   position: absolute;
   top: 0;
@@ -10,9 +11,10 @@
   background: rgba(0,0,0,0.75);
   z-index: 1002;
 }
+
 .onboarding .slick-slide {
   background: white;
-  border-radius: 0.25em;
+  border-radius: .25em;
   margin: 1em;
   padding: 2rem;
   height: calc(100vh - 2em);
@@ -21,6 +23,7 @@
   justify-content: center;
   align-items: center;
 }
+
 div#skip {
   position: absolute;
   top: 2em;
@@ -32,68 +35,75 @@ div#skip {
   display: block;
   z-index: 1005;
 }
+
 .onboarding .slick-dots {
   position: absolute;
-    bottom: 1em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: calc(100% - 2em);
-    list-style: none;
+  bottom: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% - 2em);
+  list-style: none;
 }
+
 .onboarding .slick-dots li button {
-    font-size: 0;
-    line-height: 0;
-    display: block;
-    width: 20px;
-    height: 20px;
-    padding: 5px;
-    cursor: pointer;
-    color: transparent;
-    border: 0;
-    outline: none;
-    background: transparent;
-    position: relative;
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  cursor: pointer;
+  color: transparent;
+  border: 0;
+  outline: none;
+  background: transparent;
+  position: relative;
 }
+
 .onboarding .slick-dots li button:before {
-    font-size: 30px;
-    line-height: 20px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 20px;
-    height: 20px;
-    content: '•';
-    text-align: center;
-    opacity: .25;
-    color: black;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  font-size: 30px;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  content: '•';
+  text-align: center;
+  opacity: .25;
+  color: black;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
 .onboarding .slick-dots li.slick-active button:before {
-    opacity: .75;
-    color: black;
+  opacity: .75;
+  color: black;
 }
+
 .mysterious {
   /*color: rgba(0,0,0,0.5);*/
   font-style: italic;
 }
 
-
 .form__answer {
   display: inline-block;
   box-sizing: border-box;
   width: 50vw;
-  height: calc( 50vw + 1em);
+  height: calc(50vw + 1em);
   vertical-align: top;
   text-align: center;
 }
+
 .form__answer svg {
-  width: 100%; height: auto;
-  fill:none;
-  stroke-width:5;
-  stroke:#000;
+  width: 100%;
+  height: auto;
+  fill: none;
+  stroke-width: 5;
+  stroke: #000;
 }
+
 label {
   border: 1px solid rgba(0,0,0, 0.25);
   box-sizing: border-box;
@@ -105,23 +115,29 @@ label {
   opacity: .5;
   transition: all .5s ease-in-out;
 }
-label:hover, label:focus, label:active {
+
+label:active,
+label:focus,
+label:hover {
   border: 1px solid rgba(0,0,0,0.5);
 }
 /* Input style */
+
 input[type="radio"] {
-	opacity: 0;
-	width: 0;
+  opacity: 0;
+  width: 0;
   height: 0;
 }
+
 input[type="radio"]:active ~ label {
   opacity: 1;
 }
+
 input[type="radio"]:checked ~ label {
   opacity: 1;
-	border: 1px solid rgba(0,0,0,1);
+  border: 1px solid rgba(0,0,0,1);
 }
 
 .form__answer input[type="radio"]:checked ~ label svg {
-  stroke-width:10;
+  stroke-width: 10;
 }

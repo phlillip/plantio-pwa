@@ -1,32 +1,30 @@
+footer,
 header {
-  flex: 0 0 auto;
-}
-header img{
-	height: 1em;
-}
-footer {
-  flex: 0 0 auto;
   display: flex;
-  justify-content: center;
-  border-top: 1px solid #3dc895;
+  flex: 0 0 auto;
+  width: 100%;
+  background: white;
+  height: 2.5em;
 }
-header{
-	display: flex;
+
+header {
   justify-content: space-between;
-  padding: 1em;
+  padding: .75em;
   line-height: 1;
   border-bottom: 1px solid #3dc895;
-}
-header, footer{
-	display: flex;
-	flex: 0 0 auto;
-	width: 100%;
-	background: white;
-  height: 3em;
 
+  img {
+    height: 1em;
+  }
 }
-footer a{
-	padding: .5em;
-	width: 33.333%;
-	color: #3dc895;
+
+footer {
+  justify-content: center;
+  border-top: 1px solid #3dc895;
+
+  a {
+    padding: .5em;
+    width: 33.333%;
+    color: #3dc895;
+  }
 }

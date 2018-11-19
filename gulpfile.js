@@ -4,15 +4,17 @@ var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var terser = require('gulp-terser');
 
-gulp.task('sass', function(){
-   return gulp.src('app/scss/main.scss')
-      .pipe(sass())
-      .pipe(cssnano())
-      .pipe(gulp.dest('public/css'));
+gulp.task('sass', function() {
+  return gulp.src('app/scss/main.scss')
+    .pipe(sass())
+    .pipe(cssnano({
+      zindex: false
+    }))
+    .pipe(gulp.dest('public/css'));
 });
 
-gulp.task('js', function(){
-    return gulp.src([
+gulp.task('js', function() {
+  return gulp.src([
       'app/js/manualControls.js',
       'app/js/statusMenu.js',
       'app/js/recipe.js',
@@ -20,14 +22,14 @@ gulp.task('js', function(){
       'app/js/Xall.js',
       'app/js/onboarding.js',
     ])
-        .pipe(concat('all.js'))
-        .pipe(terser())
-        .pipe(gulp.dest('public/js'));
+    .pipe(concat('all.js'))
+    .pipe(terser())
+    .pipe(gulp.dest('public/js'));
 });
 
-gulp.task('watch', function(){
-gulp.watch('app/*.scss', ['sass']);
-gulp.watch('app/js/**/*.js', ['js']);
+gulp.task('watch', function() {
+  gulp.watch('app/scss/**/*.scss', ['sass']);
+  gulp.watch('app/js/**/*.js', ['js']);
 });
 
 // The below fails for gulp@4.0

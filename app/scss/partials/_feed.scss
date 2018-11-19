@@ -1,0 +1,49 @@
+#feed {
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  top: 60%;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,1);
+  opacity: 1;
+  transition: all 3s ease-in-out;
+  overflow: hidden;
+
+  .spray {
+    position: absolute;
+    bottom: 2.5em;
+    left: calc(50% - .5em);
+    height: 1em;
+    width: 1em;
+    background-color: #ccc;
+    border-radius: 50%;
+  }
+
+  &.power .spray {
+    animation: pulse 2s infinite;
+  }
+
+  .nozzle {
+    position: absolute;
+    bottom: -3em;
+    height: 6em;
+    width: 6em;
+    background-color: #ccc;
+    left: calc(50% - 3em);
+    border-radius: 50%;
+  }
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255,255,255, 0.25);
+  }
+
+  75% {
+    box-shadow: 0 0 0 100vw rgba(255,255,255, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(255,255,255, 0);
+  }
+}
