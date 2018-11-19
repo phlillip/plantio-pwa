@@ -2,25 +2,27 @@ var gulp = require('gulp');
 var cssnano = require('gulp-cssnano');
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-
-//
-//gulp.task('[Function Name]', function(){
-   // Do stuff here
-//}
+var terser = require('gulp-terser');
 
 gulp.task('sass', function(){
-   return gulp.src('app/style.scss')
+   return gulp.src('app/scss/main.scss')
       .pipe(sass())
       .pipe(cssnano())
-      .pipe(gulp.dest('dist/css'));
+      .pipe(gulp.dest('public/css'));
 });
 
 gulp.task('js', function(){
-    return gulp.src(['app/js/plugins/*.js', 'app/js/*.js'])
+    return gulp.src([
+      'app/js/manualControls.js',
+      'app/js/statusMenu.js',
+      'app/js/recipe.js',
+      'app/js/connection.js',
+      'app/js/Xall.js',
+      'app/js/onboarding.js',
+    ])
         .pipe(concat('all.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest('dist'));
+        .pipe(terser())
+        .pipe(gulp.dest('public/js'));
 });
 
 gulp.task('watch', function(){

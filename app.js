@@ -7,7 +7,8 @@ const Sockets = require('./SocketIO')
 const express = require('express')
 const app = express()
 
-app.use(express.static('public'))
+//app.use(express.static('public'))
+app.use(express.static(__dirname + '/public/'));
 app.get('/', (req, res) => res.send('Hello World!'))
 
 // 0-1024

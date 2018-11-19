@@ -3,15 +3,11 @@
 
 (function(window, document, undefined){
 
-
 let socketOpen = false;
 let socket = null;
 let port = ':3000';
 
-
-
 function connectPlantIO() {
-
 
 return new Promise(function(resolve, reject) {
 
@@ -40,25 +36,10 @@ return new Promise(function(resolve, reject) {
        resolve({name: 'alcwyn', hobby: 'coding'});
    };
 
-
-
 });
 
-
 }
 
-/*
-if ( socketOpen === true ) {
-console.log('disconnecting...')
-document.getElementById('shield').classList.toggle('hidden')
-connectIcon.classList.replace("fa-toggle-on", "fa-toggle-off")
-socket = null;
-socketOpen = false;
-}
-else {
-
-}
-*/
 
 //Recipe constructor
 function Recipe(name, duration, light, feed, temperature) {
@@ -68,6 +49,7 @@ this.light = light; //milliseconds [TODO: convert to seconds]
 this.feed = feed; // milliseconds [TODO: convert to seconds]
 this.temperature = temperature;
 }
+
 
 //Recipe objects
 var filsToms = new Recipe('filsToms', 30, 5, 10, 20);
@@ -79,8 +61,17 @@ ms = days * 24 * 60 * 60 * 1000
 return ms
 }
 
- // Generic controller
+// toggle light visuals
+function toggleLightBars() {
+document.getElementById('lightfade').classList.toggle('power');
+barlist = document.getElementsByClassName('bars');
+for (var i = 0; i < barlist.length; i++) {
+  barlist[i].classList.toggle('hidden')
+}
+}
 
+
+ // Generic controller
  let power = false;
  let ambient = 0;
 
@@ -101,6 +92,20 @@ return ms
    }
  }
 
+
+ // Tatty old recipe
+let tattyOldRecipeButton = document.getElementById('tatty-old-recipe');
+
+tattyOldRecipeButton.addEventListener('click', function(){
+
+ connectPlantIO().then( (results, anotherval) => {
+   setTimeout(tattyOldRecipeButton.innerHTML="Connected to CloudPlantIO!", 3000)
+   startRecipe(filsToms);
+ })
+
+});
+
+
  //Start recipe
  function startRecipe(chosen){
    console.log('Starting: ' + Object.values(chosen)[0] + ', ' + Object.values(chosen)[1] + ', ' + Object.values(chosen)[2] + ', ' + Object.values(chosen)[3] + ', ' + Object.values(chosen)[4])
@@ -116,6 +121,7 @@ return ms
    let lightMilliseconds = (Object.values(chosen)[2] * 1000);
    let feedMilliseconds = (Object.values(chosen)[3] * 1000);
 
+
    //light
    let lightLoop = setTimeout(function tick() {
      controller(Object.keys(chosen)[2]);
@@ -129,6 +135,7 @@ return ms
      feedLoop = setTimeout(tick, feedMilliseconds);
    }, feedMilliseconds);
    */
+
 
    //temperature
    function thermostat(){
@@ -151,7 +158,6 @@ return ms
        mercuryValue.innerHTML = ambient + '&deg;';
        mercuryValue.style.top = topValue + '%';
 
-
        ambient++;
      }
      else {
@@ -167,67 +173,5 @@ return ms
    let temperatureLoop = setInterval(thermostat, 1000);
 
  }
-
- // Tatty old recipe
- let tattyOldRecipeButton = document.getElementById('tatty-old-recipe');
-
- tattyOldRecipeButton.addEventListener('click', function(){
-
-   connectPlantIO().then( (results, anotherval) => {
-     setTimeout(tattyOldRecipeButton.innerHTML="Connected to CloudPlantIO!", 3000)
-     startRecipe(filsToms);
-   })
-
- });
-
- // Automatic menu
- let menuBtn = document.getElementById('openMenu');
- menuBtn.addEventListener('click', function(){
-   document.querySelector('.content-footer.auto').classList.toggle('menu-open');
-
-   if(document.querySelector('.content-footer.auto').classList.contains('menu-open'))
-   {
-     document.querySelector('#menuIcon').classList.replace('fa-bars', 'fa-times')
-   }
-   else {
-     document.querySelector('#menuIcon').classList.replace('fa-times', 'fa-bars')
-   }
- });
-
-
-
-
-// Basic arrow functions (more detail needed)
-// function shout(volume, sentence){
-//  console.log(sentence)
-// }
-
-// (volume, sentence) => { console.log(sentence) }
-
-
-
-//1. connect to plant if not connected
-/*
-if(socketOpen){
-console.log('starting recipe...');
-//2. Light plant for 12 hours, every 12 hours
-
-}
-else { console.log('Socket closed :(')};
-*/
-
-/*
-   if (this.classList.contains('active') == true){
-     console.log('turning off')
-     socket.emit('hardware', {type: 'water-off', duration: 0});
-   }
-   else{
-     console.log('turning on LEDs...')
-     socket.emit('hardware', {type: 'water-on', duration: 10});
-   }
- this.classList.toggle('active');
-
- */
-
 
 })(window, document);

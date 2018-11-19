@@ -27,7 +27,8 @@
   "description": "PlantIO prototype",
   "main": "app.js",
   "devDependencies": {
-    "gulp": "^4.0.0"
+    "gulp": "^4.0.0",
+    "gulp-terser": "^1.1.5"
   },
   "repository": {
     "type": "git",
