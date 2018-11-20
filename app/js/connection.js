@@ -111,16 +111,30 @@
     }
   }
 
+  // Read selected recipe
+  /*
+  const fs = require('fs');
+  var chosenRecipe;
+  fs.readFile('recipes/strawberries.json', 'utf8', function(err, data) {
+    if (err) throw err;
+    chosenRecipe = JSON.parse(data);
+    console.log(chosenRecipe);
+  });
+  */
+
+
+
 
   // Tatty old recipe
   let tattyOldRecipeButton = document.getElementById('tatty-old-recipe');
-
   tattyOldRecipeButton.addEventListener('click', function() {
 
     connectPlantIO().then((results, anotherval) => {
       setTimeout(tattyOldRecipeButton.innerHTML = "Connected to CloudPlantIO!", 3000) // still runs immediately
 
-      startRecipe(filsToms);
+
+
+      startRecipe(disco);
     })
 
   });
