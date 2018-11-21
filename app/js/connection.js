@@ -127,18 +127,20 @@
 
   // Tatty old recipe
   let tattyOldRecipeButton = document.getElementById('tatty-old-recipe');
-  tattyOldRecipeButton.addEventListener('click', function() {
 
-    connectPlantIO().then((results, anotherval) => {
-      setTimeout(tattyOldRecipeButton.innerHTML = "Connected to CloudPlantIO!", 3000) // still runs immediately
+  if (tattyOldRecipeButton !== null){
+    tattyOldRecipeButton.addEventListener('click', function() {
+
+      connectPlantIO().then((results, anotherval) => {
+        setTimeout(tattyOldRecipeButton.innerHTML = "Connected to CloudPlantIO!", 3000) // still runs immediately
 
 
 
-      startRecipe(disco);
-    })
+        startRecipe(disco);
+      })
 
-  });
-
+    });
+  }
 
   //Start recipe
   function startRecipe(chosen) {

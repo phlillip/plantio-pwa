@@ -37,12 +37,17 @@
 
   let lightButton = document.getElementById('light')
   let modalWindow = document.getElementById('modal')
+
   let modalClose = document.querySelector(".close");
 
-  //close modal
-  modalClose.onclick = function() {
-    modalWindow.classList.toggle('hidden')
+  if (modalClose !== null){
+    //close modal
+    modalClose.onclick = function() {
+      modalWindow.classList.toggle('hidden')
+    }
+
   }
+
 
   //light plant manually
   /*

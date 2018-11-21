@@ -28,8 +28,8 @@ gulp.task('js', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch('app/scss/**/*.scss', ['sass']);
-  gulp.watch('app/js/**/*.js', ['js']);
+  gulp.watch('app/scss/**/*.scss', gulp.series('sass'));
+  gulp.watch('app/js/**/*.js', gulp.series('js'));
 });
 
 // The below fails for gulp@4.0
