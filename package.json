@@ -29,7 +29,11 @@
   "description": "PlantIO prototype",
   "main": "app.js",
   "devDependencies": {
+    "@babel/core": "^7.1.6",
     "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0-beta.2",
+    "gulp-browserify": "^0.5.1",
+    "gulp-sourcemaps": "^2.6.4",
     "gulp-terser": "^1.1.5"
   },
   "repository": {
