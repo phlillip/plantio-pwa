@@ -2,7 +2,7 @@
   position: absolute;
   z-index: 999;
   width: 100%;
-  top: 60%;
+  top: 50%;
   bottom: 0;
   width: 100%;
   background: rgba(0,0,0,1);
@@ -21,7 +21,7 @@
   }
 
   &.power .spray {
-    animation: pulse 2s infinite;
+    animation: pulse 1s infinite;
   }
 
   .nozzle {
