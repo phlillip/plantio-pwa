@@ -1,8 +1,10 @@
 var gulp = require('gulp');
 var cssnano = require('gulp-cssnano');
 var sass = require('gulp-sass');
-var concat = require('gulp-concat');
 var terser = require('gulp-terser');
+var babel = require('gulp-babel');
+var concat = require('gulp-concat');
+
 
 gulp.task('sass', function() {
   return gulp.src('app/scss/main.scss')
@@ -15,16 +17,17 @@ gulp.task('sass', function() {
 
 gulp.task('js', function() {
   return gulp.src([
-      'app/js/manualControls.js',
-      'app/js/statusMenu.js',
-      'app/js/recipe.js',
-      'app/js/connection.js',
-      'app/js/Xall.js',
-      'app/js/onboarding.js',
-    ])
-    .pipe(concat('all.js'))
-    .pipe(terser())
-    .pipe(gulp.dest('public/js'));
+      'app/js/common.js',
+      'app/js/index.js',
+      'app/js/recipes.js',
+      'app/js/plant.js',
+      'app/js/main.js'
+      ]
+    )
+    .pipe(babel())
+    .pipe(concat('main.js'))
+    .pipe(gulp.dest('public/js/'));
+
 });
 
 gulp.task('watch', function() {

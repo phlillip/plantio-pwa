@@ -1,0 +1,58 @@
+h1 {
+  font-size: 1.875em;
+  line-height: 1;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 1.375em;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.125em;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.button,
+button {
+  display: flex;
+  flex-basis: auto;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  border: 1px solid $green;
+  background: $green;
+  color: white;
+  line-height: 1;
+  height: 2.5em;
+  padding: 0 1em;
+  margin-bottom: 1em;
+  cursor: pointer;
+  transition: all .25s ease-in-out;
+
+  &:hover {
+    border-color: darken($green, 10%);
+    background: darken($green, 10%);
+    color: white;
+  }
+
+  &.button--secondary {
+    border-color: $ruutsBlue;
+    background: $ruutsBlue;
+
+    &:hover {
+      background: darken($ruutsBlue, 10%);
+      background: darken($ruutsBlue, 10%);
+    }
+  }
+}

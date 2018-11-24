@@ -1,44 +1,59 @@
 /* Onboarding */
 
-.onboarding {
+.onboarding-wrapper {
+  > h1 {
+    color: white;
+    position: absolute;
+    top: 5vw;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1003;
+  }
+
+  div#skip {
+    position: absolute;
+    bottom: 1vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1003;
+  }
+}
+
+.onboarding.slick-slider {
   position: absolute;
-  top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  height: 100vh;
-  width: 100vw;
-  background: rgba(0,0,0,0.75);
+  top: 0;
+  background: rgba(0,0,0,0.9);
   z-index: 1002;
 }
 
-.onboarding .slick-slide {
+.onboarding.slick-initialized .slick-slide {
   background: white;
   border-radius: .25em;
-  margin: 1em;
+  margin: calc(25vh - 5em) 2em calc(25vh - 2em) 2em;
   padding: 2rem;
-  height: calc(100vh - 2em);
+  height: 50vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+
+  button {
+    justify-self: flex-end;
+    margin-top: auto;
+  }
 }
 
-div#skip {
-  position: absolute;
-  top: 2em;
-  right: 2em;
-  text-decoration: underline;
-  background: transparent;
-  margin: 1em;
-  height: 1em;
-  display: block;
-  z-index: 1005;
+.slick-list,
+.slick-track {
+  height: 100%;
 }
 
 .onboarding .slick-dots {
   position: absolute;
-  bottom: 1em;
+  bottom: calc(25vh - 5em);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -72,14 +87,14 @@ div#skip {
   content: '•';
   text-align: center;
   opacity: .25;
-  color: black;
+  color: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .onboarding .slick-dots li.slick-active button:before {
   opacity: .75;
-  color: black;
+  color: white;
 }
 
 .mysterious {
@@ -90,14 +105,15 @@ div#skip {
 .form__answer {
   display: inline-block;
   box-sizing: border-box;
-  width: 50vw;
-  height: calc(50vw + 1em);
+  height: calc(15vw + 2em);
   vertical-align: top;
   text-align: center;
 }
 
 .form__answer svg {
-  width: 100%;
+  width: 15vw;
+  display: block;
+  margin: 0 auto;
   height: auto;
   fill: none;
   stroke-width: 5;
@@ -105,12 +121,10 @@ div#skip {
 }
 
 label {
-  border: 1px solid rgba(0,0,0, 0.25);
   box-sizing: border-box;
   display: block;
   height: 100%;
   width: 100%;
-  padding: 1em;
   cursor: pointer;
   opacity: .5;
   transition: all .5s ease-in-out;
@@ -118,9 +132,7 @@ label {
 
 label:active,
 label:focus,
-label:hover {
-  border: 1px solid rgba(0,0,0,0.5);
-}
+label:hover {}
 /* Input style */
 
 input[type="radio"] {
@@ -135,7 +147,6 @@ input[type="radio"]:active ~ label {
 
 input[type="radio"]:checked ~ label {
   opacity: 1;
-  border: 1px solid rgba(0,0,0,1);
 }
 
 .form__answer input[type="radio"]:checked ~ label svg {

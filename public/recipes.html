@@ -1,67 +1,17 @@
 <html>
+  <head>
+    <title>PlantIO</title>
+    <meta name=viewport content="width=device-width, initial-scale=1">
 
-<head>
-  <title>PlantIO</title>
-  <meta name=viewport content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+  </head>
 
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-  <!-- Slick slider for onboarding -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  <!-- socket.io-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
-  <!-- GULP  -->
-  <link rel="stylesheet" href="css/main.css" type="text/css">
+  <body id="recipes" class="recipe1" onload="init()">
+    <div class="page status">
 
-</head>
-
-<body>
-  <div class="page status">
-    <header>
-      <span><img src="/images/ruuts.svg" /> | PlantStatus</span>
-      <a href="menu"><span class="fas fa-bars"></span></a>
-    </header>
-    <div class="content">
-
-      <div class="content-header">
-        <a class="btn">RECIPES</a>
-      </div>
-      <div class="content-content">
-        <div class="recipe-list">
-          <span class="breadcrumbs">Salad | Tomato | Piccolino</span>
-          <div class="recipe collapsed">
-            <div class="recipe-info">
-              <span class="recipe-name">filsToms</span>
-              <span class="recipe-tags">colour | yield</span>
-            </div>
-            <span id="filsToms" class="recipe-switch fas fa-toggle-off"></span>
-          </div>
-          <div class="recipe collapsed">
-            <div class="recipe-info">
-              <span class="recipe-name">Disco</span>
-              <span class="recipe-tags">size</span>
-            </div>
-            <span id="disco" class="disco recipe-switch fas fa-toggle-off"></span>
-          </div>
-          <div class="recipe collapsed">
-            <div class="recipe-info">
-              <span class="recipe-name">Temp</span>
-              <span class="recipe-tags">yield | speed</span>
-            </div>
-            <span id="temp" class="temp recipe-switch active fas fa-toggle-on"></span>
-          </div>
-        </div>
-      </div>
     </div>
-    <footer>
-      <a href="recipes.html" class="active">Recipes</a>
-      <a href="index.html">Garden</a>
-      <a href="info.html">Info</a>
-    </footer>
-  </div>
-  <!--- GULP --->
-  <script src="js/all.js"></script>
-</body>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>
