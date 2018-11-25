@@ -343,35 +343,27 @@ let plant = {
     }); // 5: Start growing
 
     startGrowingButton.addEventListener('click', function () {
-      startRecipe(timewarp);
-    }); // 5a: duplicate function to ensure things run in sequence:
+      startRecipe(chosenRecipe);
+      document.querySelector('.onboarding-wrapper').style.display = 'none';
 
-    if (startGrowingButton !== null) {
-      startGrowingButton.addEventListener('click', function () {
-        document.querySelector('.onboarding-wrapper').style.display = 'none';
+      if (skipButton !== null) {
+        skipButton.style.display = "none";
+      }
 
-        if (skipButton !== null) {
-          skipButton.style.display = "none";
-        }
+      setTimeout(function () {
+        harvestTimer();
+      }, durationLength); // 'durationLength' not defined
+    }); // 6: Collect Harvest
 
-        setTimeout(function () {
-          harvestTimer();
-        }, durationLength); // 'durationLength' not defined
-      });
-    } // 6: Collect Harvest
+    collectHarvestButton.addEventListener('click', function () {
+      document.querySelector('.onboarding-wrapper').style.display = 'none';
 
+      if (skipButton !== null) {
+        skipButton.style.display = "none";
+      }
 
-    if (collectHarvestButton !== null) {
-      collectHarvestButton.addEventListener('click', function () {
-        document.querySelector('.onboarding-wrapper').style.display = 'none';
-
-        if (skipButton !== null) {
-          skipButton.style.display = "none";
-        }
-
-        document.querySelector('.gamification-screen').style.display = 'flex';
-      });
-    }
+      document.querySelector('.gamification-screen').style.display = 'flex';
+    });
   },
   grow: () => {
     console.log('I am growing!');
