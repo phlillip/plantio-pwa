@@ -1,17 +1,27 @@
 <html>
-  <head>
-    <title>PlantIO</title>
-    <meta name=viewport content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/main.css" type="text/css">
-  </head>
+<head>
+  <title>PlantIO</title>
+  <meta name=viewport content="width=device-width, initial-scale=1">
 
-  <body id="recipes" class="recipe1" onload="init()">
-    <div class="page status">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/main.css" type="text/css">
+</head>
 
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+<body id="recipes" class="recipe1" onload="init()">
+  <div class="page status">
+    <header>
+      <span><a href="/"><img src="/images/ruuts.svg" /></a> | Plant status</span>
+      <a href="#"><span class="fas fa-bars"></span></a>
+    </header>
+    <footer>
+      <a href="#">Recipes</a>
+      <a href="plant.html" class="active">Garden</a>
+      <a href="#">Info</a>
+    </footer>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
 </html>

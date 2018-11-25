@@ -1,5 +1,4 @@
 /* Onboarding */
-
 .onboarding-wrapper {
   > h1 {
     color: white;
@@ -19,6 +18,23 @@
   }
 }
 
+.onboarding .slick-next,
+.onboarding .slick-prev {
+  position: fixed;
+  bottom: 4em;
+  z-index: 1005;
+  width: calc(50% - 2em);
+  margin: 0;
+}
+
+.onboarding .slick-prev {
+  left: 1em;
+}
+
+.onboarding .slick-next {
+  right: 1em;
+}
+
 .onboarding.slick-slider {
   position: absolute;
   right: 0;
@@ -32,9 +48,9 @@
 .onboarding.slick-initialized .slick-slide {
   background: white;
   border-radius: .25em;
-  margin: calc(25vh - 5em) 2em calc(25vh - 2em) 2em;
+  margin: calc(25vh - 5em) 2em calc(15vh - 2em) 2em;
   padding: 2rem;
-  height: 50vh;
+  height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -43,6 +59,7 @@
   button {
     justify-self: flex-end;
     margin-top: auto;
+    margin-bottom: 0;
   }
 }
 
@@ -134,7 +151,6 @@ label:active,
 label:focus,
 label:hover {}
 /* Input style */
-
 input[type="radio"] {
   opacity: 0;
   width: 0;
