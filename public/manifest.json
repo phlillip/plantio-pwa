@@ -1,0 +1,25 @@
+{
+    "dir": "ltr",
+    "lang": "en",
+    "name": "PlantIO by Ruuts",
+    "scope": "/",
+    "display": "fullscreen",
+    "start_url": "index.html",
+    "short_name": "PlantIO",
+    "theme_color": "#3dc895",
+    "description": "Grow food, automatically with PlantIO",
+    "orientation": "any",
+    "background_color": "#3dc895",
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "icons": [{
+    "src": "images/plantio_icon--192.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  },
+  {
+  "src": "images/plantio_icon--512.png",
+  "sizes": "512x512",
+  "type": "image/png"
+  }]
+}

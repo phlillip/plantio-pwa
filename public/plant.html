@@ -1,19 +1,30 @@
+<!DOCTYPE html>
 <html>
 
 <head>
   <title>PlantIO</title>
+  <meta charset="UTF-8">
   <meta name=viewport content="width=device-width, initial-scale=1">
-  <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
-
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <meta name="description" content="Grow food, automatically with the PlantIO system.">
+  <meta name="keywords" content="aeroponics, farming, organic, food, led">
+  <meta name="author" content="Phillip Penny">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#3dc895" />
+  </link>
   <link rel="stylesheet" href="css/main.css" type="text/css">
 </head>
 
 <body id="plant" class="grow events" onload="init()">
   <div class="page status">
     <header>
-      <span><a href="/"><img src="/images/ruuts.svg" /></a> | Plant status</span>
-      <a href="#"><span class="fas fa-bars"></span></a>
+      <span><a href="/"><img src="/images/ruuts.svg" alt="Ruuts" /></a> | Plant status</span>
+      <a href="#" aria-label="menu" class="hamburger">
+        <svg xmlns="http://www.w3.org/2000/svg" style="fill: #aac446" width="512" height="512" viewBox="0 0 512 512">
+          <path d="M448 232v48H64v-48H448z" />
+          <path d="M448 64v48H64V64H448z" />
+          <path d="M448 400v48H64v-48H448z" />
+        </svg>
+      </a>
     </header>
     <div class="content">
       <div id="shield">
@@ -69,7 +80,24 @@
       <!-- AUTOMATIC MODE FOOTER -->
       <div class="content-footer auto">
         <div class="footer-header">
-          <a id="openMenu" class="btn" href="#"><span id="menuIcon" class="fas fa-info-circle"></span></a>
+          <a id="openMenu" class="btn" href="#"><span id="menuIcon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+                <style>.a{fill:none;}.b{fill:#FFF;}</style>
+                <pattern x="0.5" y="512.5" width="64.5" height="65" patternUnits="userSpaceOnUse" viewBox="0 -65 64.5 65">
+                  <polygon points="0 0 64.5 0 64.5 -65 0 -65 " class="a" />
+                  <polygon points="0 0 64.5 0 64.5 -65 0 -65 " class="a" />
+                  <polygon points="0 0 64.5 0 64.5 -65 0 -65 " class="a" />
+                  <polygon points="0 0 64.5 0 64.5 -65 0 -65 " class="a" />
+                  <polygon points="0 0 64.5 0 64.5 -65 0 -65 " class="a" />
+                  <polygon points="0 0 64.5 0 64.5 -65 0 -65 " fill="#404041" />
+                </pattern>
+                <path d="M256 0C115 0 0 115 0 256s115 256 256 256 256-115 256-256S397 0 256 0z" fill="#AAC446" />
+                <pattern xlink:href="#SVGID_214_" patternTransform="matrix(0.75 0 0 0.3751 1404.6074 7838.6719)" />
+                <path d="M256 64C150 64 64 150 64 256s86 192 192 192 192-86 192-192S362 64 256 64z" fill="url(#SVGID_1_)" />
+                <path d="M232 128h48v48h-48V128z" class="b" />
+                <path d="M232 192h48v192h-48V192z" class="b" />
+              </svg>
+            </span></a>
           <span class="chosenRecipe">Recipe Data</span>
         </div>
 
