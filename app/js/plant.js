@@ -328,7 +328,9 @@ let plant = {
 
     // 3: Choose recipe
     selectRecipeButton.addEventListener('click', function() {
-      //chosenRecipe = new Recipe(JSON.parse(JSON.stringify(this.id)))
+      /* from: jsben.ch/bWfk9
+       * chosenRecipe = new Recipe(JSON.parse(JSON.stringify(this.id)))
+       */
       chosenRecipe = this.id
       console.log(chosenRecipe);
       $slideshow.slick('slickNext');
