@@ -214,10 +214,16 @@
 	justify-content: center;
 	align-items: center;
 	position: absolute;
-	top: 0;
+	top: 2.5em;
 	left: 0;
 	right: 0;
-	bottom: 0;
+	bottom: 2.5em;
+	padding: 2em;
 	background: white;
 	z-index: 1004;
+
+	img {
+		height: 2.5em;
+		margin: 0 auto 1em;
+	}
 }

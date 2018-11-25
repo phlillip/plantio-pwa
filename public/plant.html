@@ -3,6 +3,7 @@
 <head>
   <title>PlantIO</title>
   <meta name=viewport content="width=device-width, initial-scale=1">
+  <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
   <link rel="stylesheet" href="css/main.css" type="text/css">
@@ -12,7 +13,7 @@
   <div class="page status">
     <header>
       <span><a href="/"><img src="/images/ruuts.svg" /></a> | Plant status</span>
-      <a href="menu"><span class="fas fa-bars"></span></a>
+      <a href="#"><span class="fas fa-bars"></span></a>
     </header>
     <div class="content">
       <div id="shield">
@@ -87,6 +88,8 @@
       </div>
 
 
+      <!-- Onboarding -->
+
       <div class="onboarding-wrapper">
         <h1>Tutorial</h1>
         <div class="onboarding">
@@ -95,6 +98,9 @@
             <h2>Plant<strong>IO</strong></h2>
             <h3>Grow food, automatically.</h3>
             <p>Let's run a simulation harvest to show you how easy it is!</p>
+            <div class="js--fe">
+              <button class="continue">Continue</button>
+            </div>
           </div>
           <div class="tutorial">
             <h2>Choose seed</h2>
@@ -102,12 +108,15 @@
             <p class="form__answer">
               <input type="radio" name="mysterious-seed" value="mysterious-seed" id="mysterious-seed">
               <label class="mysterious" for="mysterious-seed">
+                &hellip;unknown seed&hellip;
                 <svg xmlns="http://www.w3.org/2000/svg" width="512px" height="512px" viewBox="0 0 512 512">
                   <path d="M256 256c0-174.4 150.6-150.6 150.6-150.6-65.8-65.8-186.3-51.5-269.6 31.7-83.2 83.2-97.5 203.8-31.7 269.6.1-.1 150.7 23.7 150.7-150.7z" class="a" />
                   <path d="M406.6 105.4S256 81.6 256 256 105.4 406.6 105.4 406.6c65.8 65.8 186.3 51.5 269.6-31.7 83.2-83.2 97.4-203.7 31.6-269.5z" class="a" /></svg>
-                &hellip;take unknown seed&hellip;
               </label>
             </p>
+            <div class="js--fe">
+              <button id="mysterious-seed" class="take-seed">Take seed</button>
+            </div>
           </div>
           <div class="tutorial">
             <h2>Choose recipe</h2>
@@ -124,51 +133,62 @@
                   <line x1="39.5" y1="114" x2="195.5" y2="114" />
                   <line x1="39.5" y1="178" x2="195.5" y2="178" />
                 </svg>
-                &hellip;take mysterious recipe&hellip;
+                &hellip;mysterious recipe&hellip;
               </label>
             </p>
+            <div class="js--fe">
+              <button id="timewarp" class="take-recipe">Take recipe</button>
+            </div>
           </div>
           <div class="tutorial">
             <h2>Connect to your PlantIO system</h2>
             <p>You can connect to our <span class="mysterious">cloud system</span> for now until you invest in a real system.</p>
-            <button id="tatty-old-recipe">Connect</button>
+            <div class="js--fe">
+              <button id="connect">Connect</button>
+            </div>
           </div>
           <div class="tutorial">
             <h3>Plant your seed</h3>
             <p>Woah. Your <span class="mysterious">unknown seed</span> just teleported into the CloudPlantIO. Wait, why is that clock going round so fast&hellip;</p>
-            <button class="finished-onboarding">Start growing</button>
+            <div class="js--fe">
+              <button class="finished-onboarding">Start growing</button>
+            </div>
           </div>
 
           <div class="harvest-modal">
             <h3>Harvest complete!</h3>
             <p>Take a look at what you've grown&hellip;</p>
-            <button class="collect-harvest">Collect harvest</button>
+            <div class="js--fe">
+              <button class="collect-harvest">Collect harvest</button>
+            </div>
           </div>
 
         </div>
-        <div id="skip" class="button">skip</div>
+        <div class="button">skip</div>
       </div>
-
-      <div class="gamification-screen">
-        <h1>Congratulations!</h1>
-        <h3>You are now a level 1 grower</h3>
-        <svg id="plant-visual" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 1024 1024">
-          <rect id="trunk" x="496" y="423.7" class="st0" width="32" height="280" />
-          <path id="head" class="st0" d="M512,88.2c-110.5,0-200,89.5-200,200s89.5,200,200,200c110.5,0,200-89.5,200-200S622.5,88.2,512,88.2
-    z M512,352.2c-35.3,0-64-28.7-64-64s28.7-64,64-64c35.3,0,64,28.7,64,64S547.3,352.2,512,352.2z" />
-          <polygon id="roots" class="st0" points="649,699.8 512,935.8 375,699.8 " />
-        </svg>
-        <p>Create your free account now to save your pet plant!</p>
-        <button class="create-account">Create Account</button>
-      </div>
-
 
 
     </div>
+    <div class="gamification-screen">
+      <h1>Congratulations!</h1>
+      <h3>You are now a level 1 grower</h3>
+      <svg id="plant-visual" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 1024 1024">
+        <rect id="trunk" x="496" y="423.7" class="st0" width="32" height="280" />
+        <path id="head" class="st0" d="M512,88.2c-110.5,0-200,89.5-200,200s89.5,200,200,200c110.5,0,200-89.5,200-200S622.5,88.2,512,88.2
+  z M512,352.2c-35.3,0-64-28.7-64-64s28.7-64,64-64c35.3,0,64,28.7,64,64S547.3,352.2,512,352.2z" />
+        <polygon id="roots" class="st0" points="649,699.8 512,935.8 375,699.8 " />
+      </svg>
+      <p>Create your free account now to save your pet plant!</p>
+      <label>Email address</label>
+      <input type="email" name="email" required />
+      <button class="create-account">Create Account</button>
+      <!-- TODO: https://console.developers.google.com/apis/credentials?pli=1&project=teser111-222418&folder&organizationId -->
+      <img class="google-sign-in" src="/images/btn_google_signin_dark_disabled_web@2x.png" />
+    </div>
     <footer>
       <a href="recipes.html">Recipes</a>
-      <a href="index.html" class="active">Garden</a>
-      <a href="info.html">Info</a>
+      <a href="#" class="active">Garden</a>
+      <a href="#">Info</a>
     </footer>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
@@ -177,6 +197,7 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <!-- TODO: <script src="https://apis.google.com/js/platform.js" async defer></script> -->
 </body>
 
 </html>

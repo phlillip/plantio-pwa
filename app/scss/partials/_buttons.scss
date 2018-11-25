@@ -21,3 +21,58 @@ a.active {
   color: white;
   background: $green;
 }
+
+.button,
+button,
+input[type="email"] {
+  display: flex;
+  flex-basis: auto;
+  flex-shrink: 0;
+  flex-grow: 0;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1em;
+  border: 1px solid $ruutsGreen;
+  background: $ruutsGreen;
+  color: white;
+  line-height: 1;
+  height: 2.5em;
+  padding: 0 1em;
+  margin-bottom: 1em;
+  cursor: pointer;
+  transition: all .25s ease-in-out;
+
+  &:hover {
+    border-color: darken($ruutsGreen, 10%);
+    background: darken($ruutsGreen, 10%);
+    color: white;
+  }
+
+  &.button--secondary {
+    border-color: $ruutsOrange;
+    background: $ruutsOrange;
+
+    &:hover {
+      background: darken($ruutsOrange, 10%);
+      background: darken($ruutsOrange, 10%);
+    }
+  }
+}
+
+label {
+  align-self: flex-start;
+  font-size: .75em;
+}
+
+input[type="email"] {
+  width: 100%;
+  background: white;
+  border: 1px solid $ruutsBlack;
+
+  &:focus {
+    border-color: $ruutsGreen;
+    background: white;
+    color: white;
+  }
+}
