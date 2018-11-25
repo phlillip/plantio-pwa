@@ -23,11 +23,15 @@ a.active {
 }
 
 .button,
-button {
+button,
+input[type="email"] {
   display: flex;
   flex-basis: auto;
+  flex-shrink: 0;
+  flex-grow: 0;
   justify-content: center;
   align-items: center;
+  text-align: center;
   font-size: 1em;
   border: 1px solid $ruutsGreen;
   background: $ruutsGreen;
@@ -53,5 +57,22 @@ button {
       background: darken($ruutsOrange, 10%);
       background: darken($ruutsOrange, 10%);
     }
+  }
+}
+
+label {
+  align-self: flex-start;
+  font-size: .75em;
+}
+
+input[type="email"] {
+  width: 100%;
+  background: white;
+  border: 1px solid $ruutsBlack;
+
+  &:focus {
+    border-color: $ruutsGreen;
+    background: white;
+    color: white;
   }
 }

@@ -342,6 +342,10 @@ let plant = {
       });
     }); // 5: Start growing
 
+    startGrowingButton.addEventListener('click', function () {
+      startRecipe(timewarp);
+    }); // 5a: duplicate function to ensure things run in sequence:
+
     if (startGrowingButton !== null) {
       startGrowingButton.addEventListener('click', function () {
         document.querySelector('.onboarding-wrapper').style.display = 'none';
@@ -350,11 +354,9 @@ let plant = {
           skipButton.style.display = "none";
         }
 
-        startRecipe(chosenRecipe).then((results, anotherval) => {
-          setTimeout(function () {
-            harvestTimer();
-          }, .00208); // 'durationLength' not defined
-        });
+        setTimeout(function () {
+          harvestTimer();
+        }, durationLength); // 'durationLength' not defined
       });
     } // 6: Collect Harvest
 

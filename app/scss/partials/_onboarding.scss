@@ -55,12 +55,6 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-
-  button {
-    justify-self: flex-end;
-    margin-top: auto;
-    margin-bottom: 0;
-  }
 }
 
 .slick-list,
@@ -137,7 +131,7 @@
   stroke: #000;
 }
 
-label {
+.onboarding label {
   box-sizing: border-box;
   display: block;
   height: 100%;
