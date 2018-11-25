@@ -71,8 +71,15 @@ let plant = {
     /*
      * FUNCTIONS
      */
-    // Onboarding slideshow
+    // delay function for use in promises
+
+    function delay(t, v) {
+      return new Promise(function (resolve) {
+        setTimeout(resolve.bind(null, v), t);
+      });
+    } // Onboarding slideshow
     // TODO: replace with custom solution, no jQuery
+
 
     $slideshow = $('.onboarding').slick({
       dots: false,
@@ -343,16 +350,18 @@ let plant = {
     }); // 5: Start growing
 
     startGrowingButton.addEventListener('click', function () {
-      startRecipe(chosenRecipe);
       document.querySelector('.onboarding-wrapper').style.display = 'none';
 
       if (skipButton !== null) {
         skipButton.style.display = "none";
       }
 
-      setTimeout(function () {
-        harvestTimer();
-      }, durationLength); // 'durationLength' not defined
+      startRecipe(chosenRecipe).then((results, anotherval) => {
+        return delay(3000).then(function () {
+          //chosenRecipe.durationLength not defined
+          harvestTimer();
+        });
+      });
     }); // 6: Collect Harvest
 
     collectHarvestButton.addEventListener('click', function () {
