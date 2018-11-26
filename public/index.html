@@ -18,13 +18,41 @@
   <div class="page">
     <header>
       <span><a href="/"><img src="/images/ruuts.svg" alt="Ruuts" /></a> | Plant status</span>
-      <a href="#" aria-label="menu" class="hamburger">
+      <!--<a href="#" aria-label="menu" class="hamburger">
         <svg xmlns="http://www.w3.org/2000/svg" style="fill: #aac446" width="512" height="512" viewBox="0 0 512 512">
           <path d="M448 232v48H64v-48H448z" />
           <path d="M448 64v48H64V64H448z" />
           <path d="M448 400v48H64v-48H448z" />
         </svg>
-      </a>
+      </a>-->
+
+      <nav role="navigation">
+        <div id="menuToggle">
+          <input type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span>
+          <ul id="menu">
+            <a href="#">
+              <li>Home</li>
+            </a>
+            <a href="#">
+              <li>About</li>
+            </a>
+            <a href="#">
+              <li>Info</li>
+            </a>
+            <a href="#">
+              <li>Contact</li>
+            </a>
+            <a href="mailto:phillippenny@gmail.com" target="_blank">
+              <li>Feedback</li>
+            </a>
+          </ul>
+        </div>
+      </nav>
+
+
     </header>
     <section class="fix">
       <h2>Welcome to Plant<strong>IO</strong></h2>
@@ -62,7 +90,7 @@
     </section>
 
   </div>
-  <script>
+  <!--<script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function() {
         navigator.serviceWorker.register('/sw.js').then(function(registration) {
@@ -74,7 +102,7 @@
         });
       });
     }
-  </script>
+  </script>-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
   <script src="js/main.js"></script>
 </body>
