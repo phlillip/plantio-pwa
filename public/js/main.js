@@ -65,7 +65,7 @@ let plant = {
     const disco = new Recipe('disco', 30, 0.5, 1, 30);
     const temp = new Recipe('temp', 30, 15, 15, 10);
     let chosenSeed;
-    let chosenRecipe;
+    let chosenRecipe = {};
     let power = false;
     let ambient = 0;
     /*
@@ -126,14 +126,14 @@ let plant = {
 
     ; //Start recipe
 
-    function startRecipe(chosen) {
+    function startRecipe(chosenRecipe) {
       return new Promise(function (resolve, reject) {
         // human readable values
-        let nameData = Object.values(chosen)[0];
-        let durationData = Object.values(chosen)[1];
-        let lightData = Object.values(chosen)[2];
-        let feedData = Object.values(chosen)[3];
-        let temperatureData = Object.values(chosen)[4];
+        let nameData = chosenRecipe.name;
+        let durationData = chosenRecipe.duration;
+        let lightData = chosenRecipe.light;
+        let feedData = chosenRecipe.feed;
+        let temperatureData = chosenRecipe.temperature;
         startTime = new Date().getTime();
         startDate = new Date(startTime);
         durationLength = daysToMilliseconds(durationData);
@@ -180,7 +180,7 @@ let plant = {
         let lumensDosage = 47;
         let lightLoop = setTimeout(function tick() {
           if (progressPercentage < 100) {
-            controller(Object.keys(chosen)[2]);
+            controller(Object.keys(chosenRecipe)[2]);
             lightLoop = setTimeout(tick, lightMilliseconds);
             liveLightData += lumensDosage;
           }
@@ -189,14 +189,14 @@ let plant = {
         let feedDosage = 5;
         let feedLoop = setTimeout(function tick() {
           if (progressPercentage < 100) {
-            controller(Object.keys(chosen)[3]);
+            controller(Object.keys(chosenRecipe)[3]);
             feedLoop = setTimeout(tick, feedMilliseconds);
             liveFeedData += feedDosage;
           }
         }, feedMilliseconds); //temperature
 
         function thermostat() {
-          target = Object.values(chosen)[4];
+          target = Object.values(chosenRecipe)[4];
 
           if (ambient <= target) {
             console.log('Ambient temperature: ' + ambient);
@@ -336,31 +336,42 @@ let plant = {
       /* from: jsben.ch/bWfk9
        * chosenRecipe = new Recipe(JSON.parse(JSON.stringify(this.id)))
        */
-      chosenRecipe = this.id;
-      console.log(chosenRecipe);
       $slideshow.slick('slickNext');
+
+      if (this.id == 'timewarp') {
+        chosenRecipe = JSON.parse(JSON.stringify(timewarp));
+      }
+
+      console.log(chosenRecipe);
+      console.log(typeof chosenRecipe);
     }); // 4: Connect to CloudPlantIO
 
     connectButton.addEventListener('click', function () {
       connectPlantIO().then((results, anotherval) => {
         connectButton.innerHTML = "Connected to CloudPlantIO!";
         $slideshow.slick('slickNext');
-        console.log("Chosen seed: " + chosenSeed + ",\n" + "Chosen recipe: " + chosenRecipe.name + ",\n" + "Recipe length: " + chosenRecipe.duration + ",\n" + "Recipe feed: " + chosenRecipe.feed + ",\n" + "Connection: " + socket + ",\n");
+        console.log("Chosen seed: " + chosenSeed + ",\n" + "Chosen recipe: " + chosenRecipe.name + ",\n" + "Recipe length: " + chosenRecipe.duration + ",\n" + "Recipe length in milliseconds: " + chosenRecipe.durationLength + ",\n" + "Recipe feed: " + chosenRecipe.feed + ",\n" + "Connection: " + socket + ",\n");
       });
-    }); // 5: Start growing
+    }); // 5: Start recipe
 
     startGrowingButton.addEventListener('click', function () {
       document.querySelector('.onboarding-wrapper').style.display = 'none';
 
       if (skipButton !== null) {
         skipButton.style.display = "none";
-      }
+      } //startRecipe(chosenRecipe)
+
 
       startRecipe(chosenRecipe).then((results, anotherval) => {
-        return delay(3000).then(function () {
-          //chosenRecipe.durationLength not defined
-          harvestTimer();
-        });
+        /*return delay(durationLength).then(function() { //chosenRecipe.durationLength not defined
+          console.log("harvest length: " + durationLength)
+          harvestTimer()
+        });*/
+        harvestTimer();
+        /* setTimeout(function() {
+          harvestTimer()
+        }, durationLength) // 'durationLength' not defined
+        */
       });
     }); // 6: Collect Harvest
 
