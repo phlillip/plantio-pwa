@@ -29,6 +29,18 @@ let recipes = {
 };
 let plant = {
   init: () => {
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/sw.js').then(function (registration) {
+          // Registration was successful
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function (err) {
+          // registration failed :(
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      });
+    }
+
     console.log('hello plant');
   },
   events: () => {
@@ -238,13 +250,7 @@ let plant = {
         });
       });
     } // end of startRecipe
-    // Harvest complete
-
-
-    function harvestTimer() {
-      document.querySelector('.onboarding-wrapper').style.display = 'block';
-      document.querySelector('.tutorial').style.display = 'none';
-    } // Time functions
+    // Time functions
 
 
     function daysToMilliseconds(days) {
@@ -352,9 +358,33 @@ let plant = {
         $slideshow.slick('slickNext');
         console.log("Chosen seed: " + chosenSeed + ",\n" + "Chosen recipe: " + chosenRecipe.name + ",\n" + "Recipe length: " + chosenRecipe.duration + ",\n" + "Recipe length in milliseconds: " + chosenRecipe.durationLength + ",\n" + "Recipe feed: " + chosenRecipe.feed + ",\n" + "Connection: " + socket + ",\n");
       });
-    }); // 5: Start recipe
+    }); // Harvest complete
+
+    function harvestTimer() {
+      var notification = new Notification("Harvest complete!");
+      document.querySelector('.onboarding-wrapper').style.display = 'block';
+      document.querySelector('.tutorial').style.display = 'none';
+    } // 5: Start recipe
+
 
     startGrowingButton.addEventListener('click', function () {
+      // try to turn on notifications
+      Notification.requestPermission().then(function (result) {
+        if (result === 'granted') {
+          console.log("Notifications granted.");
+          return;
+        } else if (result === 'denied') {
+          console.log('Permission wasn\'t granted. Allow a retry.');
+          return;
+        } else if (result === 'default') {
+          console.log('The permission request was dismissed.');
+          return;
+        } // Do something with the granted permission.
+
+
+        console.log("working notifications");
+      }); // hide onboarding
+
       document.querySelector('.onboarding-wrapper').style.display = 'none';
 
       if (skipButton !== null) {
@@ -367,11 +397,11 @@ let plant = {
           console.log("harvest length: " + durationLength)
           harvestTimer()
         });*/
-        harvestTimer();
-        /* setTimeout(function() {
-          harvestTimer()
-        }, durationLength) // 'durationLength' not defined
-        */
+        //harvestTimer()
+        console.log("durationLength: " + durationLength);
+        setTimeout(function () {
+          harvestTimer();
+        }, durationLength); // 'durationLength' not defined
       });
     }); // 6: Collect Harvest
 
