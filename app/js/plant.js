@@ -27,12 +27,13 @@ let plant = {
     const selectSeedButton = document.querySelector('.take-seed');
     const selectRecipeButton = document.querySelector('.take-recipe');
     const skipButton = document.getElementById('skip');
-    const connectButton = document.getElementById('connect');
+    const connectButton = document.querySelector('.connect');
     const startGrowingButton = document.querySelector('.finished-onboarding');
     const harvestModal = document.querySelector('.harvest-modal');
     const collectHarvestButton = document.querySelector('.collect-harvest');
 
     const menuBtn = document.getElementById('openMenu');
+
 
     //Recipe constructor
     function Recipe(name, duration, light, feed, temperature) {
@@ -78,6 +79,8 @@ let plant = {
 
     // Connect to CloudPlantIO
     function connectPlantIO() {
+      connectButton.innerHTML = "&hellip;connecting&hellip;";
+      connectButton.classList.add("connection-animation")
 
       return new Promise(function(resolve, reject) {
 
@@ -105,7 +108,13 @@ let plant = {
           let ip = myIP + port;
           socket = io(ip);
           socketOpen = true;
-          console.log('Connected!');
+
+          setTimeout(
+            function tick() {
+              connectButton.classList.remove("connection-animation")
+              console.log('Connected!');
+            }, 3000);
+
           resolve({
             connection: 'active'
           });
@@ -327,51 +336,88 @@ let plant = {
 
 
     // 1: Continue
-    continueButton.addEventListener('click', function() {
+    function nextSlide(event) {
       $slideshow.slick('slickNext');
-    });
+    }
+
+    continueButton.addEventListener('click', nextSlide);
 
     // 2: Choose seed
-    selectSeedButton.addEventListener('click', function() {
-      chosenSeed = this.id;
-      console.log(chosenSeed);
-      $slideshow.slick('slickNext');
-
-    });
+    function selectSeed(event) {
+      chosenSeed = this.id
+      console.log(chosenSeed)
+      nextSlide()
+    }
+    selectSeedButton.addEventListener('click', selectSeed);
 
 
     // 3: Choose recipe
-    selectRecipeButton.addEventListener('click', function() {
-      /* from: jsben.ch/bWfk9
-       * chosenRecipe = new Recipe(JSON.parse(JSON.stringify(this.id)))
-       */
-      $slideshow.slick('slickNext');
+    function selectRecipe(event) {
       if (this.id == 'timewarp') {
-        chosenRecipe = JSON.parse(JSON.stringify(timewarp));
+        chosenRecipe = JSON.parse(JSON.stringify(timewarp))
       }
       console.log(chosenRecipe)
       console.log(typeof chosenRecipe)
-    });
+      nextSlide()
+    }
+    selectRecipeButton.addEventListener('click', selectRecipe);
 
     // 4: Connect to CloudPlantIO
-    connectButton.addEventListener('click', function() {
-      connectPlantIO().then((results, anotherval) => {
-        connectButton.innerHTML = "Connected to CloudPlantIO!";
-        $slideshow.slick('slickNext');
-        console.log(
-          "Chosen seed: " + chosenSeed + ",\n" +
-          "Chosen recipe: " + chosenRecipe.name + ",\n" +
-          "Recipe length: " + chosenRecipe.duration + ",\n" +
-          "Recipe length in milliseconds: " + chosenRecipe.durationLength + ",\n" +
-          "Recipe feed: " + chosenRecipe.feed + ",\n" +
-          "Connection: " + socket + ",\n"
-        )
-      })
-    });
+    function connectProcess(event) {
+      if (connectButton.classList.contains('continue')) {
+        nextSlide(event)
+      } else {
+        connectPlantIO().then((results, anotherval) => {
+
+          console.log(
+            "Chosen seed: " + chosenSeed + ",\n" +
+            "Chosen recipe: " + chosenRecipe.name + ",\n" +
+            "Recipe length: " + chosenRecipe.duration + ",\n" +
+            "Recipe length in milliseconds: " + chosenRecipe.durationLength + ",\n" +
+            "Recipe feed: " + chosenRecipe.feed + ",\n" +
+            "Connection: " + socket + ",\n"
+          )
+
+          setTimeout(
+            function tick() {
+              connectButton.innerHTML = "Continue";
+              connectButton.classList.add('continue')
+            }, 1000);
+        })
+      }
+
+    }
+    connectButton.addEventListener('click', connectProcess);
 
     // Harvest complete
     function harvestTimer() {
-      var notification = new Notification("Harvest complete!");
+
+      let options = {
+        body: 'Take a look at what you have grown!',
+        icon: 'images/plantio_icon--192.png',
+        vibrate: [100, 50, 100],
+        data: {
+          dateOfArrival: Date.now(),
+          primaryKey: 1
+        }
+        /*,
+                actions: [{
+                    action: 'click',
+                    title: 'Explore this new world',
+                    icon: 'images/checkmark.png'
+                  },
+                  {
+                    action: 'close',
+                    title: 'Close notification',
+                    icon: 'images/xmark.png'
+                  },
+                ]*/
+        // causes "TypeError: Failed to construct 'Notification':"
+      }
+
+      let harvestCompleteNotification = new Notification("Harvest complete!", options);
+
+
       document.querySelector('.onboarding-wrapper').style.display = 'block';
       document.querySelector('.tutorial').style.display = 'none';
     }
@@ -403,31 +449,22 @@ let plant = {
 
       //startRecipe(chosenRecipe)
       startRecipe(chosenRecipe).then((results, anotherval) => {
-        /*return delay(durationLength).then(function() { //chosenRecipe.durationLength not defined
-          console.log("harvest length: " + durationLength)
-          harvestTimer()
-        });*/
-
-        //harvestTimer()
-
         console.log("durationLength: " + durationLength)
         setTimeout(function() {
           harvestTimer()
-        }, durationLength) // 'durationLength' not defined
-
-
+        }, 3000)
       })
-
     });
 
     // 6: Collect Harvest
-    collectHarvestButton.addEventListener('click', function() {
+    function collectHarvest(event) {
       document.querySelector('.onboarding-wrapper').style.display = 'none';
       if (skipButton !== null) {
         skipButton.style.display = "none";
       }
       document.querySelector('.gamification-screen').style.display = 'flex';
-    });
+    }
+    collectHarvestButton.addEventListener('click', collectHarvest)
 
   },
   grow: () => {
