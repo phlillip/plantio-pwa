@@ -1,4 +1,5 @@
 /* --- Utility Classes--- */
+
 .mb--2 {
   margin-bottom: 2rem;
 }
@@ -8,7 +9,6 @@
 }
 /* Flexbox
 // ================================================== */
-
 .d--f {
   display: flex;
 }
@@ -17,12 +17,10 @@
   display: inline-flex;
 }
 /* Flex direction */
-
 .fd--r {
   flex-direction: row;
 }
 /* Default */
-
 .fd--rr {
   flex-direction: row-reverse;
 }
@@ -35,12 +33,10 @@
   flex-direction: column-reverse;
 }
 /* Flex wrap */
-
 .fw--n {
   flex-wrap: nowrap;
 }
 /* Default */
-
 .fw--w {
   flex-wrap: wrap;
 }
@@ -49,7 +45,6 @@
   flex-wrap: wrap-reverse;
 }
 /* Justify content */
-
 .jc--fe {
   justify-content: flex-end;
 }
@@ -58,7 +53,6 @@
   justify-content: flex-start;
 }
 /* Default */
-
 .jc--c {
   justify-content: center;
 }
@@ -71,7 +65,6 @@
   justify-content: space-between;
 }
 /* Align items */
-
 .ai--fs {
   align-items: flex-start;
 }
@@ -88,22 +81,18 @@
   align-items: stretch;
 }
 /* Default */
-
 .ai--b {
   align-items: baseline;
 }
 /* Flex grow */
-
 .fg--0 {
   flex-grow: 0;
 }
 /* Default */
-
 .fg--1 {
   flex-grow: 1;
 }
 /* Flex shrink */
-
 .fs--0 {
   flex-shrink: 0;
 }
@@ -113,21 +102,19 @@
 }
 /* Default */
 /* Flex basis */
+
 .fb--a {
   flex-basis: auto;
 }
 /* Default */
-
 .fb--0 {
   flex-basis: 0;
 }
 /* Align self */
-
 .as--a {
   align-self: auto;
 }
 /* Default */
-
 .as--fs {
   align-self: flex-start;
 }
@@ -147,18 +134,47 @@
 .as--b {
   align-self: baseline;
 }
+
+.ta--l {
+  text-align: left;
+}
+
+.ta--c {
+  text-align: center;
+}
+
+.ta--r {
+  text-align: right;
+}
 /* Setups */
+
+.preset--fcc,
 .preset--fcr {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0 -1em -1em;
 
   & > * {
-    margin: 1em;
+    margin: 1rem;
     flex-grow: 1;
-    flex-basis: 0;
+    @include respond-to('laptop') {
+      flex-basis: 0;
+    }
+  }
+  @include respond-to('laptop') {
+    flex-direction: row;
+  }
+}
+
+.preset--fcc {
+  @include respond-to('laptop') {
+    flex-direction: column;
+  }
+
+  & > * {
+    flex-grow: 0;
   }
 }
 

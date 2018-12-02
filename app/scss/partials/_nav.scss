@@ -1,4 +1,4 @@
-footer,
+#plant footer,
 header {
   display: flex;
   flex: 0 0 auto;
@@ -18,14 +18,34 @@ header {
   }
 }
 
-footer {
+#plant footer {
   justify-content: center;
-  border-top: 1px solid #3dc895;
+  background: $ruutsGreen;
+  color: white;
 
   a {
     padding: .5em;
     width: 33.333%;
     color: #3dc895;
+  }
+}
+
+footer {
+  background: rgba($ruutsBlack, 0.25);
+  text-align: left;
+  padding: 2em 2em 4em;
+
+  h3 {
+    font-size: 1em;
+  }
+
+  .preset--fcr {
+    align-items: flex-start;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
   }
 }
 

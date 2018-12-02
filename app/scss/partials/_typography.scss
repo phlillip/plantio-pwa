@@ -2,23 +2,73 @@ h1 {
   font-size: 1.875em;
   line-height: 1;
   margin-bottom: 1rem;
-  text-transform: uppercase;
+  @include respond-to('laptop') {
+    font-size: 4.5em;
+  }
+  @include respond-to('hd') {
+    font-size: 5em;
+  }
 }
 
 h2 {
-  font-size: 1.375em;
+  font-size: 1.5em;
   line-height: 1;
   margin-bottom: 1rem;
+  @include respond-to('laptop') {
+    font-size: 2.5em;
+  }
+  @include respond-to('hd') {
+    font-size: 3.5em;
+  }
 }
 
 h3 {
   font-size: 1.125em;
   line-height: 1;
   margin-bottom: 1rem;
+  @include respond-to('laptop') {
+    font-size: 1.5em;
+  }
+  @include respond-to('hd') {
+    font-size: 1.75em;
+  }
 }
 
+a,
 p {
   font-size: 1em;
   line-height: 1.5;
   margin-bottom: 1rem;
+  @include respond-to('laptop') {
+    font-size: 1.25em;
+    text-align: left;
+  }
+  @include respond-to('hd') {
+    font-size: 1.5em;
+  }
+}
+
+a.cta {
+  position: relative;
+  color: $ruutsGreen;
+  font-weight: 500;
+
+  &:after {
+    content: '»';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -1.25em;
+    width: 1em;
+    display: inline-block;
+    transition: all .25s ease-out;
+  }
+
+  &:hover {
+    text-decoration: underline;
+
+    &:after {
+      right: -1.5em;
+    }
+  }
 }

@@ -16,8 +16,16 @@ section {
   justify-content: center;
   align-items: center;
   padding: 1em;
-  border-bottom: 1px solid black;
-  min-height: 56.25vw;
+  min-height: 150vw;
+  height: auto;
+  @include respond-to('tablet') {
+    min-height: 42.55vw;
+
+    .narrow {
+      max-width: 80em;
+      margin: 0 auto;
+    }
+  }
 }
 
 .page {
