@@ -1,6 +1,6 @@
 let stage = 0;
 
-function() {
+function onboardingFunc() {
   stage++;
   switch (stage) {
     case 1:

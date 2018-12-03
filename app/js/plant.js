@@ -19,15 +19,13 @@ let plant = {
      * VARIABLES
      */
 
-    const port = ':3000';
-    let socketOpen = false;
-    let socket = null;
+
 
     const continueButton = document.querySelector('.continue');
     const selectSeedButton = document.querySelector('.take-seed');
     const selectRecipeButton = document.querySelector('.take-recipe');
     const skipButton = document.getElementById('skip');
-    const connectButton = document.querySelector('.connect');
+    //const connectButton = document.querySelector('.connect');
     const startGrowingButton = document.querySelector('.finished-onboarding');
     const harvestModal = document.querySelector('.harvest-modal');
     const collectHarvestButton = document.querySelector('.collect-harvest');
@@ -78,7 +76,7 @@ let plant = {
     });
 
     // Connect to CloudPlantIO
-    function connectPlantIO() {
+    function connectPlantIO2() {
       connectButton.innerHTML = "&hellip;connecting&hellip;";
       connectButton.classList.add("connection-animation")
 
@@ -452,7 +450,7 @@ let plant = {
         console.log("durationLength: " + durationLength)
         setTimeout(function() {
           harvestTimer()
-        }, 3000)
+        }, durationLength)
       })
     });
 

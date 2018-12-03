@@ -1,4 +1,4 @@
-#plant footer,
+footer,
 header {
   display: flex;
   flex: 0 0 auto;
@@ -11,7 +11,8 @@ header {
   justify-content: space-between;
   padding: .5em;
   line-height: 1;
-  border-bottom: 1px solid #3dc895;
+  border-bottom: 1px solid $ruutsGreen;
+  z-index: 10000;
 
   img {
     height: 1em;
@@ -20,17 +21,27 @@ header {
 
 #plant footer {
   justify-content: center;
-  background: $ruutsGreen;
-  color: white;
+  border-top: 1px solid $ruutsGreen;
 
   a {
     padding: .5em;
     width: 33.333%;
-    color: #3dc895;
+    color: $ruutsGreen;
+    margin-bottom: 0;
+
+    &.active {
+      color: white;
+      background: $ruutsGreen;
+    }
+
+    &.disabled {
+      color: $ruutsBlack;
+      opacity: .25;
+    }
   }
 }
 
-footer {
+#page footer {
   background: rgba($ruutsBlack, 0.25);
   text-align: left;
   padding: 2em 2em 4em;
@@ -95,8 +106,8 @@ nav {
   height: 4px;
   margin-bottom: 5px;
   position: relative;
-  background: $green;
-  z-index: 1;
+  background: $ruutsGreen;
+  z-index: 10000;
   transform-origin: 4px 0;
   transition: transform .5s cubic-bezier(0.77,0.2,0.05,1.0), background .5s cubic-bezier(0.77,0.2,0.05,1.0), opacity .55s ease;
 }
@@ -130,7 +141,7 @@ nav {
   width: 100vw;
   margin: -2.5em 0 0 -90.75vw;
   padding: 5em 1em;
-  background: $green;
+  background: $ruutsGreen;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
   /* to stop flickering of text in safari */

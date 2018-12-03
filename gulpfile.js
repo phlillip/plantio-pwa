@@ -19,11 +19,11 @@ gulp.task('js', function() {
   return gulp.src([
       'app/js/common.js',
       'app/js/index.js',
+      'app/js/connection.js',
       'app/js/recipes.js',
       'app/js/plant.js',
       'app/js/main.js'
-      ]
-    )
+    ])
     .pipe(babel())
     .pipe(concat('main.js'))
     .pipe(gulp.dest('public/js/'));
