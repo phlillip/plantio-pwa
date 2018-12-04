@@ -1,14 +1,6 @@
 /* Onboarding */
-.onboarding-wrapper {
-  > h1 {
-    color: white;
-    position: absolute;
-    top: 5vw;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1003;
-  }
 
+.onboarding-wrapper {
   div#skip {
     position: absolute;
     bottom: 1vh;
@@ -48,9 +40,9 @@
 .onboarding.slick-initialized .slick-slide {
   background: white;
   border-radius: .25em;
-  margin: calc(25vh - 5em) 2em calc(15vh - 2em) 2em;
+  margin: calc(18.5vh - 5em) 2em;
   padding: 2rem;
-  height: 60vh;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -121,44 +113,86 @@
   text-align: center;
 }
 
-.form__answer svg {
+.onboarding svg {
   width: 15vw;
   display: block;
   margin: 0 auto;
   height: auto;
   fill: none;
-  stroke-width: 5;
+  stroke-width: 10;
   stroke: #000;
 }
 
-.onboarding label {
-  box-sizing: border-box;
-  display: block;
-  height: 100%;
-  width: 100%;
-  cursor: pointer;
-  opacity: .5;
-  transition: all .5s ease-in-out;
-}
+.onboarding {
+  #watch {
+    font-size: 1em;
+    position: relative;
+  }
 
-label:active,
-label:focus,
-label:hover {}
-/* Input style */
-input[type="radio"] {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
+  #watch .frame-face {
+    position: relative;
+    width: 3em;
+    height: 3em;
+    margin: .2em auto;
+    border-radius: 1.5em;
+    border: 1px solid black;
+    background: white;
+  }
+  @keyframes hours {
+    to {
+      transform: rotate(335deg);
+    }
+  }
 
-input[type="radio"]:active ~ label {
-  opacity: 1;
-}
+  #watch .hours-hand {
+    width: .12em;
+    height: .7em;
+    border-radius: .05em;
+    background: black;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    margin: 0 0 -.08em -.06em;
+    transform-origin: .06em .62em;
+    transform: rotate(-25deg);
+    animation: hours 43.2s linear 0s infinite;
+  }
+  @keyframes minutes {
+    to {
+      transform: rotate(422deg);
+    }
+  }
 
-input[type="radio"]:checked ~ label {
-  opacity: 1;
-}
+  #watch .minutes-hand {
+    width: .1em;
+    height: 1.25em;
+    border-radius: .05em;
+    background: black;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    margin: 0 0 -.15em -.05em;
+    transform-origin: .05em 1.1em;
+    transform: rotate(62deg);
+    animation: minutes 3.6s linear 0s infinite;
+  }
+  @keyframes seconds {
+    to {
+      transform: rotate(480deg);
+    }
+  }
 
-.form__answer input[type="radio"]:checked ~ label svg {
-  stroke-width: 10;
+  #watch .seconds-hand {
+    width: .05em;
+    height: 1.4em;
+    border-radius: .01em .1em 0 0/1.0em 1.0em 0 0;
+    background: black;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    margin: 0 0 -.2em -.01em;
+    transform-origin: .01em 1.2em;
+    transform: rotate(120deg);
+    animation: seconds .6s steps(60, end) 0s infinite;
+  }
 }
