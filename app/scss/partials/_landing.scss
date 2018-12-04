@@ -5,10 +5,22 @@
   color: white;
 }
 
+section.dream {
+  padding-bottom: 0;
+
+  img {
+    margin-bottom: -1rem;
+  }
+}
+
 img {
   align-self: center;
   max-width: 100%;
   @include respond-to('tablet') {
     max-height: 42.55vw;
+
+    &.padded-img {
+      max-height: calc(42.55vw - 2em);
+    }
   }
 }
