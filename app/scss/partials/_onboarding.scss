@@ -1,5 +1,4 @@
 /* Onboarding */
-
 .onboarding-wrapper {
   div#skip {
     position: absolute;
@@ -42,7 +41,7 @@
   border-radius: .25em;
   margin: calc(18.5vh - 5em) 2em;
   padding: 2rem;
-  height: 70vh;
+  height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -103,14 +102,6 @@
 .mysterious {
   /*color: rgba(0,0,0,0.5);*/
   font-style: italic;
-}
-
-.form__answer {
-  display: inline-block;
-  box-sizing: border-box;
-  height: calc(15vw + 2em);
-  vertical-align: top;
-  text-align: center;
 }
 
 .onboarding svg {
