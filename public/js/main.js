@@ -73,18 +73,17 @@ let recipes = {
 };
 let plant = {
   init: () => {
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function () {
-        navigator.serviceWorker.register('/sw.js').then(function (registration) {
+    /*if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js').then(function(registration) {
           // Registration was successful
           console.log('ServiceWorker registration successful with scope: ', registration.scope);
-        }, function (err) {
+        }, function(err) {
           // registration failed :(
           console.log('ServiceWorker registration failed: ', err);
         });
       });
-    }
-
+    }*/
     console.log('hello plant');
   },
   events: () => {
@@ -455,18 +454,18 @@ let plant = {
 
 
     startGrowingButton.addEventListener('click', function () {
-      /* navigator.serviceWorker.register('sw.js');
-      Notification.requestPermission(function(result) {
+      navigator.serviceWorker.register('sw.js');
+      Notification.requestPermission(function (result) {
         if (result === 'granted') {
-          navigator.serviceWorker.ready.then(function(registration) {
+          navigator.serviceWorker.ready.then(function (registration) {
             registration.showNotification('Notification with ServiceWorker');
           });
         }
-      });*/
-      // try to turn on notifications
-      Notification.requestPermission().then(function (result) {
+      }); // try to turn on notifications
+
+      /*Notification.requestPermission().then(function(result) {
         if (result === 'granted') {
-          console.log("Notifications granted.");
+          console.log("Notifications granted.")
           return;
         } else if (result === 'denied') {
           console.log('Permission wasn\'t granted. Allow a retry.');
@@ -474,11 +473,11 @@ let plant = {
         } else if (result === 'default') {
           console.log('The permission request was dismissed.');
           return;
-        } // Do something with the granted permission.
-
-
-        console.log("working notifications");
-      }); // hide onboarding
+        }
+        // Do something with the granted permission.
+        console.log("working notifications")
+      });*/
+      // hide onboarding
 
       document.querySelector('.onboarding-wrapper').style.display = 'none';
 

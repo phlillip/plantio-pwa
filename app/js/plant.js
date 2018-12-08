@@ -1,6 +1,6 @@
 let plant = {
   init: () => {
-    if ('serviceWorker' in navigator) {
+    /*if ('serviceWorker' in navigator) {
       window.addEventListener('load', function() {
         navigator.serviceWorker.register('/sw.js').then(function(registration) {
           // Registration was successful
@@ -10,7 +10,7 @@ let plant = {
           console.log('ServiceWorker registration failed: ', err);
         });
       });
-    }
+    }*/
     console.log('hello plant')
   },
   events: () => {
@@ -428,17 +428,17 @@ let plant = {
     // 5: Start recipe
     startGrowingButton.addEventListener('click', function() {
 
-      /* navigator.serviceWorker.register('sw.js');
+      navigator.serviceWorker.register('sw.js');
       Notification.requestPermission(function(result) {
         if (result === 'granted') {
           navigator.serviceWorker.ready.then(function(registration) {
             registration.showNotification('Notification with ServiceWorker');
           });
         }
-      });*/
+      });
 
       // try to turn on notifications
-      Notification.requestPermission().then(function(result) {
+      /*Notification.requestPermission().then(function(result) {
         if (result === 'granted') {
           console.log("Notifications granted.")
           return;
@@ -451,7 +451,7 @@ let plant = {
         }
         // Do something with the granted permission.
         console.log("working notifications")
-      });
+      });*/
 
       // hide onboarding
       document.querySelector('.onboarding-wrapper').style.display = 'none';
