@@ -418,14 +418,14 @@ let plant = {
 
       if (notificationPermission == true) {
         navigator.serviceWorker.ready.then(function(registration) {
-          //registration.showNotification('Notification with ServiceWorker');
+          registration.showNotification('Harvest complete!', options);
 
-          let harvestCompleteNotification = new Notification("Harvest complete!", options);
+          /*let harvestCompleteNotification = new Notification("Harvest complete!", options);
           harvestCompleteNotification.onclick = function(event) {
             event.preventDefault();
             window.focus();
             this.close();
-          };
+          };*/
         });
       }
 
