@@ -255,37 +255,39 @@ let plant = {
         function thermostat() {
           target = Object.values(chosenRecipe)[4];
 
-          if (ambient <= target) {
-            console.log('Ambient temperature: ' + ambient);
-            console.log('Target temperature: ' + target);
-            console.log('turning on thermostat');
-            socket.emit('hardware', {
-              type: 'thermostat-on',
-              duration: 'UNKNOWN'
-            }); //update UI
+          if (progressPercentage < 100) {
+            if (ambient <= target) {
+              console.log('Ambient temperature: ' + ambient);
+              console.log('Target temperature: ' + target);
+              console.log('turning on thermostat');
+              socket.emit('hardware', {
+                type: 'thermostat-on',
+                duration: 'UNKNOWN'
+              }); //update UI
 
-            let mercury = document.querySelector('.mercury');
-            let mercuryValue = document.querySelector('.mercury span');
-            let targetValue = document.querySelector('.target');
-            convertedTemp = ambient * 2 + 20; //consider negative values
+              let mercury = document.querySelector('.mercury');
+              let mercuryValue = document.querySelector('.mercury span');
+              let targetValue = document.querySelector('.target');
+              convertedTemp = ambient * 2 + 20; //consider negative values
 
-            targetTop = 100 - (target * 2 + 20);
-            topValue = 100 - convertedTemp;
-            targetValue.style.top = targetTop + '%';
-            mercury.style.height = convertedTemp + '%';
-            mercuryValue.innerHTML = ambient + '&deg;';
-            mercuryValue.style.top = topValue + '%';
-            ambient++;
-          } else {
-            console.log('Ambient temperature: ' + ambient);
-            console.log('Target temperature: ' + target);
-            console.log('turning off thermostat');
-            socket.emit('hardware', {
-              type: 'thermostat-off',
-              duration: 'UNKNOWN'
-            }); //update UI
+              targetTop = 100 - (target * 2 + 20);
+              topValue = 100 - convertedTemp;
+              targetValue.style.top = targetTop + '%';
+              mercury.style.height = convertedTemp + '%';
+              mercuryValue.innerHTML = ambient + '&deg;';
+              mercuryValue.style.top = topValue + '%';
+              ambient++;
+            } else {
+              console.log('Ambient temperature: ' + ambient);
+              console.log('Target temperature: ' + target);
+              console.log('turning off thermostat');
+              socket.emit('hardware', {
+                type: 'thermostat-off',
+                duration: 'UNKNOWN'
+              }); //update UI
 
-            ambient--;
+              ambient--;
+            }
           }
         }
 
@@ -424,17 +426,11 @@ let plant = {
         dateOfArrival: Date.now(),
         primaryKey: 1
         /*,
-                actions: [{
-                    action: 'click',
-                    title: 'Explore this new world',
-                    icon: 'images/checkmark.png'
-                  },
-                  {
-                    action: 'close',
-                    title: 'Close notification',
-                    icon: 'images/xmark.png'
-                  },
-                ]*/
+              actions: [{
+                action: 'explore',
+                title: 'Explore this new world',
+                icon: 'images/checkmark.png'
+              }]*/
         // causes "TypeError: Failed to construct 'Notification':"
 
       } // Harvest complete
