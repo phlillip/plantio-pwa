@@ -181,7 +181,7 @@
 
 .content-header div.progress {
 	width: 0;
-	height: 1em;
+	height: 1.5em;
 	margin: 0;
 	background: $ruutsGreen;
 }
@@ -225,5 +225,9 @@
 	img {
 		height: 2.5em;
 		margin: 0 auto 1em;
+
+		&.growers-badge {
+			height: 7.5em;
+		}
 	}
 }

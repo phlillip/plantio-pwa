@@ -1,11 +1,14 @@
 /* Onboarding */
+
 .onboarding-wrapper {
   div#skip {
     position: absolute;
-    bottom: 1vh;
+    top: 1.5vh;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1003;
+    color: white;
+    text-decoration: underline;
   }
 }
 
