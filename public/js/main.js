@@ -497,7 +497,7 @@ let plant = {
         console.log("durationLength: " + durationLength);
         setTimeout(function () {
           harvestTimer();
-        }, 3000);
+        }, durationLength);
       });
     }); // 6: Collect Harvest
 
