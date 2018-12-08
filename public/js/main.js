@@ -413,40 +413,47 @@ let plant = {
       }
     }
 
-    connectButton.addEventListener('click', connectProcess); // Harvest complete
+    connectButton.addEventListener('click', connectProcess); // notification
+
+    let notificationPermission = false;
+    let options = {
+      body: 'Take a look at what you have grown!',
+      icon: 'images/plantio_icon--192.png',
+      vibrate: [100, 50, 100],
+      data: {
+        dateOfArrival: Date.now(),
+        primaryKey: 1
+        /*,
+                actions: [{
+                    action: 'click',
+                    title: 'Explore this new world',
+                    icon: 'images/checkmark.png'
+                  },
+                  {
+                    action: 'close',
+                    title: 'Close notification',
+                    icon: 'images/xmark.png'
+                  },
+                ]*/
+        // causes "TypeError: Failed to construct 'Notification':"
+
+      } // Harvest complete
+
+    };
 
     function harvestTimer() {
-      let options = {
-        body: 'Take a look at what you have grown!',
-        icon: 'images/plantio_icon--192.png',
-        vibrate: [100, 50, 100],
-        data: {
-          dateOfArrival: Date.now(),
-          primaryKey: 1
-          /*,
-                  actions: [{
-                      action: 'click',
-                      title: 'Explore this new world',
-                      icon: 'images/checkmark.png'
-                    },
-                    {
-                      action: 'close',
-                      title: 'Close notification',
-                      icon: 'images/xmark.png'
-                    },
-                  ]*/
-          // causes "TypeError: Failed to construct 'Notification':"
-
-        }
-      };
-      let harvestCompleteNotification = new Notification("Harvest complete!", options);
-
-      harvestCompleteNotification.onclick = function (event) {
-        event.preventDefault(); //window.open('http://www.mozilla.org', '_blank');
-
+      if (notificationPermission == true) {
+        navigator.serviceWorker.ready.then(function (registration) {
+          registration.showNotification('Notification with ServiceWorker');
+        });
+      }
+      /*let harvestCompleteNotification = new Notification("Harvest complete!", options);
+      harvestCompleteNotification.onclick = function(event) {
+        event.preventDefault();
         window.focus();
         this.close();
-      };
+      };*/
+
 
       document.querySelector('.onboarding-wrapper').style.display = 'block';
       document.querySelector('.tutorial').style.display = 'none';
@@ -457,9 +464,7 @@ let plant = {
       navigator.serviceWorker.register('sw.js');
       Notification.requestPermission(function (result) {
         if (result === 'granted') {
-          navigator.serviceWorker.ready.then(function (registration) {
-            registration.showNotification('Notification with ServiceWorker');
-          });
+          notificationPermission = true;
         }
       }); // try to turn on notifications
 
