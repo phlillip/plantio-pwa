@@ -428,6 +428,15 @@ let plant = {
     // 5: Start recipe
     startGrowingButton.addEventListener('click', function() {
 
+      /* navigator.serviceWorker.register('sw.js');
+      Notification.requestPermission(function(result) {
+        if (result === 'granted') {
+          navigator.serviceWorker.ready.then(function(registration) {
+            registration.showNotification('Notification with ServiceWorker');
+          });
+        }
+      });*/
+
       // try to turn on notifications
       Notification.requestPermission().then(function(result) {
         if (result === 'granted') {
