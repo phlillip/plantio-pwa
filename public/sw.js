@@ -4,6 +4,7 @@
     event.notification.close(); // Android needs explicit close.
     event.waitUntil(
       clients.matchAll({
+        includeUncontrolled: true,
         type: 'window'
       }).then(windowClients => {
         // Check if there is already a window/tab open with the target URL
