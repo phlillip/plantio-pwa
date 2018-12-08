@@ -441,6 +441,14 @@ let plant = {
         }
       };
       let harvestCompleteNotification = new Notification("Harvest complete!", options);
+
+      harvestCompleteNotification.onclick = function (event) {
+        event.preventDefault(); //window.open('http://www.mozilla.org', '_blank');
+
+        window.focus();
+        this.close();
+      };
+
       document.querySelector('.onboarding-wrapper').style.display = 'block';
       document.querySelector('.tutorial').style.display = 'none';
     } // 5: Start recipe
@@ -475,7 +483,7 @@ let plant = {
         console.log("durationLength: " + durationLength);
         setTimeout(function () {
           harvestTimer();
-        }, durationLength);
+        }, 3000);
       });
     }); // 6: Collect Harvest
 
