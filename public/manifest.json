@@ -4,7 +4,7 @@
     "name": "PlantIO by Ruuts",
     "scope": "/",
     "display": "fullscreen",
-    "start_url": "index.html",
+    "start_url": "plant.html",
     "short_name": "PlantIO",
     "theme_color": "#3dc895",
     "description": "Grow food, automatically with PlantIO",

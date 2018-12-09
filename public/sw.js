@@ -1,4 +1,36 @@
   console.log('service worker FILE listening')
+
+  var CACHE_NAME = 'plantio-cache-v1';
+  var urlsToCache = [
+    '/',
+    'plant.html'
+  ];
+
+  self.addEventListener('fetch', function(event) {
+    event.respondWith(
+      caches.match(event.request)
+      .then(function(response) {
+        // Cache hit - return response
+        if (response) {
+          return response;
+        }
+        return fetch(event.request);
+      })
+    );
+  });
+
+  self.addEventListener('install', function(event) {
+    // Perform install steps
+    event.waitUntil(
+      caches.open(CACHE_NAME)
+      .then(function(cache) {
+        console.log('Opened cache');
+        return cache.addAll(urlsToCache);
+      })
+    );
+  });
+
+  // Notification event handler
   self.addEventListener('notificationclick', function(event) {
     let url = 'https://plantio.co.uk/plant.html';
     event.notification.close(); // Android needs explicit close.

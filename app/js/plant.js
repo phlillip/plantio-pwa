@@ -12,6 +12,8 @@ let plant = {
       });
     }*/
     console.log('hello plant')
+    navigator.serviceWorker.register('sw.js');
+
   },
   events: () => {
 
@@ -439,7 +441,7 @@ let plant = {
     // 5: Start recipe
     startGrowingButton.addEventListener('click', function() {
 
-      navigator.serviceWorker.register('sw.js');
+
       Notification.requestPermission(function(result) {
         if (result === 'granted') {
           notificationPermission = true;
