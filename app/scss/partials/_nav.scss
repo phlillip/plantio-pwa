@@ -52,6 +52,12 @@ header {
   padding: 2em 2em 4em;
   height: auto;
 
+  .footer-menu {
+    a {
+      font-size: inherit;
+    }
+  }
+
   div div {}
 
   h3 {
