@@ -1,5 +1,4 @@
 /* Onboarding */
-
 .onboarding-wrapper {
   div#skip {
     position: absolute;
@@ -49,6 +48,10 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  @include respond-to('tablet') {
+    margin-left: calc((100vh - 20em) / 2);
+    margin-right: calc((100vh - 20em) / 2);
+  }
 }
 
 .slick-list,

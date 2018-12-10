@@ -113,7 +113,7 @@ let plant = {
     } //Recipe objects
 
 
-    const timewarp = new Recipe('timewarp', .000208, 3, 0.5, 30); // .00208
+    const timewarp = new Recipe('timewarp', .00208, 3, 0.5, 30); // .00208
 
     const filsToms = new Recipe('filsToms', 30, 5, 10, 20);
     const disco = new Recipe('disco', 30, 0.5, 1, 30);
@@ -141,49 +141,7 @@ let plant = {
       draggable: false,
       mobileFirst: true,
       infinite: false
-    }); // Connect to CloudPlantIO
-
-    function connectPlantIO2() {
-      connectButton.innerHTML = "&hellip;connecting&hellip;";
-      connectButton.classList.add("connection-animation");
-      return new Promise(function (resolve, reject) {
-        console.log('connecting to CloudPlantIO...');
-        document.getElementById('shield').classList.toggle('hidden');
-        document.querySelector('.content-footer').classList.toggle('active'); //get internal ip automatically:
-        //https://stackoverflow.com/questions/32837471/how-to-get-local-internal-ip-with-javascript
-
-        window.RTCPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection; //compatibility for firefox and chrome
-
-        var pc = new RTCPeerConnection({
-          iceServers: []
-        }),
-            noop = function () {};
-
-        pc.createDataChannel(""); //create a bogus data channel
-
-        pc.createOffer(pc.setLocalDescription.bind(pc), noop); // create offer and set local description
-
-        pc.onicecandidate = function (ice) {
-          //listen for candidate events
-          if (!ice || !ice.candidate || !ice.candidate.candidate) return;
-          var myIP = /([0-9]{1,3}(\.[0-9]{1,3}){3}|[a-f0-9]{1,4}(:[a-f0-9]{1,4}){7})/.exec(ice.candidate.candidate)[1]; //console.log('my IP: ', myIP);
-
-          pc.onicecandidate = noop;
-          let ip = myIP + port;
-          socket = io(ip);
-          socketOpen = true;
-          setTimeout(function tick() {
-            connectButton.classList.remove("connection-animation");
-            console.log('Connected!');
-          }, 3000);
-          resolve({
-            connection: 'active'
-          });
-        };
-      });
-    }
-
-    ; //Start recipe
+    }); //Start recipe
 
     function startRecipe(chosenRecipe) {
       return new Promise(function (resolve, reject) {
@@ -196,16 +154,16 @@ let plant = {
         startTime = new Date().getTime();
         startDate = new Date(startTime);
         durationLength = daysToMilliseconds(durationData);
+        durationSeconds = durationLength / 1000;
         finishTime = new Date(startTime + durationLength);
         let liveLightData = 0;
         let liveFeedData = 0;
-        let totalLight = durationLength / lightData / 2;
-        let totalFeed = durationLength / feedData / 2;
-        console.log('Starting: ' + nameData + ', ' + durationData + ', ' + lightData + ', ' + feedData + ', ' + temperatureData);
-        console.log('Date started: ' + startDate);
-        console.log('Duration: ' + durationData + ' days');
-        console.log('Expected harvest: ' + finishTime);
-        console.log('Harvest info: ' + durationLength);
+        let liveDurationLength = durationLength;
+        let totalLight = parseInt(durationLength / lightData / 2);
+        let lumensDosage = totalLight / durationLength * lightData * 1000;
+        let totalFeed = parseInt(durationLength / feedData / 2);
+        let feedDosage = totalFeed / durationLength * feedData * 1000; //console.log('Starting: ' + nameData + ', ' + durationData + ', ' + lightData + ', ' + feedData + ', ' + temperatureData) console.log('Date started: ' + startDate) console.log('Duration: ' + durationData + ' days') console.log('Expected harvest: ' + finishTime) console.log('Harvest info: ' + durationLength)
+
         let lightMilliseconds = lightData * 1000;
         let feedMilliseconds = feedData * 1000; //progress
 
@@ -226,36 +184,42 @@ let plant = {
         let liveData = setTimeout(function tick() {
           if (progressPercentage < 100) {
             document.querySelector('.recipe-name').innerHTML = nameData;
-            document.querySelector('.recipe-description span').innerHTML = "xxx";
-            document.querySelector('.live-light').innerHTML = liveLightData;
-            document.querySelector('.live-feed').innerHTML = liveFeedData;
+            document.querySelector('.recipe-description span').innerHTML = parseFloat(liveDurationLength / 1000 / 60 / 60 / 24).toFixed(5);
+            document.querySelector('.live-light').innerHTML = parseInt(liveLightData);
+            document.querySelector('.live-feed').innerHTML = parseInt(liveFeedData);
             document.querySelector('.total-light').innerHTML = totalLight;
             document.querySelector('.total-feed').innerHTML = totalFeed;
             document.querySelector('.recipe-temperature-value span').innerHTML = temperatureData;
             liveData = setTimeout(tick, 1000);
           }
+        }, 1000); //time
+
+        let timeLoop = setTimeout(function tick() {
+          if (progressPercentage < 100) {
+            controller(durationLength);
+            timeLoop = setTimeout(tick, 1000);
+            liveDurationLength -= 1000;
+          }
         }, 1000); //light
 
-        let lumensDosage = 47;
         let lightLoop = setTimeout(function tick() {
           if (progressPercentage < 100) {
-            controller(Object.keys(chosenRecipe)[2]);
+            controller(lightData);
             lightLoop = setTimeout(tick, lightMilliseconds);
             liveLightData += lumensDosage;
           }
         }, lightMilliseconds); //feed
 
-        let feedDosage = 5;
         let feedLoop = setTimeout(function tick() {
           if (progressPercentage < 100) {
-            controller(Object.keys(chosenRecipe)[3]);
+            controller(feedData);
             feedLoop = setTimeout(tick, feedMilliseconds);
             liveFeedData += feedDosage;
           }
         }, feedMilliseconds); //temperature
 
         function thermostat() {
-          target = Object.values(chosenRecipe)[4];
+          target = temperatureData;
 
           if (progressPercentage < 100) {
             if (ambient <= target) {
@@ -303,7 +267,7 @@ let plant = {
 
 
     function daysToMilliseconds(days) {
-      ms = days * 24 * 60 * 60 * 1000;
+      ms = 1000 * 60 * 60 * 24 * days;
       return ms;
     } // toggle light visuals
 
