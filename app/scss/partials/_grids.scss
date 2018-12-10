@@ -5,6 +5,10 @@ html {
   overflow-x: hidden;
   /* needed for proper layout */
 }
+
+.simulator-wrapper {
+  display: none;
+}
 @media only screen and (min-width: 1100px) {
   body {
     background: rgba(0,0,0,0.9);
