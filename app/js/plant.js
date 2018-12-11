@@ -35,6 +35,39 @@ let plant = {
     const menuBtn = document.getElementById('openMenu');
 
 
+
+    const recipeNav = document.getElementById('recipe-nav');
+    const gardenNav = document.getElementById('garden-nav');
+    const infoNav = document.getElementById('info-nav');
+
+    if (recipeNav !== null) {
+      recipeNav.addEventListener('click', function() {
+        document.querySelector('.content').style.transform = 'translateX(0)';
+        recipeNav.classList.add('active')
+        gardenNav.classList.remove('active')
+        infoNav.classList.remove('active')
+      });
+    }
+    if (gardenNav !== null) {
+      gardenNav.addEventListener('click', function() {
+        document.querySelector('.content').style.transform = 'translateX(-100vw)';
+        recipeNav.classList.remove('active')
+        gardenNav.classList.add('active')
+        infoNav.classList.remove('active')
+      });
+    }
+    if (infoNav !== null) {
+      infoNav.addEventListener('click', function() {
+        document.querySelector('.content').style.transform = 'translateX(-200vw)';
+        recipeNav.classList.remove('active')
+        gardenNav.classList.remove('active')
+        infoNav.classList.add('active')
+      });
+    }
+
+
+
+
     //Recipe constructor
     function Recipe(name, duration, light, feed, temperature) {
       this.name = name;
@@ -303,7 +336,9 @@ let plant = {
       $slideshow.slick('slickNext');
     }
 
-    continueButton.addEventListener('click', nextSlide);
+    if (continueButton !== null) {
+      continueButton.addEventListener('click', nextSlide);
+    }
 
     // 2: Choose seed
     function selectSeed(event) {
@@ -311,8 +346,9 @@ let plant = {
       console.log(chosenSeed)
       nextSlide()
     }
-    selectSeedButton.addEventListener('click', selectSeed);
-
+    if (selectSeedButton !== null) {
+      selectSeedButton.addEventListener('click', selectSeed);
+    }
 
     // 3: Choose recipe
     function selectRecipe(event) {
@@ -323,8 +359,9 @@ let plant = {
       console.log(typeof chosenRecipe)
       nextSlide()
     }
-    selectRecipeButton.addEventListener('click', selectRecipe);
-
+    if (selectRecipeButton !== null) {
+      selectRecipeButton.addEventListener('click', selectRecipe);
+    }
     // 4: Connect to CloudPlantIO
     function connectProcess(event) {
       if (connectButton.classList.contains('continue')) {
@@ -350,8 +387,9 @@ let plant = {
       }
 
     }
-    connectButton.addEventListener('click', connectProcess);
-
+    if (connectButton !== null) {
+      connectButton.addEventListener('click', connectProcess);
+    }
 
     // notification
     let notificationPermission = false;
@@ -400,45 +438,47 @@ let plant = {
     }
 
     // 5: Start recipe
-    startGrowingButton.addEventListener('click', function() {
+    if (startGrowingButton !== null) {
+      startGrowingButton.addEventListener('click', function() {
 
 
-      Notification.requestPermission(function(result) {
-        if (result === 'granted') {
-          notificationPermission = true;
+        Notification.requestPermission(function(result) {
+          if (result === 'granted') {
+            notificationPermission = true;
+          }
+        });
+
+        // try to turn on notifications
+        /*Notification.requestPermission().then(function(result) {
+          if (result === 'granted') {
+            console.log("Notifications granted.")
+            return;
+          } else if (result === 'denied') {
+            console.log('Permission wasn\'t granted. Allow a retry.');
+            return;
+          } else if (result === 'default') {
+            console.log('The permission request was dismissed.');
+            return;
+          }
+          // Do something with the granted permission.
+          console.log("working notifications")
+        });*/
+
+        // hide onboarding
+        document.querySelector('.onboarding-wrapper').style.display = 'none';
+        if (skipButton !== null) {
+          skipButton.style.display = "none";
         }
+
+        //startRecipe(chosenRecipe)
+        startRecipe(chosenRecipe).then((results, anotherval) => {
+          console.log("durationLength: " + durationLength)
+          setTimeout(function() {
+            harvestTimer()
+          }, durationLength)
+        })
       });
-
-      // try to turn on notifications
-      /*Notification.requestPermission().then(function(result) {
-        if (result === 'granted') {
-          console.log("Notifications granted.")
-          return;
-        } else if (result === 'denied') {
-          console.log('Permission wasn\'t granted. Allow a retry.');
-          return;
-        } else if (result === 'default') {
-          console.log('The permission request was dismissed.');
-          return;
-        }
-        // Do something with the granted permission.
-        console.log("working notifications")
-      });*/
-
-      // hide onboarding
-      document.querySelector('.onboarding-wrapper').style.display = 'none';
-      if (skipButton !== null) {
-        skipButton.style.display = "none";
-      }
-
-      //startRecipe(chosenRecipe)
-      startRecipe(chosenRecipe).then((results, anotherval) => {
-        console.log("durationLength: " + durationLength)
-        setTimeout(function() {
-          harvestTimer()
-        }, durationLength)
-      })
-    });
+    }
 
     // 6: Collect Harvest
     function collectHarvest(event) {
@@ -448,8 +488,9 @@ let plant = {
       }
       document.querySelector('.gamification-screen').style.display = 'flex';
     }
-    collectHarvestButton.addEventListener('click', collectHarvest)
-
+    if (collectHarvestButton !== null) {
+      collectHarvestButton.addEventListener('click', collectHarvest)
+    }
   },
   grow: () => {
     console.log('I am growing!');

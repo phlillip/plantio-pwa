@@ -184,3 +184,41 @@ nav {
 #menuToggle input:checked ~ ul {
   transform: none;
 }
+// slide navigator
+
+.content {
+  height: 100vh;
+  width: 300vw;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  transform: translateX(-100vw);
+  transition: transform .25s ease;
+  background: white;
+
+  .info-panel {
+    width: 100vw;
+    margin: 1em;
+    position: relative;
+    border-radius: .25em;
+  }
+
+  .recipe-panel {
+    width: 100vw;
+    margin: 1em;
+    position: relative;
+    overflow-y: scroll;
+
+    .recipe {
+      background: rgba(0,0,0,.9);
+      color: white;
+    }
+  }
+
+  .status-panel {
+    width: 100vw;
+    margin: 1em;
+    position: relative;
+    background: rgba(0,0,0,.9);
+  }
+}
