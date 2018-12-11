@@ -153,7 +153,7 @@ let plant = {
         //light
         let lightLoop = setTimeout(function tick() {
           if (progressPercentage < 100) {
-            controller(lightData);
+            controller(Object.keys(chosenRecipe)[2]);
             lightLoop = setTimeout(tick, lightMilliseconds);
             liveLightData += lumensDosage;
           }
@@ -162,7 +162,7 @@ let plant = {
         //feed
         let feedLoop = setTimeout(function tick() {
           if (progressPercentage < 100) {
-            controller(feedData);
+            controller(Object.keys(chosenRecipe)[3]);
             feedLoop = setTimeout(tick, feedMilliseconds);
             liveFeedData += feedDosage;
           }
