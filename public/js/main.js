@@ -100,34 +100,47 @@ let plant = {
     const harvestModal = document.querySelector('.harvest-modal');
     const collectHarvestButton = document.querySelector('.collect-harvest');
     const menuBtn = document.getElementById('openMenu');
+    const contentContainer = document.querySelector('.content');
     const recipeNav = document.getElementById('recipe-nav');
     const gardenNav = document.getElementById('garden-nav');
     const infoNav = document.getElementById('info-nav');
+    const statusPanel = document.querySelector('.status-panel');
+    const infoPanel = document.querySelector('.info-panel');
+    const systemPlantio = document.querySelector('.system-plantio');
 
     if (recipeNav !== null) {
       recipeNav.addEventListener('click', function () {
-        document.querySelector('.content').style.transform = 'translateX(0)';
+        statusPanel.style.transform = 'scale(1)';
+        systemPlantio.classList.remove('active');
+        contentContainer.style.transform = 'translateX(0)';
         recipeNav.classList.add('active');
         gardenNav.classList.remove('active');
         infoNav.classList.remove('active');
+        infoPanel.classList.remove('active');
       });
     }
 
     if (gardenNav !== null) {
       gardenNav.addEventListener('click', function () {
-        document.querySelector('.content').style.transform = 'translateX(-100vw)';
+        statusPanel.style.transform = 'scale(1)';
+        systemPlantio.classList.remove('active');
+        contentContainer.style.transform = 'translateX(-100vw)';
         recipeNav.classList.remove('active');
         gardenNav.classList.add('active');
         infoNav.classList.remove('active');
+        infoPanel.classList.remove('active');
       });
     }
 
     if (infoNav !== null) {
       infoNav.addEventListener('click', function () {
-        document.querySelector('.content').style.transform = 'translateX(-200vw)';
+        statusPanel.style.transform = 'scale(0.5)';
+        contentContainer.style.transform = 'translateX(-100vw)';
+        systemPlantio.classList.add('active');
         recipeNav.classList.remove('active');
         gardenNav.classList.remove('active');
         infoNav.classList.add('active');
+        infoPanel.classList.add('active');
       });
     } //Recipe constructor
 
