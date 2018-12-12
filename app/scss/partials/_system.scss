@@ -16,12 +16,12 @@
   transition: opacity .25s ease;
 
   &.active {
-    opacity: 1;
+    opacity: .99;
     pointer-events: inherit;
   }
 
   .system-highlight {
-    background: $ruutsGreen;
+    background: $ruutsBlack;
     width: calc(100% - .25em);
     height: .75em;
     position: relative;
@@ -33,6 +33,7 @@
       height: 25vw;
       border-radius: 50%;
       border: .75em solid $ruutsGreen;
+      //box-shadow: 0 0 .25em .125em rgba($ruutsGreen,0.75);
       background: black;
       position: absolute;
       top: 50%;
@@ -40,37 +41,71 @@
       transform: translate(-50%, -50%);
     }
   }
+
+  img {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 25%;
+    width: 50%;
+    height: auto;
+  }
 }
 
 .info-panel {
   .system-lights,
   .system-nozzle {
-    width: 40%;
-    height: 1em;
-    background: blue;
+    width: 50%;
     position: absolute;
-    left: 30%;
+    left: 25%;
   }
 
   .system-lights {
     top: 50%;
-    transition: top 1s ease;
+    transition: top .5s ease;
     transition-delay: .25s;
   }
 
   .system-nozzle {
     bottom: 50%;
-    transition: bottom 1s ease;
+    transition: bottom .5s ease;
     transition-delay: .25s;
+  }
+
+  .system-reservoir {
+    position: absolute;
+    height: 0;
+    width: 1.5em;
+    border: .25em solid rgba($ruutsBlue,0);
+    background: rgba($ruutsBlue, 0.75);
+    border-top: 0;
+    bottom: 25%;
+    right: 2em;
+
+    span {
+      margin-top: -3.5em;
+      display: block;
+      text-align: center;
+      width: 4em;
+      margin-left: -1.5em;
+    }
   }
 
   &.active {
     .system-lights {
-      top: 1em;
+      top: 0;
     }
 
     .system-nozzle {
-      bottom: 1em;
+      bottom: 0;
+    }
+
+    .system-reservoir {
+      height: 50%;
+      opacity: 1;
+      border-color: rgba($ruutsBlue, 1);
+      transition: all .5s ease;
+      transition-delay: .5s;
     }
   }
 }
