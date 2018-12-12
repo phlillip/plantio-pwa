@@ -2,200 +2,238 @@
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="512px" height="256px" viewBox="0 0 512 256" enable-background="new 0 0 512 256" xml:space="preserve">
-<pattern  y="-128" width="64.5" height="65" patternUnits="userSpaceOnUse" id="V" viewBox="0 -65 64.5 65" overflow="visible">
+	 width="512px" height="128px" viewBox="0 64 512 128" enable-background="new 0 64 512 128" xml:space="preserve">
+<pattern  x="0.5" y="384.5" width="64.5" height="65" patternUnits="userSpaceOnUse" id="SVGID_1_" viewBox="0 -65 64.5 65" overflow="visible">
 	<g>
 		<polygon fill="none" points="0,0 64.5,0 64.5,-65 0,-65 		"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="#A4CDC6" d="M0,0h64.5v-65H0V0z"/>
+		<g>
+			<polygon fill="none" points="0,-65 64.5,-65 64.5,0 0,0 			"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="#A4CDC6" d="M0-65h64.5V0H0V-65z"/>
+		</g>
 	</g>
 </pattern>
-<pattern  y="-128" width="64.5" height="65" patternUnits="userSpaceOnUse" id="X" viewBox="0 -65 64.5 65" overflow="visible">
+<pattern  x="0.5" y="384.5" width="64.5" height="65" patternUnits="userSpaceOnUse" id="SVGID_10_" viewBox="0 -65 64.5 65" overflow="visible">
 	<g>
 		<polygon fill="none" points="0,0 64.5,0 64.5,-65 0,-65 		"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="#404041" d="M0,0h64.5v-65H0V0z"/>
+		<g>
+			<polygon fill="none" points="0,-65 64.5,-65 64.5,0 0,0 			"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="#404041" d="M0-65h64.5V0H0V-65z"/>
+		</g>
 	</g>
 </pattern>
-<pattern  y="-128" width="64.5" height="65" patternUnits="userSpaceOnUse" id="Z" viewBox="0 -65 64.5 65" overflow="visible">
+<pattern  x="0.5" y="384.5" width="64.5" height="65" patternUnits="userSpaceOnUse" id="SVGID_11_" viewBox="0 -65 64.5 65" overflow="visible">
 	<g>
 		<polygon fill="none" points="0,0 64.5,0 64.5,-65 0,-65 		"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="#404041" d="M0,0h64.5v-65H0V0z"/>
+		<g>
+			<polygon fill="none" points="0,-65 64.5,-65 64.5,0 0,0 			"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="#404041" d="M0-65h64.5V0H0V-65z"/>
+		</g>
 	</g>
 </pattern>
-<pattern  y="-128" width="64.5" height="65" patternUnits="userSpaceOnUse" id="ab" viewBox="0 -65 64.5 65" overflow="visible">
+<pattern  x="0.5" y="384.5" width="64.5" height="65" patternUnits="userSpaceOnUse" id="SVGID_12_" viewBox="0 -65 64.5 65" overflow="visible">
 	<g>
 		<polygon fill="none" points="0,0 64.5,0 64.5,-65 0,-65 		"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="#404041" d="M0,0h64.5v-65H0V0z"/>
+		<g>
+			<polygon fill="none" points="0,-65 64.5,-65 64.5,0 0,0 			"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="#404041" d="M0-65h64.5V0H0V-65z"/>
+		</g>
 	</g>
 </pattern>
-<pattern  y="-128" width="64.5" height="65" patternUnits="userSpaceOnUse" id="ad" viewBox="0 -65 64.5 65" overflow="visible">
+<pattern  x="0.5" y="384.5" width="64.5" height="65" patternUnits="userSpaceOnUse" id="SVGID_2_" viewBox="0 -65 64.5 65" overflow="visible">
 	<g>
 		<polygon fill="none" points="0,0 64.5,0 64.5,-65 0,-65 		"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="#A4CDC6" d="M0,0h64.5v-65H0V0z"/>
+		<g>
+			<polygon fill="none" points="0,-65 64.5,-65 64.5,0 0,0 			"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="#404041" d="M0-65h64.5V0H0V-65z"/>
+		</g>
 	</g>
 </pattern>
-<pattern  y="-128" width="64.5" height="65" patternUnits="userSpaceOnUse" id="af" viewBox="0 -65 64.5 65" overflow="visible">
+<pattern  x="0.5" y="384.5" width="64.5" height="65" patternUnits="userSpaceOnUse" id="SVGID_3_" viewBox="0 -65 64.5 65" overflow="visible">
 	<g>
 		<polygon fill="none" points="0,0 64.5,0 64.5,-65 0,-65 		"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="#404041" d="M0,0h64.5v-65H0V0z"/>
+		<g>
+			<polygon fill="none" points="0,-65 64.5,-65 64.5,0 0,0 			"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="#404041" d="M0-65h64.5V0H0V-65z"/>
+		</g>
 	</g>
 </pattern>
-<pattern  y="-128" width="64.5" height="65" patternUnits="userSpaceOnUse" id="ah" viewBox="0 -65 64.5 65" overflow="visible">
+<pattern  x="0.5" y="384.5" width="64.5" height="65" patternUnits="userSpaceOnUse" id="SVGID_4_" viewBox="0 -65 64.5 65" overflow="visible">
 	<g>
 		<polygon fill="none" points="0,0 64.5,0 64.5,-65 0,-65 		"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="#404041" d="M0,0h64.5v-65H0V0z"/>
+		<g>
+			<polygon fill="none" points="0,-65 64.5,-65 64.5,0 0,0 			"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="#404041" d="M0-65h64.5V0H0V-65z"/>
+		</g>
 	</g>
 </pattern>
-<pattern  y="-128" width="64.5" height="65" patternUnits="userSpaceOnUse" id="aj" viewBox="0 -65 64.5 65" overflow="visible">
+<pattern  x="0.5" y="384.5" width="64.5" height="65" patternUnits="userSpaceOnUse" id="SVGID_5_" viewBox="0 -65 64.5 65" overflow="visible">
 	<g>
 		<polygon fill="none" points="0,0 64.5,0 64.5,-65 0,-65 		"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="#404041" d="M0,0h64.5v-65H0V0z"/>
+		<g>
+			<polygon fill="none" points="0,-65 64.5,-65 64.5,0 0,0 			"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="#A4CDC6" d="M0-65h64.5V0H0V-65z"/>
+		</g>
 	</g>
 </pattern>
-<pattern  y="-128" width="64.5" height="65" patternUnits="userSpaceOnUse" id="al" viewBox="0 -65 64.5 65" overflow="visible">
+<pattern  x="0.5" y="384.5" width="64.5" height="65" patternUnits="userSpaceOnUse" id="SVGID_6_" viewBox="0 -65 64.5 65" overflow="visible">
 	<g>
 		<polygon fill="none" points="0,0 64.5,0 64.5,-65 0,-65 		"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="#A4CDC6" d="M0,0h64.5v-65H0V0z"/>
+		<g>
+			<polygon fill="none" points="0,-65 64.5,-65 64.5,0 0,0 			"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="#404041" d="M0-65h64.5V0H0V-65z"/>
+		</g>
 	</g>
 </pattern>
-<pattern  y="-128" width="64.5" height="65" patternUnits="userSpaceOnUse" id="an" viewBox="0 -65 64.5 65" overflow="visible">
+<pattern  x="0.5" y="384.5" width="64.5" height="65" patternUnits="userSpaceOnUse" id="SVGID_7_" viewBox="0 -65 64.5 65" overflow="visible">
 	<g>
 		<polygon fill="none" points="0,0 64.5,0 64.5,-65 0,-65 		"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="#404041" d="M0,0h64.5v-65H0V0z"/>
+		<g>
+			<polygon fill="none" points="0,-65 64.5,-65 64.5,0 0,0 			"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="#404041" d="M0-65h64.5V0H0V-65z"/>
+		</g>
 	</g>
 </pattern>
-<pattern  y="-128" width="64.5" height="65" patternUnits="userSpaceOnUse" id="ap" viewBox="0 -65 64.5 65" overflow="visible">
+<pattern  x="0.5" y="384.5" width="64.5" height="65" patternUnits="userSpaceOnUse" id="SVGID_8_" viewBox="0 -65 64.5 65" overflow="visible">
 	<g>
 		<polygon fill="none" points="0,0 64.5,0 64.5,-65 0,-65 		"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="#404041" d="M0,0h64.5v-65H0V0z"/>
+		<g>
+			<polygon fill="none" points="0,-65 64.5,-65 64.5,0 0,0 			"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="#404041" d="M0-65h64.5V0H0V-65z"/>
+		</g>
 	</g>
 </pattern>
-<pattern  y="-128" width="64.5" height="65" patternUnits="userSpaceOnUse" id="ar" viewBox="0 -65 64.5 65" overflow="visible">
+<pattern  x="0.5" y="384.5" width="64.5" height="65" patternUnits="userSpaceOnUse" id="SVGID_9_" viewBox="0 -65 64.5 65" overflow="visible">
 	<g>
 		<polygon fill="none" points="0,0 64.5,0 64.5,-65 0,-65 		"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="none" d="M0,0h64.5v-65H0V0z"/>
-		<path fill="#404041" d="M0,0h64.5v-65H0V0z"/>
+		<g>
+			<polygon fill="none" points="0,-65 64.5,-65 64.5,0 0,0 			"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="none" d="M0-65h64.5V0H0V-65z"/>
+			<path fill="#A4CDC6" d="M0-65h64.5V0H0V-65z"/>
+		</g>
 	</g>
 </pattern>
-<pattern  id="SVGID_1_" xlink:href="#V" patternTransform="matrix(0.75 0 0 0.75 1405 23777.7813)">
-</pattern>
-<path fill="url(#SVGID_1_)" d="M184.8,171.65c-12,0-21.8-9.851-21.8-21.851v-31.4h43.649v31.4
-	C206.649,161.8,196.8,171.65,184.8,171.65"/>
-<pattern  id="SVGID_2_" xlink:href="#X" patternTransform="matrix(0.75 0 0 0.75 1405 23777.7813)">
-</pattern>
-<path fill="url(#SVGID_2_)" d="M158.649,119.25H169.5v10.95c0,1.3,0.85,2.149,2.2,2.149h4.35l-3.95,5.25
-	c-0.619,0.999-0.405,2.302,0.5,3.051c0.851,0.649,2.351,0.449,3-0.45l6.55-8.7c0.45-0.65,0.65-1.5,0.2-2.2
-	c-0.399-0.65-1.05-1.3-1.95-1.3h-6.5v-8.75H195.7v17.5H187l4-5.25c0.649-0.9,0.399-2.4-0.5-3.05c-0.851-0.65-2.351-0.45-3,0.4
-	l-6.55,8.75c-0.45,0.65-0.65,1.5-0.2,2.2c0.399,0.65,1.05,1.3,1.95,1.3h15.25c1.3,0,2.199-0.899,2.199-2.199v-19.65
-	c1.301,0,2.15-0.85,2.15-2.15c0-1.3-0.85-2.2-2.15-2.2h-41.5c-1.25,0-2.149-0.85-2.149-2.15c0-1.35,0.899-2.2,2.2-2.2H211
-	c1.3,0,2.2,0.85,2.2,2.15c0,1.35-0.9,2.2-2.2,2.2h-2.2c-2.15,0-2.15,2-2.15,3.5v31.4c-1,12.054-11.582,21.015-23.636,20.015
-	c-10.665-0.885-19.129-9.35-20.014-20.015v-24c0-1.3-0.851-2.15-2.2-2.15c-1.3,0-2.15,0.85-2.15,2.15v24
-	c0.027,14.439,11.711,26.146,26.15,26.2c14.458-0.027,26.173-11.742,26.2-26.2v-30.5c3.7,0,6.5-2.85,6.5-6.55
-	c0.05-3.75-2.8-6.55-6.5-6.55h-52.351c-3.699,0-6.55,2.8-6.55,6.5c0,3.75,2.851,6.55,6.5,6.55H158.649z"/>
-<pattern  id="SVGID_3_" xlink:href="#Z" patternTransform="matrix(0.75 0 0 0.75 1405 23777.7813)">
-</pattern>
-<path fill="url(#SVGID_3_)" d="M197.899,101.8c1.301,0,2.2-0.85,2.2-2.15v-17.5c0-1.3-0.899-2.15-2.2-2.15
-	c-1.3,0-2.149,0.85-2.149,2.2v17.45C195.75,100.95,196.6,101.8,197.899,101.8z"/>
-<pattern  id="SVGID_4_" xlink:href="#ab" patternTransform="matrix(0.75 0 0 0.75 1405 23777.7813)">
-</pattern>
-<path fill="url(#SVGID_4_)" d="M171.75,101.8c1.3,0,2.149-0.85,2.149-2.15v-17.5c0-1.3-0.85-2.15-2.149-2.15
-	c-1.351,0-2.2,0.85-2.2,2.2v17.45C169.55,100.95,170.399,101.8,171.75,101.8z"/>
-<pattern  id="SVGID_5_" xlink:href="#ad" patternTransform="matrix(0.75 0 0 0.75 1405 23777.7813)">
-</pattern>
-<path fill="url(#SVGID_5_)" d="M256.8,172.4c-12,0-21.8-9.851-21.8-21.851v-31.4h43.649v31.4
-	C278.649,162.55,268.8,172.4,256.8,172.4"/>
-<pattern  id="SVGID_6_" xlink:href="#af" patternTransform="matrix(0.75 0 0 0.75 1405 23777.7813)">
-</pattern>
-<path fill="url(#SVGID_6_)" d="M230.649,120H241.5v11c0,1.3,0.85,2.15,2.2,2.15h4.35l-3.95,5.25c-0.619,0.998-0.405,2.301,0.5,3.05
-	c0.851,0.649,2.351,0.45,3-0.45l6.55-8.7c0.45-0.649,0.65-1.5,0.2-2.2c-0.399-0.649-1.05-1.3-1.95-1.3h-6.5V120H267.7v17.5H259
-	l3.95-5.25c0.649-0.9,0.399-2.4-0.5-3.05c-0.851-0.65-2.351-0.45-3,0.399l-6.551,8.75c-0.449,0.65-0.649,1.5-0.199,2.2
-	c0.399,0.65,1.05,1.3,1.949,1.3h15.25c1.301,0,2.2-0.899,2.2-2.199V120c1.3,0,2.15-0.85,2.15-2.15c0-1.3-0.851-2.2-2.15-2.2h-41.5
-	c-1.25,0-2.149-0.85-2.149-2.15c0-1.35,0.899-2.2,2.199-2.2H283c1.3,0,2.2,0.85,2.2,2.15c0,1.35-0.9,2.2-2.2,2.2h-2.2
-	c-2.15,0-2.15,2-2.15,3.5v31.4c-1,12.054-11.582,21.015-23.636,20.015c-10.665-0.885-19.129-9.35-20.014-20.015v-24
-	c0-1.3-0.851-2.15-2.2-2.15c-1.3,0-2.15,0.85-2.15,2.15v24c0.027,14.439,11.712,26.146,26.15,26.2
-	c14.478-0.027,26.2-11.771,26.2-26.25V120c3.7,0,6.55-2.85,6.55-6.55c0-3.75-2.85-6.55-6.5-6.55H230.6c-3.7,0-6.55,2.8-6.55,6.5
-	c0,3.75,2.85,6.55,6.5,6.55L230.649,120z"/>
-<pattern  id="SVGID_7_" xlink:href="#ah" patternTransform="matrix(0.75 0 0 0.75 1405 23777.7813)">
-</pattern>
-<path fill="url(#SVGID_7_)" d="M269.899,102.55c1.301,0,2.2-0.85,2.2-2.15V82.9c0-1.3-0.899-2.15-2.2-2.15
-	c-1.3,0-2.149,0.85-2.149,2.2v17.45C267.75,101.7,268.6,102.55,269.899,102.55z"/>
-<pattern  id="SVGID_8_" xlink:href="#aj" patternTransform="matrix(0.75 0 0 0.75 1405 23777.7813)">
-</pattern>
-<path fill="url(#SVGID_8_)" d="M243.75,102.55c1.3,0,2.149-0.85,2.149-2.15V82.9c0-1.3-0.85-2.15-2.149-2.15
-	c-1.351,0-2.2,0.85-2.2,2.2v17.45C241.55,101.7,242.399,102.55,243.75,102.55z"/>
 <g>
-	<pattern  id="SVGID_9_" xlink:href="#al" patternTransform="matrix(0.75 0 0 0.75 1405 23777.7813)">
+	<pattern  id="SVGID_13_" xlink:href="#SVGID_1_" patternTransform="matrix(0.75 0 0 -0.75 -579.6255 -38223.6758)">
 	</pattern>
-	<path fill="url(#SVGID_9_)" d="M328.8,173.15c-12,0-21.8-9.851-21.8-21.851v-31.4h43.649v31.4
-		C350.649,163.3,340.8,173.15,328.8,173.15"/>
-	<pattern  id="SVGID_10_" xlink:href="#an" patternTransform="matrix(0.75 0 0 0.75 1405 23777.7813)">
+	<path fill="url(#SVGID_13_)" d="M184.8,155.65c-12,0-21.8-9.852-21.8-21.852v-31.4h43.648v31.4
+		C206.649,145.8,196.8,155.65,184.8,155.65"/>
+	<pattern  id="SVGID_14_" xlink:href="#SVGID_2_" patternTransform="matrix(0.75 0 0 -0.75 -579.6255 -38223.6758)">
 	</pattern>
-	<path fill="url(#SVGID_10_)" d="M302.649,120.75H313.5v10.95c0,1.3,0.85,2.149,2.199,2.149h4.351l-3.95,5.25
-		c-0.619,0.999-0.406,2.302,0.5,3.051c0.85,0.649,2.35,0.449,3-0.45l6.55-8.7c0.45-0.65,0.65-1.5,0.2-2.2
-		c-0.4-0.649-1.05-1.3-1.95-1.3h-6.5v-8.75h21.8v17.5H331l4-5.25c0.649-0.9,0.399-2.4-0.5-3.05c-0.851-0.65-2.351-0.45-3,0.399
-		l-6.551,8.75c-0.449,0.65-0.649,1.5-0.199,2.2c0.399,0.65,1.05,1.3,1.949,1.3h15.25c1.301,0,2.2-0.899,2.2-2.199v-19.65
-		c1.3,0,2.15-0.85,2.15-2.15c0-1.3-0.851-2.2-2.15-2.2h-41.5c-1.25,0-2.149-0.85-2.149-2.15c0-1.35,0.899-2.2,2.199-2.2H355
-		c1.3,0,2.199,0.85,2.199,2.15c0,1.35-0.899,2.2-2.199,2.2h-2.2c-2.15,0-2.15,2-2.15,3.5v31.4
-		c-1,12.054-11.582,21.015-23.636,20.015c-10.666-0.885-19.129-9.35-20.014-20.015v-24c0-1.3-0.851-2.15-2.2-2.15
-		c-1.3,0-2.15,0.85-2.15,2.15v24c0.027,14.439,11.711,26.146,26.15,26.2c14.458-0.027,26.172-11.742,26.2-26.2v-30.5
-		c3.699,0,6.55-2.85,6.55-6.55c0-3.75-2.851-6.55-6.5-6.55H302.6c-3.7,0-6.55,2.8-6.55,6.5c0,3.75,2.85,6.55,6.5,6.55H302.649z"/>
+	<path fill="url(#SVGID_14_)" d="M158.649,103.25H169.5v10.95c0,1.3,0.85,2.149,2.2,2.149h4.35l-3.95,5.25
+		c-0.619,0.998-0.405,2.301,0.5,3.051c0.852,0.648,2.352,0.449,3-0.45l6.55-8.7c0.45-0.65,0.65-1.5,0.2-2.2
+		c-0.398-0.649-1.05-1.3-1.95-1.3h-6.5v-8.75H195.7v17.5H187l4-5.25c0.648-0.9,0.398-2.4-0.5-3.05c-0.852-0.65-2.352-0.45-3,0.399
+		l-6.55,8.75c-0.45,0.65-0.65,1.5-0.2,2.2c0.398,0.65,1.05,1.3,1.95,1.3h15.25c1.3,0,2.198-0.898,2.198-2.199v-19.649
+		c1.302,0,2.15-0.85,2.15-2.15c0-1.3-0.85-2.2-2.15-2.2h-41.5c-1.25,0-2.148-0.85-2.148-2.15c0-1.35,0.898-2.2,2.2-2.2H211
+		c1.3,0,2.2,0.85,2.2,2.15c0,1.35-0.9,2.2-2.2,2.2h-2.2c-2.15,0-2.15,2-2.15,3.5v31.4c-1,12.055-11.582,21.016-23.636,20.016
+		c-10.665-0.885-19.129-9.351-20.014-20.016v-24c0-1.3-0.852-2.15-2.2-2.15c-1.3,0-2.15,0.85-2.15,2.15v24
+		c0.027,14.439,11.711,26.146,26.15,26.2c14.458-0.026,26.173-11.742,26.2-26.2v-30.5c3.7,0,6.5-2.85,6.5-6.55
+		c0.05-3.75-2.8-6.55-6.5-6.55h-52.352c-3.698,0-6.55,2.8-6.55,6.5c0,3.75,2.852,6.55,6.5,6.55L158.649,103.25L158.649,103.25z"/>
+	<pattern  id="SVGID_15_" xlink:href="#SVGID_3_" patternTransform="matrix(0.75 0 0 -0.75 -579.6255 -38223.6758)">
+	</pattern>
+	<path fill="url(#SVGID_15_)" d="M197.899,85.8c1.302,0,2.2-0.85,2.2-2.15v-17.5c0-1.3-0.898-2.15-2.2-2.15
+		c-1.3,0-2.148,0.85-2.148,2.2v17.45C195.75,84.95,196.6,85.8,197.899,85.8z"/>
+	<pattern  id="SVGID_16_" xlink:href="#SVGID_4_" patternTransform="matrix(0.75 0 0 -0.75 -579.6255 -38223.6758)">
+	</pattern>
+	<path fill="url(#SVGID_16_)" d="M171.75,85.8c1.3,0,2.148-0.85,2.148-2.15v-17.5c0-1.3-0.85-2.15-2.148-2.15
+		c-1.352,0-2.2,0.85-2.2,2.2v17.45C169.55,84.95,170.399,85.8,171.75,85.8z"/>
+	<pattern  id="SVGID_17_" xlink:href="#SVGID_5_" patternTransform="matrix(0.75 0 0 -0.75 -579.6255 -38223.6758)">
+	</pattern>
+	<path fill="url(#SVGID_17_)" d="M256.8,156.4c-12,0-21.8-9.852-21.8-21.852v-31.4h43.648v31.4
+		C278.649,146.55,268.8,156.4,256.8,156.4"/>
+	<pattern  id="SVGID_18_" xlink:href="#SVGID_6_" patternTransform="matrix(0.75 0 0 -0.75 -579.6255 -38223.6758)">
+	</pattern>
+	<path fill="url(#SVGID_18_)" d="M230.649,104H241.5v11c0,1.3,0.85,2.15,2.2,2.15h4.35l-3.95,5.25
+		c-0.619,0.998-0.405,2.301,0.5,3.05c0.852,0.649,2.352,0.45,3-0.45l6.55-8.7c0.45-0.649,0.65-1.5,0.2-2.2
+		c-0.398-0.648-1.05-1.3-1.95-1.3h-6.5V104H267.7v17.5H259l3.95-5.25c0.648-0.9,0.398-2.4-0.5-3.05c-0.852-0.65-2.352-0.45-3,0.399
+		l-6.552,8.75c-0.448,0.649-0.648,1.5-0.198,2.199c0.398,0.65,1.05,1.301,1.948,1.301h15.25c1.302,0,2.2-0.899,2.2-2.199V104
+		c1.3,0,2.15-0.85,2.15-2.15c0-1.3-0.852-2.2-2.15-2.2h-41.5c-1.25,0-2.148-0.85-2.148-2.15c0-1.35,0.898-2.2,2.198-2.2H283
+		c1.3,0,2.2,0.85,2.2,2.15c0,1.35-0.9,2.2-2.2,2.2h-2.2c-2.15,0-2.15,2-2.15,3.5v31.4c-1,12.054-11.582,21.015-23.636,20.015
+		c-10.665-0.885-19.129-9.35-20.014-20.015v-24c0-1.3-0.852-2.15-2.2-2.15c-1.3,0-2.15,0.85-2.15,2.15v24
+		c0.027,14.439,11.712,26.146,26.15,26.2c14.478-0.027,26.2-11.771,26.2-26.25V104c3.7,0,6.55-2.85,6.55-6.55
+		c0-3.75-2.85-6.55-6.5-6.55H230.6c-3.7,0-6.55,2.8-6.55,6.5c0,3.75,2.85,6.55,6.5,6.55L230.649,104z"/>
+	<pattern  id="SVGID_19_" xlink:href="#SVGID_7_" patternTransform="matrix(0.75 0 0 -0.75 -579.6255 -38223.6758)">
+	</pattern>
+	<path fill="url(#SVGID_19_)" d="M269.899,86.55c1.302,0,2.2-0.85,2.2-2.15V66.9c0-1.3-0.898-2.15-2.2-2.15
+		c-1.3,0-2.148,0.85-2.148,2.2V84.4C267.75,85.7,268.6,86.55,269.899,86.55z"/>
+	<pattern  id="SVGID_20_" xlink:href="#SVGID_8_" patternTransform="matrix(0.75 0 0 -0.75 -579.6255 -38223.6758)">
+	</pattern>
+	<path fill="url(#SVGID_20_)" d="M243.75,86.55c1.3,0,2.148-0.85,2.148-2.15V66.9c0-1.3-0.85-2.15-2.148-2.15
+		c-1.352,0-2.2,0.85-2.2,2.2V84.4C241.55,85.7,242.399,86.55,243.75,86.55z"/>
 	<g>
-		<pattern  id="SVGID_11_" xlink:href="#ap" patternTransform="matrix(0.75 0 0 0.75 1405 23777.7813)">
+		<pattern  id="SVGID_21_" xlink:href="#SVGID_9_" patternTransform="matrix(0.75 0 0 -0.75 -579.6255 -38223.6758)">
 		</pattern>
-		<path fill="url(#SVGID_11_)" d="M341.899,103.3c1.3,0,2.2-0.85,2.2-2.15v-17.5c0-1.3-0.9-2.15-2.2-2.15s-2.149,0.9-2.149,2.2
-			v17.45C339.75,102.45,340.6,103.3,341.899,103.3z"/>
-	</g>
-	<g>
-		<pattern  id="SVGID_12_" xlink:href="#ar" patternTransform="matrix(0.75 0 0 0.75 1405 23777.7813)">
+		<path fill="url(#SVGID_21_)" d="M328.8,157.15c-12,0-21.8-9.852-21.8-21.852v-31.4h43.648v31.4
+			C350.649,147.3,340.8,157.15,328.8,157.15"/>
+		<pattern  id="SVGID_22_" xlink:href="#SVGID_10_" patternTransform="matrix(0.75 0 0 -0.75 -579.6255 -38223.6758)">
 		</pattern>
-		<path fill="url(#SVGID_12_)" d="M315.75,103.3c1.3,0,2.149-0.85,2.149-2.15v-17.5c0-1.3-0.85-2.15-2.149-2.15
-			c-1.351,0-2.2,0.85-2.2,2.2v17.45C313.55,102.45,314.399,103.3,315.75,103.3z"/>
+		<path fill="url(#SVGID_22_)" d="M302.649,104.75H313.5v10.95c0,1.3,0.85,2.149,2.198,2.149h4.352l-3.95,5.25
+			c-0.619,0.998-0.406,2.301,0.5,3.051c0.85,0.648,2.35,0.449,3-0.45l6.55-8.7c0.45-0.65,0.65-1.5,0.2-2.2
+			c-0.4-0.649-1.05-1.3-1.95-1.3h-6.5v-8.75h21.8v17.5H331l4-5.25c0.648-0.9,0.398-2.4-0.5-3.05c-0.852-0.65-2.352-0.45-3,0.399
+			l-6.552,8.75c-0.448,0.649-0.648,1.5-0.198,2.199c0.398,0.65,1.05,1.301,1.948,1.301h15.25c1.302,0,2.2-0.899,2.2-2.199v-19.65
+			c1.3,0,2.15-0.85,2.15-2.15c0-1.3-0.852-2.2-2.15-2.2h-41.5c-1.25,0-2.148-0.85-2.148-2.15c0-1.35,0.898-2.2,2.198-2.2H355
+			c1.3,0,2.198,0.85,2.198,2.15c0,1.35-0.898,2.2-2.198,2.2h-2.2c-2.15,0-2.15,2-2.15,3.5v31.4
+			c-1,12.054-11.582,21.015-23.636,20.015c-10.666-0.885-19.129-9.35-20.014-20.015v-24c0-1.3-0.852-2.15-2.2-2.15
+			c-1.3,0-2.15,0.85-2.15,2.15v24c0.027,14.438,11.711,26.146,26.15,26.2c14.458-0.027,26.172-11.742,26.2-26.2v-30.5
+			c3.698,0,6.55-2.85,6.55-6.55c0-3.75-2.852-6.55-6.5-6.55H302.6c-3.7,0-6.55,2.8-6.55,6.5c0,3.75,2.85,6.55,6.5,6.55H302.649z"/>
+		<g>
+			<pattern  id="SVGID_23_" xlink:href="#SVGID_11_" patternTransform="matrix(0.75 0 0 -0.75 -579.6255 -38223.6758)">
+			</pattern>
+			<path fill="url(#SVGID_23_)" d="M341.899,87.3c1.3,0,2.2-0.85,2.2-2.15v-17.5c0-1.3-0.9-2.15-2.2-2.15s-2.148,0.9-2.148,2.2
+				v17.45C339.75,86.45,340.6,87.3,341.899,87.3z"/>
+		</g>
+		<g>
+			<pattern  id="SVGID_24_" xlink:href="#SVGID_12_" patternTransform="matrix(0.75 0 0 -0.75 -579.6255 -38223.6758)">
+			</pattern>
+			<path fill="url(#SVGID_24_)" d="M315.75,87.3c1.3,0,2.148-0.85,2.148-2.15v-17.5c0-1.3-0.85-2.15-2.148-2.15
+				c-1.352,0-2.2,0.85-2.2,2.2v17.45C313.55,86.45,314.399,87.3,315.75,87.3z"/>
+		</g>
 	</g>
 </g>
 </svg>
