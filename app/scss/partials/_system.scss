@@ -53,12 +53,13 @@
 }
 
 .info-panel {
+  opacity: 0;
+
   .system-lights,
   .system-nozzle {
     width: 50%;
     position: absolute;
     left: 25%;
-    opacity: 0;
   }
 
   .system-lights {
