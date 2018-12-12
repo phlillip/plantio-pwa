@@ -58,6 +58,7 @@
     width: 50%;
     position: absolute;
     left: 25%;
+    opacity: 0;
   }
 
   .system-lights {
@@ -92,6 +93,8 @@
   }
 
   &.active {
+    opacity: 1;
+
     .system-lights {
       top: 0;
     }
