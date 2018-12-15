@@ -52,6 +52,7 @@ a.cta {
   position: relative;
   color: $ruutsGreen;
   font-weight: 500;
+  /* [TODO] desktop only
 
   &:after {
     content: '»';
@@ -64,6 +65,7 @@ a.cta {
     transition: all .25s ease-out;
   }
 
+  */
   &:hover {
     text-decoration: underline;
 
