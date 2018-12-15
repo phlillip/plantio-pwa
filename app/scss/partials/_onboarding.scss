@@ -1,5 +1,4 @@
 /* Onboarding */
-
 .onboarding-wrapper {
   div#skip {
     position: absolute;
@@ -52,6 +51,10 @@
   @include respond-to('tablet') {
     margin-left: calc((100vh - 20em) / 2);
     margin-right: calc((100vh - 20em) / 2);
+  }
+
+  img {
+    max-width: 30vw;
   }
 }
 
@@ -192,5 +195,30 @@
     transform-origin: .01em 1.2em;
     transform: rotate(120deg);
     animation: seconds .6s steps(60, end) 0s infinite;
+  }
+}
+
+.gamification-screen {
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow-y: scroll;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1em;
+  background: white;
+  z-index: 1004;
+
+  img {
+    height: 2.5em;
+    margin: 0 auto 1em;
+
+    &.growers-badge {
+      max-width: 30vw;
+    }
   }
 }
