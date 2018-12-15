@@ -1,0 +1,47 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <h2>Process</h2>
+  <div id="thought-list" class="thoughts">
+
+    {% for post in site.posts %}
+    {% if post.categories contains "thoughts" %}
+    <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
+      <header>
+        <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: '<span class="time">%H:%M</span>%m-%d-%Y' }}</time>
+        <h3 itemprop="name headline">{{ post.title }}</h3>
+      </header>
+      <div class="content" itemprop="articleBody">
+        {{ post.content }}
+      </div>
+    </article>
+    {% endif %}
+    {% endfor %}
+  </div>
+
+  <ul id="post-list" class="post-list">
+    {% for post in site.posts %}
+    {% if post.categories contains "FMP" %}
+    <li>
+      <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+      <h2><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+      <p>{{ post.tagline }}</p>
+    </li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+</div>
