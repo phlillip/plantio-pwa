@@ -6,6 +6,11 @@
 }
 
 #plant-visual {
+	opacity: 0;
+}
+
+#plant-visual.growing {
+	opacity: 1;
 	transform: scale(1.25);
 	animation: grow 180s 1;
 }

@@ -157,7 +157,7 @@ let plant = {
     } //Recipe objects
 
 
-    const timewarp = new Recipe('timewarp', .000208, 3, 0.5, 30); // .00208
+    const timewarp = new Recipe('timewarp', .00208, 3, 0.5, 30); // .00208
 
     const filsToms = new Recipe('filsToms', 30, 5, 10, 20);
     const disco = new Recipe('disco', 30, 0.5, 1, 30);
@@ -375,11 +375,12 @@ let plant = {
     if (menuBtn !== null) {
       menuBtn.addEventListener('click', function () {
         document.querySelector('.content-footer.auto').classList.toggle('menu-open');
+        let menuBtnIcon = document.getElementById('menuIcon');
 
         if (document.querySelector('.content-footer.auto').classList.contains('menu-open')) {
-          document.querySelector('#menuIcon').classList.replace('fa-info-circle', 'fa-times');
+          menuBtnIcon.innerHTML = '&times;';
         } else {
-          document.querySelector('#menuIcon').classList.replace('fa-times', 'fa-info-circle');
+          menuBtnIcon.innerHTML = 'i';
         }
       });
     } // 1: Continue
@@ -512,8 +513,10 @@ let plant = {
 
         if (skipButton !== null) {
           skipButton.style.display = "none";
-        } //startRecipe(chosenRecipe)
+        } //start plant animation
 
+
+        document.querySelector('#plant-visual').classList.add('growing'); //startRecipe(chosenRecipe)
 
         startRecipe(chosenRecipe).then((results, anotherval) => {
           console.log("durationLength: " + durationLength);

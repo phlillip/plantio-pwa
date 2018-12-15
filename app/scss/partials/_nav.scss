@@ -80,9 +80,21 @@ header {
   }
 }
 
-#menuIcon svg {
-  width: 2em;
-  height: 2em;
+#menuIcon {
+  font-weight: 900;
+  background: $ruutsGreen;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  line-height: 1.9;
+  color: white;
+  display: inline-block;
+  text-align: center;
+
+  svg {
+    width: 2em;
+    height: 2em;
+  }
 }
 
 nav {
@@ -116,39 +128,43 @@ nav {
 #menuToggle span {
   display: block;
   pointer-events: none;
-  width: calc(2.5em *(5 / 7));
-  left: calc(2.5em / 7);
-  top: calc(2.5em / 7);
-  height: calc(2.5em / 7);
-  margin-bottom: calc(2.5em / 7);
-  position: relative;
-  background: rgba(255,255,255,0.5);
+  width: 1.5em;
+  left: .25em;
+  height: 1px;
+  margin-bottom: .25em;
+  position: absolute;
+  background: rgba(255,255,255,1);
   z-index: 10000;
-  transform-origin: calc(2.5em / 7) 0;
-  transition: transform .5s cubic-bezier(0.77,0.2,0.05,1.0), background .5s cubic-bezier(0.77,0.2,0.05,1.0), opacity .55s ease;
+  transition: all .5s ease;
 }
 
-#menuToggle span:first-child {
-  transform-origin: 0 0;
+#menuToggle span:nth-of-type(1) {
+  top: .75em;
 }
 
-#menuToggle span:nth-last-child(2) {
-  transform-origin: 0 100%;
+#menuToggle span:nth-of-type(2),
+#menuToggle span:nth-of-type(3) {
+  top: 1.25em;
+  opacity: 1;
+}
+
+#menuToggle span:nth-of-type(4) {
+  top: 1.75em;
 }
 
 #menuToggle input:checked ~ span {
-  opacity: 1;
-  transform: rotate(45deg) translate(5px, 0);
-  background: white;
-}
+  &:nth-of-type(1),
+  &:nth-of-type(4) {
+    opacity: 0;
+  }
 
-#menuToggle input:checked ~ span:nth-last-child(3) {
-  opacity: 0;
-  transform: rotate(0deg) scale(0.2, 0.2);
-}
+  &:nth-of-type(2) {
+    transform: rotate(45deg);
+  }
 
-#menuToggle input:checked ~ span:nth-last-child(2) {
-  transform: rotate(-45deg) translate(6px, 0);
+  &:nth-of-type(3) {
+    transform: rotate(-45deg);
+  }
 }
 
 #menu {
