@@ -11,8 +11,8 @@
 ">
 
   <link rel="stylesheet" href="../css/main.css">
-  <link rel="canonical" href="http://localhost:4000/journal/">
-  <link rel="alternate" type="application/rss+xml" title="Journal" href="http://localhost:4000/journal/feed.xml">
+  <link rel="canonical" href="https://plantio.co.uk/journal/">
+  <link rel="alternate" type="application/rss+xml" title="Journal" href="https://plantio.co.uk/journal/feed.xml">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Fanwood+Text" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Rubik:300,700" rel="stylesheet">
@@ -21,7 +21,7 @@
 <body>
 
   <header class="site-header">
-  <span class="logo"><a href="/"><img src="../images/plantio__logo--colour.svg" /></a> Journal</span>
+  <span class="logo"><a href="/"><img src="../images/plantio__logo--colour.svg" /></a></span>
 
   <nav role="navigation">
     <div id="menuToggle">
@@ -41,22 +41,19 @@
   </nav>
 </header>
 
-  <div class="page-content">
-    <div class="wrapper">
-      <div class="home">
+  <div class="journal-panel">
+    <h1>Development Journal</h1>
+<div id="thought-list" class="thoughts">
 
-  <h2>Process</h2>
-  <div id="thought-list" class="thoughts">
-
-    
-    
-    <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
-      <header>
-        <time datetime="" itemprop="datePublished"><span class="time">11:20</span>12-09-2018</time>
-        <h3 itemprop="name headline">Fine tuning the server</h3>
-      </header>
-      <div class="content" itemprop="articleBody">
-        <p>Implementing best practises such as redirecting www to non-www:</p>
+  
+  
+  <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <time datetime="" itemprop="datePublished"><span class="time">11:20</span>12-09-2018</time>
+      <h3 itemprop="name headline">Fine tuning the server</h3>
+    </header>
+    <div class="article-content" itemprop="articleBody">
+      <p>Implementing best practises such as redirecting www to non-www:</p>
 
 <p><code class="highlighter-rouge">$: sudo nano /etc/nginx/sites-available/default</code></p>
 
@@ -76,18 +73,18 @@ listen 443 ssl http2;
 <p><code class="highlighter-rouge">$: sudo nginc -t</code>
 <code class="highlighter-rouge">$: sudo systemctl restart nginx</code></p>
 
-      </div>
-    </article>
-    
-    
-    
-    <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
-      <header>
-        <time datetime="" itemprop="datePublished"><span class="time">21:19</span>12-03-2018</time>
-        <h3 itemprop="name headline">Initial recipe</h3>
-      </header>
-      <div class="content" itemprop="articleBody">
-        <p>So what we’re looking at is how much spray time do we need to be able to penetrate the plant site
+    </div>
+  </article>
+  
+  
+  
+  <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <time datetime="" itemprop="datePublished"><span class="time">21:19</span>12-03-2018</time>
+      <h3 itemprop="name headline">Initial recipe</h3>
+    </header>
+    <div class="article-content" itemprop="articleBody">
+      <p>So what we’re looking at is how much spray time do we need to be able to penetrate the plant site
 and how long does that take to drop off or evaporate.</p>
 
 <p><strong>Light</strong></p>
@@ -132,52 +129,52 @@ Night: 20 on / 999 off</p>
 Flush cycle: 240 on / 480 off<br />
 Notes:  Saturate roots with 0 e.c and 5.8 P.h. Measure the excess water for change in e.c and p.h. Repeat cycle until the e.c and p.h water going in is the same as what is coming out. Flush complete</p>
 
-      </div>
-    </article>
-    
-    
-    
-    <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
-      <header>
-        <time datetime="" itemprop="datePublished"><span class="time">20:48</span>12-03-2018</time>
-        <h3 itemprop="name headline">HTTPS status on droplet</h3>
-      </header>
-      <div class="content" itemprop="articleBody">
-        <p>Having setup https fpr my subdomain pwa.ruuts.co.uk on my droplet, I now need to figure out how to 
+    </div>
+  </article>
+  
+  
+  
+  <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <time datetime="" itemprop="datePublished"><span class="time">20:48</span>12-03-2018</time>
+      <h3 itemprop="name headline">HTTPS status on droplet</h3>
+    </header>
+    <div class="article-content" itemprop="articleBody">
+      <p>Having setup https fpr my subdomain pwa.ruuts.co.uk on my droplet, I now need to figure out how to 
 correctly point the subdomain to it. This will then just leave the issue of allowing access to the 
 ports in use.</p>
 
 <p><img src="media/https-acquired.jpg" alt="HTTPS acquired on droplet" /></p>
 
-      </div>
-    </article>
-    
-    
-    
-    <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
-      <header>
-        <time datetime="" itemprop="datePublished"><span class="time">11:35</span>12-02-2018</time>
-        <h3 itemprop="name headline">Structuring the website</h3>
-      </header>
-      <div class="content" itemprop="articleBody">
-        <p>The PWA will be one part of the Ruuts’ PlantIO offering, sitting alongside the hardware sales,
+    </div>
+  </article>
+  
+  
+  
+  <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <time datetime="" itemprop="datePublished"><span class="time">11:35</span>12-02-2018</time>
+      <h3 itemprop="name headline">Structuring the website</h3>
+    </header>
+    <div class="article-content" itemprop="articleBody">
+      <p>The PWA will be one part of the Ruuts’ PlantIO offering, sitting alongside the hardware sales,
 forum, user account and open source development journal. These all need to be considered in the
 navigation design.</p>
 
 <p><img src="media/site-structure.jpg" alt="Journal notes on potential site structure" /></p>
 
-      </div>
-    </article>
-    
-    
-    
-    <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
-      <header>
-        <time datetime="" itemprop="datePublished"><span class="time">11:24</span>12-02-2018</time>
-        <h3 itemprop="name headline">Landing gear down</h3>
-      </header>
-      <div class="content" itemprop="articleBody">
-        <p>Having looked at Jonathan Starks’ advice for
+    </div>
+  </article>
+  
+  
+  
+  <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <time datetime="" itemprop="datePublished"><span class="time">11:24</span>12-02-2018</time>
+      <h3 itemprop="name headline">Landing gear down</h3>
+    </header>
+    <div class="article-content" itemprop="articleBody">
+      <p>Having looked at Jonathan Starks’ advice for
 <a href="https://jonathanstark.com/building-the-perfect-sales-page">building the perfect sales page</a>, I
 still felt the narrative was too contrived and not direct enough for my target audience.</p>
 
@@ -186,18 +183,18 @@ more aligned with my thoughts. The Google Drive analysis can be seen below.</p>
 
 <p><img src="media/drive-landing-teardown.jpg" alt="Google Drive landing page analysis" /></p>
 
-      </div>
-    </article>
-    
-    
-    
-    <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
-      <header>
-        <time datetime="" itemprop="datePublished"><span class="time">18:49</span>11-28-2018</time>
-        <h3 itemprop="name headline">Domain difficulties</h3>
-      </header>
-      <div class="content" itemprop="articleBody">
-        <p>I need to point the subdomain <code class="highlighter-rouge">pwa.ruuts.co.uk</code> to my DigitalOcean droplet at <code class="highlighter-rouge">142.93.40.131:3000</code>. 
+    </div>
+  </article>
+  
+  
+  
+  <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <time datetime="" itemprop="datePublished"><span class="time">18:49</span>11-28-2018</time>
+      <h3 itemprop="name headline">Domain difficulties</h3>
+    </header>
+    <div class="article-content" itemprop="articleBody">
+      <p>I need to point the subdomain <code class="highlighter-rouge">pwa.ruuts.co.uk</code> to my DigitalOcean droplet at <code class="highlighter-rouge">142.93.40.131:3000</code>. 
 This involves a number of steps:</p>
 <ol>
   <li><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-16-04">Set 
@@ -215,48 +212,48 @@ droplet</a></li>
   <li>Change current port 4444/3000 to port 80</li>
 </ol>
 
-      </div>
-    </article>
-    
-    
-    
-    <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
-      <header>
-        <time datetime="" itemprop="datePublished"><span class="time">17:08</span>11-28-2018</time>
-        <h3 itemprop="name headline">Revisiting the journey map</h3>
-      </header>
-      <div class="content" itemprop="articleBody">
-        <p><img src="media/journey-map-revisited.jpg" alt="Journey map from journal" /></p>
+    </div>
+  </article>
+  
+  
+  
+  <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <time datetime="" itemprop="datePublished"><span class="time">17:08</span>11-28-2018</time>
+      <h3 itemprop="name headline">Revisiting the journey map</h3>
+    </header>
+    <div class="article-content" itemprop="articleBody">
+      <p><img src="media/journey-map-revisited.jpg" alt="Journey map from journal" /></p>
 
 <p><a href="https://photos.app.goo.gl/SW7oiY7DK6MDYnL3A">Video explanation</a></p>
 
-      </div>
-    </article>
-    
-    
-    
-    <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
-      <header>
-        <time datetime="" itemprop="datePublished"><span class="time">22:07</span>11-27-2018</time>
-        <h3 itemprop="name headline">Clone wars</h3>
-      </header>
-      <div class="content" itemprop="articleBody">
-        <p><img src="media/cloning-an-object.png" alt="My revelation about cloning objects." /></p>
+    </div>
+  </article>
+  
+  
+  
+  <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <time datetime="" itemprop="datePublished"><span class="time">22:07</span>11-27-2018</time>
+      <h3 itemprop="name headline">Clone wars</h3>
+    </header>
+    <div class="article-content" itemprop="articleBody">
+      <p><img src="media/cloning-an-object.png" alt="My revelation about cloning objects." /></p>
 
 <p>I finally figured it out.</p>
 
-      </div>
-    </article>
-    
-    
-    
-    <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
-      <header>
-        <time datetime="" itemprop="datePublished"><span class="time">18:17</span>11-25-2018</time>
-        <h3 itemprop="name headline">Adding a progress bar</h3>
-      </header>
-      <div class="content" itemprop="articleBody">
-        <p>One of the most pressing pieces of information—aside from the plant’s health—is the
+    </div>
+  </article>
+  
+  
+  
+  <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <time datetime="" itemprop="datePublished"><span class="time">18:17</span>11-25-2018</time>
+      <h3 itemprop="name headline">Adding a progress bar</h3>
+    </header>
+    <div class="article-content" itemprop="articleBody">
+      <p>One of the most pressing pieces of information—aside from the plant’s health—is the
 amount of time left until the harvest is ready. After considering a circular design for this, I
 decided it would take up too much space and insted went for a horizontal bar in the header, in
 place of the defunct “automatic mode” header.</p>
@@ -266,33 +263,33 @@ place of the defunct “automatic mode” header.</p>
 <p>To improve the status of this display I will adding information overlaying the percentage complete,
 and time until harvest.</p>
 
-      </div>
-    </article>
-    
-    
-    
-    <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
-      <header>
-        <time datetime="" itemprop="datePublished"><span class="time">15:56</span>11-25-2018</time>
-        <h3 itemprop="name headline">Attaining PWA status</h3>
-      </header>
-      <div class="content" itemprop="articleBody">
-        <p>Have now implemented a basic PWA status to pass Google’s <a href="https://developers.google.com/web/tools/lighthouse/">lighthouse</a> audit. Next step is to present an informative offline display presenting all the relevant information immediately to the user.</p>
+    </div>
+  </article>
+  
+  
+  
+  <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <time datetime="" itemprop="datePublished"><span class="time">15:56</span>11-25-2018</time>
+      <h3 itemprop="name headline">Attaining PWA status</h3>
+    </header>
+    <div class="article-content" itemprop="articleBody">
+      <p>Have now implemented a basic PWA status to pass Google’s <a href="https://developers.google.com/web/tools/lighthouse/">lighthouse</a> audit. Next step is to present an informative offline display presenting all the relevant information immediately to the user.</p>
 
 <p><img src="media/pwa-status-achieved.jpg" alt="PWA status achieved" /></p>
 
-      </div>
-    </article>
-    
-    
-    
-    <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
-      <header>
-        <time datetime="" itemprop="datePublished"><span class="time">19:24</span>11-24-2018</time>
-        <h3 itemprop="name headline">Routing implementation</h3>
-      </header>
-      <div class="content" itemprop="articleBody">
-        <p>After reading <a href="https://www.paulirish.com/2009/markup-based-unobtrusive-comprehensive-dom-ready-execution/">Paul Irish’s 
+    </div>
+  </article>
+  
+  
+  
+  <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <time datetime="" itemprop="datePublished"><span class="time">19:24</span>11-24-2018</time>
+      <h3 itemprop="name headline">Routing implementation</h3>
+    </header>
+    <div class="article-content" itemprop="articleBody">
+      <p>After reading <a href="https://www.paulirish.com/2009/markup-based-unobtrusive-comprehensive-dom-ready-execution/">Paul Irish’s 
 post</a> 
 about routing from back in 2009, I have now refactored my code to call only necessary javascript 
 for the page in view.</p>
@@ -300,31 +297,31 @@ for the page in view.</p>
 <p>I still need to implement promises in order to ensure processes are running correctly and in the 
 right order.</p>
 
-      </div>
-    </article>
-    
-    
-    
-    <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
-      <header>
-        <time datetime="" itemprop="datePublished"><span class="time">21:35</span>11-23-2018</time>
-        <h3 itemprop="name headline">Thermostat display</h3>
-      </header>
-      <div class="content" itemprop="articleBody">
-        <p><img src="media/thermostat-display.jpg" alt="Thermostat display sketches from journal" /></p>
+    </div>
+  </article>
+  
+  
+  
+  <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <time datetime="" itemprop="datePublished"><span class="time">21:35</span>11-23-2018</time>
+      <h3 itemprop="name headline">Thermostat display</h3>
+    </header>
+    <div class="article-content" itemprop="articleBody">
+      <p><img src="media/thermostat-display.jpg" alt="Thermostat display sketches from journal" /></p>
 
-      </div>
-    </article>
-    
-    
-    
-    <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
-      <header>
-        <time datetime="" itemprop="datePublished"><span class="time">22:24</span>11-19-2018</time>
-        <h3 itemprop="name headline">Timing is everything</h3>
-      </header>
-      <div class="content" itemprop="articleBody">
-        <p>Having refactored my code with GULP (aside from a few js <code class="highlighter-rouge">undefined</code> issues) I now face the 
+    </div>
+  </article>
+  
+  
+  
+  <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <time datetime="" itemprop="datePublished"><span class="time">22:24</span>11-19-2018</time>
+      <h3 itemprop="name headline">Timing is everything</h3>
+    </header>
+    <div class="article-content" itemprop="articleBody">
+      <p>Having refactored my code with GULP (aside from a few js <code class="highlighter-rouge">undefined</code> issues) I now face the 
 challenge of promises once again—I need to run concurrent processes for the feed, lights and 
 temperature.</p>
 
@@ -339,18 +336,18 @@ if(typeof fn === 'function') {
 
 <p>Back onto promises tomorrow.</p>
 
-      </div>
-    </article>
-    
-    
-    
-    <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
-      <header>
-        <time datetime="" itemprop="datePublished"><span class="time">22:00</span>11-18-2018</time>
-        <h3 itemprop="name headline">(Gulp) Here goes nothing</h3>
-      </header>
-      <div class="content" itemprop="articleBody">
-        <p>It seems plug ‘n’ play technology only reaches a certain level; installing Gulp and running
+    </div>
+  </article>
+  
+  
+  
+  <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <time datetime="" itemprop="datePublished"><span class="time">22:00</span>11-18-2018</time>
+      <h3 itemprop="name headline">(Gulp) Here goes nothing</h3>
+    </header>
+    <div class="article-content" itemprop="articleBody">
+      <p>It seems plug ‘n’ play technology only reaches a certain level; installing Gulp and running
 singular tasks worked just fine however running combined tasks (as is the case with the standard
 default task) breaks between Gulps versions 3 and 4.</p>
 
@@ -365,36 +362,36 @@ default task) breaks between Gulps versions 3 and 4.</p>
   <p>TODO: Segregate js code and rewrite css as sass.</p>
 </blockquote>
 
-      </div>
-    </article>
-    
-    
-    
-    <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
-      <header>
-        <time datetime="" itemprop="datePublished"><span class="time">19:51</span>11-18-2018</time>
-        <h3 itemprop="name headline">Streamlining onboarding</h3>
-      </header>
-      <div class="content" itemprop="articleBody">
-        <p>To make it super clear for the user I have removed the options from the onboarding and replaced
+    </div>
+  </article>
+  
+  
+  
+  <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <time datetime="" itemprop="datePublished"><span class="time">19:51</span>11-18-2018</time>
+      <h3 itemprop="name headline">Streamlining onboarding</h3>
+    </header>
+    <div class="article-content" itemprop="articleBody">
+      <p>To make it super clear for the user I have removed the options from the onboarding and replaced
 them with a single call to action. There is no way to navigate the process or skip it other than to
 follow the linear route. From this solid base I can account for all use cases and add in additional
 options as required with full testing.</p>
 
 <p><img src="media/onboarding-action.jpg" alt="Journal sketches of the reduced onboarding actions." /></p>
 
-      </div>
-    </article>
-    
-    
-    
-    <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
-      <header>
-        <time datetime="" itemprop="datePublished"><span class="time">16:18</span>11-18-2018</time>
-        <h3 itemprop="name headline">Deployment without enjoyment</h3>
-      </header>
-      <div class="content" itemprop="articleBody">
-        <p>After my early confusing tests with <a href="https://firebase.google.com/">Firebase</a>, I was reluctant to
+    </div>
+  </article>
+  
+  
+  
+  <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <time datetime="" itemprop="datePublished"><span class="time">16:18</span>11-18-2018</time>
+      <h3 itemprop="name headline">Deployment without enjoyment</h3>
+    </header>
+    <div class="article-content" itemprop="articleBody">
+      <p>After my early confusing tests with <a href="https://firebase.google.com/">Firebase</a>, I was reluctant to
 try <a href="https://cloud.google.com/appengine/">Google App Engine</a> however I had early success, managing to sucessfully
 deploy that which failed on <a href="https://heroku.com">Heroku</a>. Alas, it was not to be. After discussion
 with Al it seems that some of these cloud platforms do not play nicely with socket.io or using
@@ -404,35 +401,35 @@ various ports.</p>
 Ocean</a> and their droplets—scalable virtual machines run on 
 linux with a lot of freedom.</p>
 
-      </div>
-    </article>
-    
-    
-    
-    <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
-      <header>
-        <time datetime="" itemprop="datePublished"><span class="time">16:11</span>11-18-2018</time>
-        <h3 itemprop="name headline">Creating automatic mode</h3>
-      </header>
-      <div class="content" itemprop="articleBody">
-        <p>Having initially created the prototype with manual mode implemented, it is now important to 
+    </div>
+  </article>
+  
+  
+  
+  <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <time datetime="" itemprop="datePublished"><span class="time">16:11</span>11-18-2018</time>
+      <h3 itemprop="name headline">Creating automatic mode</h3>
+    </header>
+    <div class="article-content" itemprop="articleBody">
+      <p>Having initially created the prototype with manual mode implemented, it is now important to 
 investigate automatic mode and how the user will interact. I have substituted the manual controls 
 for a slide up status panel which will provide animated, up to date detailed information about the 
 plant. The thermostat is now also in place (albeit styled roughly) and it successfully reads from 
 the chosen recipe to reach a target temperature and maintain it.</p>
 
-      </div>
-    </article>
-    
-    
-    
-    <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
-      <header>
-        <time datetime="" itemprop="datePublished"><span class="time">16:09</span>11-18-2018</time>
-        <h3 itemprop="name headline">Constructing the recipes</h3>
-      </header>
-      <div class="content" itemprop="articleBody">
-        <p>I have now rewritten the recipe function using an object constructor, with one eye on moving
+    </div>
+  </article>
+  
+  
+  
+  <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <time datetime="" itemprop="datePublished"><span class="time">16:09</span>11-18-2018</time>
+      <h3 itemprop="name headline">Constructing the recipes</h3>
+    </header>
+    <div class="article-content" itemprop="articleBody">
+      <p>I have now rewritten the recipe function using an object constructor, with one eye on moving
 towards json files for user created recipes:</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//Recipe constructor
 function Recipe(name, duration, light, feed, temperature)
@@ -445,35 +442,35 @@ function Recipe(name, duration, light, feed, temperature)
 }
 </code></pre></div></div>
 
-      </div>
-    </article>
-    
-    
-    
-    <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
-      <header>
-        <time datetime="" itemprop="datePublished"><span class="time">15:45</span>11-18-2018</time>
-        <h3 itemprop="name headline">Promises promises promises</h3>
-      </header>
-      <div class="content" itemprop="articleBody">
-        <p>After struggling to implement callbacks I finally managed to setup a javascript
+    </div>
+  </article>
+  
+  
+  
+  <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <time datetime="" itemprop="datePublished"><span class="time">15:45</span>11-18-2018</time>
+      <h3 itemprop="name headline">Promises promises promises</h3>
+    </header>
+    <div class="article-content" itemprop="articleBody">
+      <p>After struggling to implement callbacks I finally managed to setup a javascript
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">promise</a>
 in the pwa to ensure the socket.io connection is made before the recipe function begins. I am still
 utilising fake <a href="https://javascript.info/settimeout-setinterval">scheduling</a> for the onboarding 
 recipe to create a sense of time.</p>
 
-      </div>
-    </article>
-    
-    
-    
-    <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
-      <header>
-        <time datetime="" itemprop="datePublished"><span class="time">15:28</span>11-18-2018</time>
-        <h3 itemprop="name headline">Structuring my build process</h3>
-      </header>
-      <div class="content" itemprop="articleBody">
-        <p>Writing everything by hand is fine until complexity creeps in, now I need to implement a 
+    </div>
+  </article>
+  
+  
+  
+  <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <time datetime="" itemprop="datePublished"><span class="time">15:28</span>11-18-2018</time>
+      <h3 itemprop="name headline">Structuring my build process</h3>
+    </header>
+    <div class="article-content" itemprop="articleBody">
+      <p>Writing everything by hand is fine until complexity creeps in, now I need to implement a 
 build system such as  <a href="https://gulpjs.com/">Gulp</a> or <a href="https://webpack.js.org/">Webpack</a> to take 
 some of the repetitive tasks away from me and ensure my app works across browsers and devices.</p>
 
@@ -481,18 +478,18 @@ some of the repetitive tasks away from me and ensure my app works across browser
 <a href="https://webpack.js.org/guides/asset-management/">Asset Management</a>. I need to decide quickly how 
 long to spend debugging this, or to move onto Gulp.</p>
 
-      </div>
-    </article>
-    
-    
-    
-    <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
-      <header>
-        <time datetime="" itemprop="datePublished"><span class="time">14:32</span>11-18-2018</time>
-        <h3 itemprop="name headline">Setting up a production environment</h3>
-      </header>
-      <div class="content" itemprop="articleBody">
-        <p>Having successfully deployed a working build of my app to a Digital Ocean droplet, I now need to 
+    </div>
+  </article>
+  
+  
+  
+  <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <time datetime="" itemprop="datePublished"><span class="time">14:32</span>11-18-2018</time>
+      <h3 itemprop="name headline">Setting up a production environment</h3>
+    </header>
+    <div class="article-content" itemprop="articleBody">
+      <p>Having successfully deployed a working build of my app to a Digital Ocean droplet, I now need to 
 set up a production environment which allows the app tyo run as a service in the background.</p>
 
 <p>After looking at <a href="https://github.com/foreverjs/forever">Forever</a> and an enticing solution by 
@@ -505,44 +502,44 @@ set up a production environment which allows the app tyo run as a service in the
   <p>TODO: Set up PM2 for non-root user with custom domina and port handling.</p>
 </blockquote>
 
-      </div>
-    </article>
-    
-    
-    
-    <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
-      <header>
-        <time datetime="" itemprop="datePublished"><span class="time">21:18</span>11-16-2018</time>
-        <h3 itemprop="name headline">Onboarding Study</h3>
-      </header>
-      <div class="content" itemprop="articleBody">
-        <p><img src="media/onboarding-study.jpg" alt="Initial onboarding study from journal." /></p>
+    </div>
+  </article>
+  
+  
+  
+  <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <time datetime="" itemprop="datePublished"><span class="time">21:18</span>11-16-2018</time>
+      <h3 itemprop="name headline">Onboarding Study</h3>
+    </header>
+    <div class="article-content" itemprop="articleBody">
+      <p><img src="media/onboarding-study.jpg" alt="Initial onboarding study from journal." /></p>
 
-      </div>
-    </article>
-    
-    
-    
-    <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
-      <header>
-        <time datetime="" itemprop="datePublished"><span class="time">21:19</span>11-14-2018</time>
-        <h3 itemprop="name headline">Initial Experience</h3>
-      </header>
-      <div class="content" itemprop="articleBody">
-        <p><img src="media/initial-experience.jpg" alt="Initial experience flow from journal" /></p>
+    </div>
+  </article>
+  
+  
+  
+  <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <time datetime="" itemprop="datePublished"><span class="time">21:19</span>11-14-2018</time>
+      <h3 itemprop="name headline">Initial Experience</h3>
+    </header>
+    <div class="article-content" itemprop="articleBody">
+      <p><img src="media/initial-experience.jpg" alt="Initial experience flow from journal" /></p>
 
-      </div>
-    </article>
-    
-    
-    
-    <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
-      <header>
-        <time datetime="" itemprop="datePublished"><span class="time">12:00</span>11-11-2018</time>
-        <h3 itemprop="name headline">Google App Engine</h3>
-      </header>
-      <div class="content" itemprop="articleBody">
-        <p>Having tried a number of cloud application platforms such as Heroku, OpenShift and DigitalOcean, Google App Engine was surprisingly the most user friendly.</p>
+    </div>
+  </article>
+  
+  
+  
+  <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <time datetime="" itemprop="datePublished"><span class="time">12:00</span>11-11-2018</time>
+      <h3 itemprop="name headline">Google App Engine</h3>
+    </header>
+    <div class="article-content" itemprop="articleBody">
+      <p>Having tried a number of cloud application platforms such as Heroku, OpenShift and DigitalOcean, Google App Engine was surprisingly the most user friendly.</p>
 
 <p><strong>Quick setup instructions</strong></p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>λ git clone [remote_repository_url]
@@ -552,20 +549,20 @@ set up a production environment which allows the app tyo run as a service in the
 λ gcloud app deploy
 </code></pre></div></div>
 
-      </div>
-    </article>
-    
-    
-    
-    
-    
-    <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
-      <header>
-        <time datetime="" itemprop="datePublished"><span class="time">12:00</span>07-25-2018</time>
-        <h3 itemprop="name headline">The design of Hey Duggee</h3>
-      </header>
-      <div class="content" itemprop="articleBody">
-        <p><strong>Whilst spending a weekend in an Airbnb with four of my closest friends (two couples - each with a small child) I was searching for joy amongst the sleepless nights on a communal settee. Hey Duggee was that joy.</strong></p>
+    </div>
+  </article>
+  
+  
+  
+  
+  
+  <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <time datetime="" itemprop="datePublished"><span class="time">12:00</span>07-25-2018</time>
+      <h3 itemprop="name headline">The design of Hey Duggee</h3>
+    </header>
+    <div class="article-content" itemprop="articleBody">
+      <p><strong>Whilst spending a weekend in an Airbnb with four of my closest friends (two couples - each with a small child) I was searching for joy amongst the sleepless nights on a communal settee. Hey Duggee was that joy.</strong></p>
 
 <p><img src="media/hey-duggee.jpg" alt="Hey Duggee" /></p>
 
@@ -598,37 +595,37 @@ set up a production environment which allows the app tyo run as a service in the
   </li>
 </ol>
 
-      </div>
-    </article>
-    
-    
-    
-    <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
-      <header>
-        <time datetime="" itemprop="datePublished"><span class="time">12:00</span>07-24-2018</time>
-        <h3 itemprop="name headline">Modular Design</h3>
-      </header>
-      <div class="content" itemprop="articleBody">
-        <p><img src="media/modular-hardware-design.jpg" alt="Journal sketches showing consideration of modular design for hardware" /></p>
+    </div>
+  </article>
+  
+  
+  
+  <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <time datetime="" itemprop="datePublished"><span class="time">12:00</span>07-24-2018</time>
+      <h3 itemprop="name headline">Modular Design</h3>
+    </header>
+    <div class="article-content" itemprop="articleBody">
+      <p><img src="media/modular-hardware-design.jpg" alt="Journal sketches showing consideration of modular design for hardware" /></p>
 
-      </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
-      <header>
-        <time datetime="" itemprop="datePublished"><span class="time">12:00</span>06-13-2018</time>
-        <h3 itemprop="name headline">Survey creation</h3>
-      </header>
-      <div class="content" itemprop="articleBody">
-        <p>The three underlying questions I want answers to are:</p>
+    </div>
+  </article>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <time datetime="" itemprop="datePublished"><span class="time">12:00</span>06-13-2018</time>
+      <h3 itemprop="name headline">Survey creation</h3>
+    </header>
+    <div class="article-content" itemprop="articleBody">
+      <p>The three underlying questions I want answers to are:</p>
 <ol>
   <li>Why don’t more people grow food?</li>
   <li>What is the joy in growing?</li>
@@ -637,35 +634,35 @@ set up a production environment which allows the app tyo run as a service in the
 
 <p><img src="media/survey-creation.jpg" alt="Flowchart of initial user survey design." /></p>
 
-      </div>
-    </article>
-    
-    
-    
-    
-    
-    <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
-      <header>
-        <time datetime="" itemprop="datePublished"><span class="time">12:00</span>06-10-2018</time>
-        <h3 itemprop="name headline">GUI thoughts</h3>
-      </header>
-      <div class="content" itemprop="articleBody">
-        <p><img src="media/gui-thoughts.jpg" alt="Initial UI sketches from journal." /></p>
+    </div>
+  </article>
+  
+  
+  
+  
+  
+  <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <time datetime="" itemprop="datePublished"><span class="time">12:00</span>06-10-2018</time>
+      <h3 itemprop="name headline">GUI thoughts</h3>
+    </header>
+    <div class="article-content" itemprop="articleBody">
+      <p><img src="media/gui-thoughts.jpg" alt="Initial UI sketches from journal." /></p>
 
-      </div>
-    </article>
-    
-    
-    
-    
-    
-    <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
-      <header>
-        <time datetime="" itemprop="datePublished"><span class="time">12:00</span>06-08-2018</time>
-        <h3 itemprop="name headline">App requirements</h3>
-      </header>
-      <div class="content" itemprop="articleBody">
-        <ul>
+    </div>
+  </article>
+  
+  
+  
+  
+  
+  <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <time datetime="" itemprop="datePublished"><span class="time">12:00</span>06-08-2018</time>
+      <h3 itemprop="name headline">App requirements</h3>
+    </header>
+    <div class="article-content" itemprop="articleBody">
+      <ul>
   <li>Run LED lighting to a prescribed program</li>
   <li>Run aeroponics to a prescribed program</li>
   <li>Wirelessly interface between hardware &amp; software</li>
@@ -681,191 +678,186 @@ set up a production environment which allows the app tyo run as a service in the
   <li>Option to create new recipes</li>
 </ul>
 
-      </div>
-    </article>
-    
-    
-    
-    <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
-      <header>
-        <time datetime="" itemprop="datePublished"><span class="time">12:00</span>06-07-2018</time>
-        <h3 itemprop="name headline">Proof of concept</h3>
-      </header>
-      <div class="content" itemprop="articleBody">
-        <p><img src="media/proof-of-concept.jpg" alt="Journal sketch showing initial proof of concept." /></p>
+    </div>
+  </article>
+  
+  
+  
+  <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <time datetime="" itemprop="datePublished"><span class="time">12:00</span>06-07-2018</time>
+      <h3 itemprop="name headline">Proof of concept</h3>
+    </header>
+    <div class="article-content" itemprop="articleBody">
+      <p><img src="media/proof-of-concept.jpg" alt="Journal sketch showing initial proof of concept." /></p>
 
-      </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    
-    <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
-      <header>
-        <time datetime="" itemprop="datePublished"><span class="time">12:00</span>06-04-2018</time>
-        <h3 itemprop="name headline">Final Major Project</h3>
-      </header>
-      <div class="content" itemprop="articleBody">
-        <p>For a long time I have waited for the opportunity to begin my food project; I managed to investigate a small part of it during the co-creative module with the production of Fūdogotchi, alongside Carl Harrisson.</p>
+    </div>
+  </article>
+  
+  
+  
+  
+  
+  
+  
+  <article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <time datetime="" itemprop="datePublished"><span class="time">12:00</span>06-04-2018</time>
+      <h3 itemprop="name headline">Final Major Project</h3>
+    </header>
+    <div class="article-content" itemprop="articleBody">
+      <p>For a long time I have waited for the opportunity to begin my food project; I managed to investigate a small part of it during the co-creative module with the production of Fūdogotchi, alongside Carl Harrisson.</p>
 
 <p><img src="media/initial-brainstorm.jpg" alt="Initial brainstorm for &quot;Fudogotchi 2&quot;" /></p>
 
-      </div>
-    </article>
-    
-    
-  </div>
-
-  <ul id="post-list" class="post-list">
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <li>
-      <span class="post-meta">Oct 2, 2018</span>
-      <h2><a class="post-link" href="/journal/fmp/2018/10/02/fmp-marketing-and-dissemination-plan.html">Marketing & Dissemination Plan</a></h2>
-      <p>Falmouth University | MA Creative App Development | Final Major Project | PlantIO | November 2019 | Phillip David Penny | PP196285</p>
-    </li>
-    
-    
-    
-    
-    
-    
-    
-    <li>
-      <span class="post-meta">Jul 17, 2018</span>
-      <h2><a class="post-link" href="/journal/fmp/2018/07/17/fmp-proposal.html">Project Proposal</a></h2>
-      <p>Falmouth University | MA Creative App Development | Final Major Project | PlantIO | July 2019 | Phillip David Penny | PP196285</p>
-    </li>
-    
-    
-    
-    <li>
-      <span class="post-meta">Jun 18, 2018</span>
-      <h2><a class="post-link" href="/journal/fmp/2018/06/18/fmp-peer-reviewed-papers.html">Peer Reviewed Papers</a></h2>
-      <p>What do the experts say?</p>
-    </li>
-    
-    
-    
-    <li>
-      <span class="post-meta">Jun 14, 2018</span>
-      <h2><a class="post-link" href="/journal/fmp/2018/06/14/fmp-competitor-analysis.html">Competitor Analysis</a></h2>
-      <p>Who is doing what in this space?</p>
-    </li>
-    
-    
-    
-    
-    
-    <li>
-      <span class="post-meta">Jun 12, 2018</span>
-      <h2><a class="post-link" href="/journal/fmp/2018/06/12/fmp-user-focused-research.html">User focused research</a></h2>
-      <p>Putting the user first</p>
-    </li>
-    
-    
-    
-    
-    
-    <li>
-      <span class="post-meta">Jun 9, 2018</span>
-      <h2><a class="post-link" href="/journal/fmp/2018/06/09/fmp-user-engagement.html">User engagement</a></h2>
-      <p>How to get people hooked</p>
-    </li>
-    
-    
-    
-    
-    
-    
-    
-    <li>
-      <span class="post-meta">Jun 6, 2018</span>
-      <h2><a class="post-link" href="/journal/fmp/2018/06/06/fmp-goals.html">Project goals</a></h2>
-      <p>What am I trying to achieve?</p>
-    </li>
-    
-    
-    
-    <li>
-      <span class="post-meta">Jun 5, 2018</span>
-      <h2><a class="post-link" href="/journal/fmp/2018/06/05/fmp-research.html">Research methods</a></h2>
-      <p>Understanding approaches</p>
-    </li>
-    
-    
-    
-    
-  </ul>
-
-
-</div>
-
-
-
-</div>
-
-
-
-
-</div>
     </div>
-  </div>
+  </article>
+  
+  
+</div>
 
-  <footer class="site-footer">
-  <p style="font-family: sans-serif">Plant<strong>I<span style="color: #a8c924">O</span></strong></p>
-</footer>
+<ul id="post-list" class="post-list">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <li>
+    <span class="post-meta">Oct 2, 2018</span>
+    <h2><a class="post-link" href="/journal/fmp/2018/10/02/fmp-marketing-and-dissemination-plan.html">Marketing & Dissemination Plan</a></h2>
+    <p>Falmouth University | MA Creative App Development | Final Major Project | PlantIO | November 2019 | Phillip David Penny | PP196285</p>
+  </li>
+  
+  
+  
+  
+  
+  
+  
+  <li>
+    <span class="post-meta">Jul 17, 2018</span>
+    <h2><a class="post-link" href="/journal/fmp/2018/07/17/fmp-proposal.html">Project Proposal</a></h2>
+    <p>Falmouth University | MA Creative App Development | Final Major Project | PlantIO | July 2019 | Phillip David Penny | PP196285</p>
+  </li>
+  
+  
+  
+  <li>
+    <span class="post-meta">Jun 18, 2018</span>
+    <h2><a class="post-link" href="/journal/fmp/2018/06/18/fmp-peer-reviewed-papers.html">Peer Reviewed Papers</a></h2>
+    <p>What do the experts say?</p>
+  </li>
+  
+  
+  
+  <li>
+    <span class="post-meta">Jun 14, 2018</span>
+    <h2><a class="post-link" href="/journal/fmp/2018/06/14/fmp-competitor-analysis.html">Competitor Analysis</a></h2>
+    <p>Who is doing what in this space?</p>
+  </li>
+  
+  
+  
+  
+  
+  <li>
+    <span class="post-meta">Jun 12, 2018</span>
+    <h2><a class="post-link" href="/journal/fmp/2018/06/12/fmp-user-focused-research.html">User focused research</a></h2>
+    <p>Putting the user first</p>
+  </li>
+  
+  
+  
+  
+  
+  <li>
+    <span class="post-meta">Jun 9, 2018</span>
+    <h2><a class="post-link" href="/journal/fmp/2018/06/09/fmp-user-engagement.html">User engagement</a></h2>
+    <p>How to get people hooked</p>
+  </li>
+  
+  
+  
+  
+  
+  
+  
+  <li>
+    <span class="post-meta">Jun 6, 2018</span>
+    <h2><a class="post-link" href="/journal/fmp/2018/06/06/fmp-goals.html">Project goals</a></h2>
+    <p>What am I trying to achieve?</p>
+  </li>
+  
+  
+  
+  <li>
+    <span class="post-meta">Jun 5, 2018</span>
+    <h2><a class="post-link" href="/journal/fmp/2018/06/05/fmp-research.html">Research methods</a></h2>
+    <p>Understanding approaches</p>
+  </li>
+  
+  
+  
+  
+</ul>
+
+
+
+
+
+
+</div>
+
+
+
+
+</div>
+  </div>
 
 </body>
 

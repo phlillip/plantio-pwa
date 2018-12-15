@@ -1,4 +1,17 @@
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.journal-panel {
+  padding: 4em 0 1em;
+  background: rgba(0,0,0,0.9);
+  color: white;
+}
 /* --- Thoughts list --- */
+
 #thought-list {
   display: flex;
   flex-wrap: wrap;
@@ -6,52 +19,70 @@
 
   article {
     box-sizing: border-box;
+    border: 1px solid black;
     padding: 1em;
     width: calc(50% - 5em);
     margin: 1em;
     color: #181818;
     background: #fff;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     @media only screen and (max-width: 798px) {
       width: calc(100% - 2em);
       min-width: calc(100% - 2em);
     }
 
-    p a {
-      color: #7cafc2;
-    }
-  }
-
-  header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1em;
-
-    h3 {
-      line-height: 1;
-      margin-bottom: 0;
-    }
-
-    time {
-      font-family: monospace;
-      font-size: .75em;
-      margin-bottom: 0;
-      background: #a8c924;
-      color: #282828;
+    header {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      height: 3rem;
-      width: 6rem;
-      margin-right: 1rem;
-      @media only screen and (max-width: 798px) {
-        min-width: 5rem;
+      justify-content: flex-start;
+      margin-bottom: 1em;
+      background: white;
+      border: none;
+
+      h3 {
+        line-height: 1;
+        margin-bottom: 0;
+        font-family: "Rubik", sans-serif;
+        line-height: .9;
+        text-transform: uppercase;
+        text-align: left;
+        padding: 0;
+        font-size: 20px;
+        font-weight: 700;
       }
 
-      .time {
-        font-size: 1.5em;
+      time {
+        font-family: monospace;
+        font-size: .75em;
+        margin-bottom: 0;
+        background: #a8c924;
+        color: #282828;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 3rem;
+        width: 6rem;
+        margin-right: 1rem;
+        @media only screen and (max-width: 798px) {
+          min-width: 5rem;
+        }
+
+        .time {
+          font-size: 1.5em;
+        }
       }
+    }
+
+    p {
+      text-align: left;
+
+      a {
+        color: #7cafc2;
+      }
+    }
+
+    .article-content p {
+      text-align: left;
     }
   }
 
@@ -63,5 +94,11 @@
     color: #d8d8d8;
     border: 1px solid #d8d8d8;
     text-align: left;
+  }
+
+  .highlighter-rouge {
+    background: rgba(0,0,0,0.9);
+    color: #d8d8d8;
+    font-size: .9em;
   }
 }
