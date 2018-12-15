@@ -506,7 +506,7 @@ let plant = {
       if (skipButton !== null) {
         skipButton.style.display = "none";
       }
-      document.querySelector('.gamification-screen').style.display = 'block';
+      document.querySelector('.gamification-screen').style.display = 'flex';
     }
     if (collectHarvestButton !== null) {
       collectHarvestButton.addEventListener('click', collectHarvest)

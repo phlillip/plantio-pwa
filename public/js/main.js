@@ -540,7 +540,7 @@ let plant = {
         skipButton.style.display = "none";
       }
 
-      document.querySelector('.gamification-screen').style.display = 'block';
+      document.querySelector('.gamification-screen').style.display = 'flex';
     }
 
     if (collectHarvestButton !== null) {
