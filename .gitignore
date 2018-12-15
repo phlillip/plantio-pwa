@@ -80,4 +80,8 @@ typings/
 # FuseBox cache
 .fusebox/
 
+# Jekyll generated files
+.jekyll-metadata
+_site
+
 # End of https://www.gitignore.io/api/node
