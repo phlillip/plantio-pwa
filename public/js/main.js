@@ -26,6 +26,7 @@ let socket = null; // Connect to CloudPlantIO
 var connectPlantIO = function () {
   connectButton.innerHTML = "&hellip;connecting&hellip;";
   connectButton.classList.add("connection-animation");
+  document.querySelector('.lds-ripple').classList.add('show');
   return new Promise(function (resolve, reject) {
     console.log('connecting to CloudPlantIO...');
     document.getElementById('shield').classList.toggle('hidden');
@@ -55,7 +56,7 @@ var connectPlantIO = function () {
       setTimeout(function tick() {
         connectButton.classList.remove("connection-animation");
         console.log('Connected!');
-      }, 3000);
+      }, 2000);
       resolve({
         connection: 'active'
       });
@@ -432,8 +433,9 @@ let plant = {
           console.log("Chosen seed: " + chosenSeed + ",\n" + "Chosen recipe: " + chosenRecipe.name + ",\n" + "Recipe length: " + chosenRecipe.duration + ",\n" + "Recipe length in milliseconds: " + chosenRecipe.durationLength + ",\n" + "Recipe feed: " + chosenRecipe.feed + ",\n" + "Connection: " + socket + ",\n");
           setTimeout(function tick() {
             connectButton.innerHTML = "Continue";
+            document.querySelector('.lds-ripple').classList.remove('show');
             connectButton.classList.add('continue');
-          }, 1000);
+          }, 2000);
         });
       }
     }

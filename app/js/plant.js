@@ -397,8 +397,9 @@ let plant = {
           setTimeout(
             function tick() {
               connectButton.innerHTML = "Continue";
+              document.querySelector('.lds-ripple').classList.remove('show');
               connectButton.classList.add('continue')
-            }, 1000);
+            }, 2000);
         })
       }
 

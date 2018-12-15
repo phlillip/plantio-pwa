@@ -8,6 +8,7 @@ let socket = null;
 var connectPlantIO = function() {
   connectButton.innerHTML = "&hellip;connecting&hellip;";
   connectButton.classList.add("connection-animation")
+  document.querySelector('.lds-ripple').classList.add('show');
 
   return new Promise(function(resolve, reject) {
 
@@ -40,7 +41,7 @@ var connectPlantIO = function() {
         function tick() {
           connectButton.classList.remove("connection-animation")
           console.log('Connected!');
-        }, 3000);
+        }, 2000);
 
       resolve({
         connection: 'active'
