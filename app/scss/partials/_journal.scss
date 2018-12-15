@@ -1,0 +1,67 @@
+/* --- Thoughts list --- */
+#thought-list {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+
+  article {
+    box-sizing: border-box;
+    padding: 1em;
+    width: calc(50% - 5em);
+    margin: 1em;
+    color: #181818;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    @media only screen and (max-width: 798px) {
+      width: calc(100% - 2em);
+      min-width: calc(100% - 2em);
+    }
+
+    p a {
+      color: #7cafc2;
+    }
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+
+    h3 {
+      line-height: 1;
+      margin-bottom: 0;
+    }
+
+    time {
+      font-family: monospace;
+      font-size: .75em;
+      margin-bottom: 0;
+      background: #a8c924;
+      color: #282828;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 3rem;
+      width: 6rem;
+      margin-right: 1rem;
+      @media only screen and (max-width: 798px) {
+        min-width: 5rem;
+      }
+
+      .time {
+        font-size: 1.5em;
+      }
+    }
+  }
+
+  blockquote p {
+    font-family: monospace;
+    font-size: .75rem;
+    margin: 1rem 0;
+    padding: .5em;
+    color: #d8d8d8;
+    border: 1px solid #d8d8d8;
+    text-align: left;
+  }
+}

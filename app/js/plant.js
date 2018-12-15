@@ -91,7 +91,7 @@ let plant = {
     }
 
     //Recipe objects
-    const timewarp = new Recipe('timewarp', .00208, 3, 0.5, 30); // .00208
+    const timewarp = new Recipe('timewarp', .000208, 3, 0.5, 30); // .00208
     const filsToms = new Recipe('filsToms', 30, 5, 10, 20);
     const disco = new Recipe('disco', 30, 0.5, 1, 30);
     const temp = new Recipe('temp', 30, 15, 15, 10);

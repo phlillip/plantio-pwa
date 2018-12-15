@@ -1,0 +1,23 @@
+<article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="name headline">Timing is everything</h1>
+    <p class="post-meta"><time datetime="2018-11-19T22:24:03+00:00" itemprop="datePublished">Nov 19, 2018</time></p>
+  </header>
+  <div class="content" itemprop="articleBody">
+    <p>Having refactored my code with GULP (aside from a few js <code class="highlighter-rouge">undefined</code> issues) I now face the 
+challenge of promises once again—I need to run concurrent processes for the feed, lights and 
+temperature.</p>
+
+<p>I did attempt to refactor the code so a single function powers each element based on passed through 
+parameters, however after getting as far as:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var fn = window[settingsfunctionName];
+if(typeof fn === 'function') {
+  fn();
+}
+</code></pre></div></div>
+<p>I decided to refocus on the basics and just get it working.</p>
+
+<p>Back onto promises tomorrow.</p>
+
+  </div>
+</article>

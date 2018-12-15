@@ -1,0 +1,28 @@
+<article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="name headline">Fine tuning the server</h1>
+    <p class="post-meta"><time datetime="2018-12-09T11:20:00+00:00" itemprop="datePublished">Dec 9, 2018</time></p>
+  </header>
+  <div class="content" itemprop="articleBody">
+    <p>Implementing best practises such as redirecting www to non-www:</p>
+
+<p><code class="highlighter-rouge">$: sudo nano /etc/nginx/sites-available/default</code></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>server {
+    if ($host = www.plantio.co.uk) {
+        return 301 https://plantio.co.uk$request_uri
+    }
+}
+</code></pre></div></div>
+
+<p>and using HTTP2:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>listen [::]:443 ssl http2 ipv6only=on;
+listen 443 ssl http2;
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">$: sudo nginc -t</code>
+<code class="highlighter-rouge">$: sudo systemctl restart nginx</code></p>
+
+  </div>
+</article>

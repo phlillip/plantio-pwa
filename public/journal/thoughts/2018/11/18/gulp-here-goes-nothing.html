@@ -1,0 +1,23 @@
+<article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="name headline">(Gulp) Here goes nothing</h1>
+    <p class="post-meta"><time datetime="2018-11-18T22:00:12+00:00" itemprop="datePublished">Nov 18, 2018</time></p>
+  </header>
+  <div class="content" itemprop="articleBody">
+    <p>It seems plug ‘n’ play technology only reaches a certain level; installing Gulp and running
+singular tasks worked just fine however running combined tasks (as is the case with the standard
+default task) breaks between Gulps versions 3 and 4.</p>
+
+<p>For clarification, the old way of writing a default task:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gulp.task('default', ['sass', 'js', 'watch']);
+</code></pre></div></div>
+<p>Must now be written like this:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gulp.task('default', gulp.series(gulp.parallel('sass', 'js', 'watch')))
+</code></pre></div></div>
+<blockquote>
+  <p>TODO: Segregate js code and rewrite css as sass.</p>
+</blockquote>
+
+  </div>
+</article>

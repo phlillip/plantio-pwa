@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Development Journal</title>
+    <description>As part of my MA in Creative App Development, I will be keeping this weekly blog to increase self-awareness and understanding as I develop my skills.
+</description>
+    <link>http://localhost:4000/journal/</link>
+    <atom:link href="http://localhost:4000/journal/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 09 Dec 2018 11:27:07 +0000</pubDate>
+    <lastBuildDate>Sun, 09 Dec 2018 11:27:07 +0000</lastBuildDate>
+    <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>Fine tuning the server</title>
+        <description>&lt;p&gt;Implementing best practises such as redirecting www to non-www:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$: sudo nano /etc/nginx/sites-available/default&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;server {
+    if ($host = www.plantio.co.uk) {
+        return 301 https://plantio.co.uk$request_uri
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;and using HTTP2:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;listen [::]:443 ssl http2 ipv6only=on;
+listen 443 ssl http2;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$: sudo nginc -t&lt;/code&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;$: sudo systemctl restart nginx&lt;/code&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 09 Dec 2018 11:20:00 +0000</pubDate>
+        <link>http://localhost:4000/journal/thoughts/2018/12/09/fine-tuning-the-server.html</link>
+        <guid isPermaLink="true">http://localhost:4000/journal/thoughts/2018/12/09/fine-tuning-the-server.html</guid>
+        
+        
+        <category>thoughts</category>
+        
+      </item>
+    
+      <item>
+        <title>Initial recipe</title>
+        <description>&lt;p&gt;So what we’re looking at is how much spray time do we need to be able to penetrate the plant site
+and how long does that take to drop off or evaporate.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Light&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We can avoid green light as the plants leaves reflect that due to its green colour. We can use red and blue predominantly. From germination through vegetation we can use mainly blue light. Flowering or  fruiting will be mainly red spectrum.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;But there is also a trick to be played to wake the plants up and help them go to sleep quicker too
+I think it’s only blue light in the morning and then red toward the end of the day cycle I’ll have to research that
+to make sure I’m right&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Feed&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Germination&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+Stage: 1&lt;br /&gt;
+Day: 60 on / 999 off&lt;br /&gt;
+Night: 30 on / 999 off&lt;br /&gt;
+Notes: We need to apply maths here for evaporation times of water at different temperatures.&lt;/p&gt;
+
+&lt;p&gt;Stage: 2 &lt;br /&gt;
+Notes: Reduce ON periods according to the growth ratio of the root mass.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Vegetation&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+Stage: 1&lt;br /&gt;
+Day: 10 on / 480 off&lt;br /&gt;
+Night: 10 on / 999 off&lt;br /&gt;
+Notes: Roots don’t like to be sat in excess water especially at night when they are not photosynthesizing.&lt;/p&gt;
+
+&lt;p&gt;Stage: 2 &lt;br /&gt;
+Notes: Reduce the OFF period according to the root mass of the plant. We want a balanced even coverage of atomisation to the root mass but not to saturate and damage secondary root hairs.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Flowering / Fruiting&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+Stage: 1&lt;br /&gt;
+Day: 20 on / 240 off&lt;br /&gt;
+Night: 20 on / 999 off&lt;br /&gt;
+Notes: (We must consider when flowering or fruiting, often is the case that the environment will be warmer so evaporation rates are faster) adjust off period according to ambient temperature of the root mass chamber.&lt;/p&gt;
+
+&lt;p&gt;Stage: 2&lt;br /&gt;
+Day: 20 on / 120 off&lt;br /&gt;
+Night: 20 on / 999 off&lt;/p&gt;
+
+&lt;p&gt;Stage: 3&lt;br /&gt;
+Flush cycle: 240 on / 480 off&lt;br /&gt;
+Notes:  Saturate roots with 0 e.c and 5.8 P.h. Measure the excess water for change in e.c and p.h. Repeat cycle until the e.c and p.h water going in is the same as what is coming out. Flush complete&lt;/p&gt;
+</description>
+        <pubDate>Mon, 03 Dec 2018 21:19:29 +0000</pubDate>
+        <link>http://localhost:4000/journal/thoughts/2018/12/03/initial-recipe.html</link>
+        <guid isPermaLink="true">http://localhost:4000/journal/thoughts/2018/12/03/initial-recipe.html</guid>
+        
+        
+        <category>thoughts</category>
+        
+      </item>
+    
+      <item>
+        <title>HTTPS status on droplet</title>
+        <description>&lt;p&gt;Having setup https fpr my subdomain pwa.ruuts.co.uk on my droplet, I now need to figure out how to 
+correctly point the subdomain to it. This will then just leave the issue of allowing access to the 
+ports in use.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;media/https-acquired.jpg&quot; alt=&quot;HTTPS acquired on droplet&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 03 Dec 2018 20:48:53 +0000</pubDate>
+        <link>http://localhost:4000/journal/thoughts/2018/12/03/https-status-on-droplet.html</link>
+        <guid isPermaLink="true">http://localhost:4000/journal/thoughts/2018/12/03/https-status-on-droplet.html</guid>
+        
+        
+        <category>thoughts</category>
+        
+      </item>
+    
+      <item>
+        <title>Structuring the website</title>
+        <description>&lt;p&gt;The PWA will be one part of the Ruuts’ PlantIO offering, sitting alongside the hardware sales,
+forum, user account and open source development journal. These all need to be considered in the
+navigation design.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;media/site-structure.jpg&quot; alt=&quot;Journal notes on potential site structure&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 02 Dec 2018 11:35:34 +0000</pubDate>
+        <link>http://localhost:4000/journal/thoughts/2018/12/02/structuring-the-website.html</link>
+        <guid isPermaLink="true">http://localhost:4000/journal/thoughts/2018/12/02/structuring-the-website.html</guid>
+        
+        
+        <category>thoughts</category>
+        
+      </item>
+    
+      <item>
+        <title>Landing gear down</title>
+        <description>&lt;p&gt;Having looked at Jonathan Starks’ advice for
+&lt;a href=&quot;https://jonathanstark.com/building-the-perfect-sales-page&quot;&gt;building the perfect sales page&lt;/a&gt;, I
+still felt the narrative was too contrived and not direct enough for my target audience.&lt;/p&gt;
+
+&lt;p&gt;I decided to analyse the landing pages for a few existing web applications and found them to be
+more aligned with my thoughts. The Google Drive analysis can be seen below.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;media/drive-landing-teardown.jpg&quot; alt=&quot;Google Drive landing page analysis&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 02 Dec 2018 11:24:12 +0000</pubDate>
+        <link>http://localhost:4000/journal/thoughts/2018/12/02/landing-gear-down.html</link>
+        <guid isPermaLink="true">http://localhost:4000/journal/thoughts/2018/12/02/landing-gear-down.html</guid>
+        
+        
+        <category>thoughts</category>
+        
+      </item>
+    
+      <item>
+        <title>Domain difficulties</title>
+        <description>&lt;p&gt;I need to point the subdomain &lt;code class=&quot;highlighter-rouge&quot;&gt;pwa.ruuts.co.uk&lt;/code&gt; to my DigitalOcean droplet at &lt;code class=&quot;highlighter-rouge&quot;&gt;142.93.40.131:3000&lt;/code&gt;. 
+This involves a number of steps:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-16-04&quot;&gt;Set 
+up 
+Apache 
+Virtual 
+Hosts 
+on 
+Digital 
+Ocean 
+droplet&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars&quot;&gt;Point domain to 
+droplet&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-16-04&quot;&gt;Set up Let’s Encrypt on Apache to enable PWA notifications&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Change current port 4444/3000 to port 80&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Wed, 28 Nov 2018 18:49:53 +0000</pubDate>
+        <link>http://localhost:4000/journal/thoughts/2018/11/28/domain-difficulties.html</link>
+        <guid isPermaLink="true">http://localhost:4000/journal/thoughts/2018/11/28/domain-difficulties.html</guid>
+        
+        
+        <category>thoughts</category>
+        
+      </item>
+    
+      <item>
+        <title>Revisiting the journey map</title>
+        <description>&lt;p&gt;&lt;img src=&quot;media/journey-map-revisited.jpg&quot; alt=&quot;Journey map from journal&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://photos.app.goo.gl/SW7oiY7DK6MDYnL3A&quot;&gt;Video explanation&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 28 Nov 2018 17:08:14 +0000</pubDate>
+        <link>http://localhost:4000/journal/thoughts/2018/11/28/revisiting-the-journey-map.html</link>
+        <guid isPermaLink="true">http://localhost:4000/journal/thoughts/2018/11/28/revisiting-the-journey-map.html</guid>
+        
+        
+        <category>thoughts</category>
+        
+      </item>
+    
+      <item>
+        <title>Clone wars</title>
+        <description>&lt;p&gt;&lt;img src=&quot;media/cloning-an-object.png&quot; alt=&quot;My revelation about cloning objects.&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I finally figured it out.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 27 Nov 2018 22:07:32 +0000</pubDate>
+        <link>http://localhost:4000/journal/thoughts/2018/11/27/clone-wars.html</link>
+        <guid isPermaLink="true">http://localhost:4000/journal/thoughts/2018/11/27/clone-wars.html</guid>
+        
+        
+        <category>thoughts</category>
+        
+      </item>
+    
+      <item>
+        <title>Adding a progress bar</title>
+        <description>&lt;p&gt;One of the most pressing pieces of information—aside from the plant’s health—is the
+amount of time left until the harvest is ready. After considering a circular design for this, I
+decided it would take up too much space and insted went for a horizontal bar in the header, in
+place of the defunct “automatic mode” header.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;media/progress-bar-design.jpg&quot; alt=&quot;Journal sketches of the progress bar concepts.&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To improve the status of this display I will adding information overlaying the percentage complete,
+and time until harvest.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 25 Nov 2018 18:17:31 +0000</pubDate>
+        <link>http://localhost:4000/journal/thoughts/2018/11/25/adding-a-progress-bar.html</link>
+        <guid isPermaLink="true">http://localhost:4000/journal/thoughts/2018/11/25/adding-a-progress-bar.html</guid>
+        
+        
+        <category>thoughts</category>
+        
+      </item>
+    
+      <item>
+        <title>Attaining PWA status</title>
+        <description>&lt;p&gt;Have now implemented a basic PWA status to pass Google’s &lt;a href=&quot;https://developers.google.com/web/tools/lighthouse/&quot;&gt;lighthouse&lt;/a&gt; audit. Next step is to present an informative offline display presenting all the relevant information immediately to the user.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;media/pwa-status-achieved.jpg&quot; alt=&quot;PWA status achieved&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 25 Nov 2018 15:56:19 +0000</pubDate>
+        <link>http://localhost:4000/journal/thoughts/2018/11/25/attaining-pwa-status.html</link>
+        <guid isPermaLink="true">http://localhost:4000/journal/thoughts/2018/11/25/attaining-pwa-status.html</guid>
+        
+        
+        <category>thoughts</category>
+        
+      </item>
+    
+  </channel>
+</rss>

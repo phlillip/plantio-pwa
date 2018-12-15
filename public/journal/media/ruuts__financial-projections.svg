@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1024px" height="512px" viewBox="0 256 1024 512" enable-background="new 0 256 1024 512" xml:space="preserve">
+<pattern  x="448.5" y="576.5" width="129" height="130" patternUnits="userSpaceOnUse" id="New_Pattern_Swatch_1" viewBox="0 -130 129 130" overflow="visible">
+	<g>
+		<polygon fill="none" points="0,0 129,0 129,-130 0,-130 		"/>
+		<g>
+			<polygon fill="none" points="0,-130 129,-130 129,0 0,0 			"/>
+			<polygon fill="#CC138A" points="129,-130 0,-130 0,0 129,0 			"/>
+		</g>
+	</g>
+</pattern>
+<pattern  x="448.5" y="576.5" width="129" height="130" patternUnits="userSpaceOnUse" id="New_Pattern_Swatch_2" viewBox="0 -130 129 130" overflow="visible">
+	<g>
+		<polygon fill="none" points="0,0 129,0 129,-130 0,-130 		"/>
+		<g>
+			<polygon fill="none" points="0,-130 129,-130 129,0 0,0 			"/>
+			<polygon fill="#F0A836" points="129,-130 0,-130 0,0 129,0 			"/>
+		</g>
+	</g>
+</pattern>
+<pattern  x="448.5" y="576.5" width="129" height="130" patternUnits="userSpaceOnUse" id="New_Pattern_Swatch_4" viewBox="0 -130 129 130" overflow="visible">
+	<g>
+		<polygon fill="none" points="0,0 129,0 129,-130 0,-130 		"/>
+		<g>
+			<polygon fill="none" points="0,-130 129,-130 129,0 0,0 			"/>
+			<polygon fill="#a8c924" points="129,-130 0,-130 0,0 129,0 			"/>
+		</g>
+	</g>
+</pattern>
+<pattern  x="448.5" y="576.5" width="129" height="130" patternUnits="userSpaceOnUse" id="New_Pattern_Swatch_5" viewBox="0 -130 129 130" overflow="visible">
+	<g>
+		<polygon fill="none" points="0,0 129,0 129,-130 0,-130 		"/>
+		<g>
+			<polygon fill="none" points="0,-130 129,-130 129,0 0,0 			"/>
+			<polygon fill="#404041" points="129,-130 0,-130 0,0 129,0 			"/>
+		</g>
+	</g>
+</pattern>
+<pattern  id="SVGID_1_" xlink:href="#New_Pattern_Swatch_1" patternTransform="matrix(1 0 0 -1 -319.5 -16125.5195)">
+</pattern>
+<rect x="185" y="544" fill="url(#SVGID_1_)" width="128" height="192"/>
+<pattern  id="SVGID_2_" xlink:href="#New_Pattern_Swatch_2" patternTransform="matrix(1 0 0 -1 -319.5 -16125.5195)">
+</pattern>
+<rect x="441" y="512" fill="url(#SVGID_2_)" width="128" height="32"/>
+<pattern  id="SVGID_3_" xlink:href="#New_Pattern_Swatch_4" patternTransform="matrix(1 0 0 -1 -319.5 -16125.5195)">
+</pattern>
+<rect x="697" y="384" fill="url(#SVGID_3_)" width="128" height="160"/>
+<pattern  id="SVGID_4_" xlink:href="#New_Pattern_Swatch_5" patternTransform="matrix(1 0 0 -1 -319.5 -16125.5195)">
+</pattern>
+<polyline fill="none" stroke="url(#SVGID_4_)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+	896,544 128,544 128,288 "/>
+<g>
+	<pattern  id="SVGID_5_" xlink:href="#New_Pattern_Swatch_5" patternTransform="matrix(1 0 0 -1 -319.5 -16125.5195)">
+	</pattern>
+	<path fill="url(#SVGID_5_)" d="M255.673,508.536h-6.816v-21.794h-8.447v-5.136c4.752,0.144,9.071-1.536,9.841-6.674h5.424
+		L255.673,508.536L255.673,508.536z"/>
+</g>
+<g>
+	<pattern  id="SVGID_6_" xlink:href="#New_Pattern_Swatch_5" patternTransform="matrix(1 0 0 -1 -319.5 -16125.5195)">
+	</pattern>
+	<path fill="url(#SVGID_6_)" d="M494.632,455.846c-0.24-7.681,4.128-13.585,12.191-13.585c6.146,0,11.521,3.938,11.521,10.514
+		c0,10.177-10.8,10.992-15.697,17.905h15.89v5.856h-24.675c0-7.825,4.801-11.041,10.609-15.025c2.928-2.063,7.057-4.08,7.057-8.208
+		c0-3.216-2.112-5.185-5.041-5.185c-4.032,0-5.328,4.176-5.328,7.729L494.632,455.846L494.632,455.846z"/>
+</g>
+<g>
+	<pattern  id="SVGID_7_" xlink:href="#New_Pattern_Swatch_5" patternTransform="matrix(1 0 0 -1 -319.5 -16125.5195)">
+	</pattern>
+	<path fill="url(#SVGID_7_)" d="M759.801,338.982c2.928,0.24,7.151-0.336,7.151-4.176c0-2.88-2.256-4.465-4.752-4.465
+		c-3.457,0-5.231,2.544-5.184,6.001h-6.482c0.24-6.913,4.658-11.617,11.617-11.617c5.377,0,11.281,3.312,11.281,9.313
+		c0,3.216-1.584,5.953-4.703,6.865v0.096c3.695,0.816,5.951,3.84,5.951,7.633c0,7.056-5.951,11.041-12.48,11.041
+		c-7.537,0-12.625-4.512-12.479-12.241h6.479c0.144,3.648,1.968,6.625,5.904,6.625c3.072,0,5.473-2.064,5.473-5.281
+		c0-5.088-4.465-4.992-7.776-4.992V338.982z"/>
+</g>
+</svg>

@@ -1,0 +1,21 @@
+<article class="thought" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="name headline">Setting up a production environment</h1>
+    <p class="post-meta"><time datetime="2018-11-18T14:32:38+00:00" itemprop="datePublished">Nov 18, 2018</time></p>
+  </header>
+  <div class="content" itemprop="articleBody">
+    <p>Having successfully deployed a working build of my app to a Digital Ocean droplet, I now need to 
+set up a production environment which allows the app tyo run as a service in the background.</p>
+
+<p>After looking at <a href="https://github.com/foreverjs/forever">Forever</a> and an enticing solution by 
+<a href="https://certsimple.com/blog/deploy-node-on-linux">CertSimple</a> I was pointed to 
+<a href="http://pm2.keymetrics.io/">PM2</a> by Al and managed to instantiate a working instance.</p>
+
+<p>However, this was as root user and without the port redirect, so it needs re-implementing.</p>
+
+<blockquote>
+  <p>TODO: Set up PM2 for non-root user with custom domina and port handling.</p>
+</blockquote>
+
+  </div>
+</article>
