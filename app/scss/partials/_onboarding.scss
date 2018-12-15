@@ -1,4 +1,5 @@
 /* Onboarding */
+
 .onboarding-wrapper {
   div#skip {
     position: absolute;
@@ -220,6 +221,12 @@
     &.growers-badge {
       height: 30vw;
     }
+  }
+
+  .dismiss {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
   }
 }
 

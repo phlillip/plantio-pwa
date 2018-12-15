@@ -23,26 +23,26 @@ let plant = {
 
 
 
-    const continueButton = document.querySelector('.continue');
-    const selectSeedButton = document.querySelector('.take-seed');
-    const selectRecipeButton = document.querySelector('.take-recipe');
-    const skipButton = document.getElementById('skip');
     //const connectButton = document.querySelector('.connect');
-    const startGrowingButton = document.querySelector('.finished-onboarding');
-    const harvestModal = document.querySelector('.harvest-modal');
-    const collectHarvestButton = document.querySelector('.collect-harvest');
+    const continueButton = document.querySelector('.continue'),
+      selectSeedButton = document.querySelector('.take-seed'),
+      selectRecipeButton = document.querySelector('.take-recipe'),
+      skipButton = document.getElementById('skip'),
+      startGrowingButton = document.querySelector('.finished-onboarding'),
+      harvestModal = document.querySelector('.harvest-modal'),
+      collectHarvestButton = document.querySelector('.collect-harvest'),
+      menuBtn = document.getElementById('openMenu'),
+      dismissBtn = document.getElementById('dismiss');
 
-    const menuBtn = document.getElementById('openMenu');
 
 
-
-    const contentContainer = document.querySelector('.content');
-    const recipeNav = document.getElementById('recipe-nav');
-    const gardenNav = document.getElementById('garden-nav');
-    const infoNav = document.getElementById('info-nav');
-    const statusPanel = document.querySelector('.status-panel');
-    const infoPanel = document.querySelector('.info-panel');
-    const systemPlantio = document.querySelector('.system-plantio')
+    const contentContainer = document.querySelector('.content'),
+      recipeNav = document.getElementById('recipe-nav'),
+      gardenNav = document.getElementById('garden-nav'),
+      infoNav = document.getElementById('info-nav'),
+      statusPanel = document.querySelector('.status-panel'),
+      infoPanel = document.querySelector('.info-panel'),
+      systemPlantio = document.querySelector('.system-plantio')
 
     if (recipeNav !== null) {
       recipeNav.addEventListener('click', function() {
@@ -510,6 +510,15 @@ let plant = {
     }
     if (collectHarvestButton !== null) {
       collectHarvestButton.addEventListener('click', collectHarvest)
+    }
+
+    //after onboarding
+    function dismiss(event) {
+      document.querySelector('.gamification-screen').style.display = 'none';
+      console.log('dismissed')
+    }
+    if (dismissBtn !== null) {
+      dismissBtn.addEventListener('click', dismiss)
     }
   },
   grow: () => {
