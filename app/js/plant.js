@@ -91,7 +91,7 @@ let plant = {
     }
 
     //Recipe objects
-    const timewarp = new Recipe('timewarp', .00208, 3, 0.5, 30); // .00208
+    const timewarp = new Recipe('timewarp', .000208, 3, 0.5, 30); // .00208
     const filsToms = new Recipe('filsToms', 30, 5, 10, 20);
     const disco = new Recipe('disco', 30, 0.5, 1, 30);
     const temp = new Recipe('temp', 30, 15, 15, 10);
@@ -119,6 +119,9 @@ let plant = {
       dots: false,
       arrows: false,
       draggable: false,
+      swipeToSlide: false,
+      touchMove: false,
+      swipe: false,
       mobileFirst: true,
       infinite: false
     });
@@ -502,7 +505,7 @@ let plant = {
       if (skipButton !== null) {
         skipButton.style.display = "none";
       }
-      document.querySelector('.gamification-screen').style.display = 'flex';
+      document.querySelector('.gamification-screen').style.display = 'block';
     }
     if (collectHarvestButton !== null) {
       collectHarvestButton.addEventListener('click', collectHarvest)

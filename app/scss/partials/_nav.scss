@@ -135,7 +135,7 @@ nav {
   position: absolute;
   background: rgba(255,255,255,1);
   z-index: 10000;
-  transition: all .5s ease;
+  transition: all .25s ease;
 }
 
 #menuToggle span:nth-of-type(1) {
@@ -225,7 +225,7 @@ nav {
 
   .recipe-panel {
     width: 100vw;
-    margin: 1em;
+    padding-top: 2em;
     position: relative;
     overflow-y: scroll;
 
@@ -236,7 +236,7 @@ nav {
   }
 
   .status-panel {
-    width: 100vw;
+    width: calc(100vw - 2em);
     margin: 1em;
     position: relative;
     background: rgba(0,0,0,.9);
