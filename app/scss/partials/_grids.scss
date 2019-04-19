@@ -2,6 +2,7 @@
 body,
 html {
   height: 100%;
+  min-height: 100%;
   overflow-x: hidden;
   /* needed for proper layout */
 }
@@ -50,7 +51,7 @@ html {
     position: relative;
     width: calc(862px / 2);
     height: calc(1754px / 2);
-    background-image: url("/images/iPhone.png");
+    background-image: url("/images/iphone.png");
     background-size: 100%;
     background-repeat: no-repeat;
 
@@ -73,21 +74,15 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1em;
-  min-height: 150vw;
+  margin: 4em 2em;
   height: auto;
   @include respond-to('tablet') {
-    min-height: 42.55vw;
-
+    //min-height: 42.55vw;
     .narrow {
       max-width: 80em;
       margin: 0 auto;
     }
   }
-}
-
-#index section {
-  //display: block;
 }
 
 .page {
