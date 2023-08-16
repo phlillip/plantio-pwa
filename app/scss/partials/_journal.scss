@@ -14,7 +14,7 @@
 
 #thought-list {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   box-sizing: border-box;
 
   article {

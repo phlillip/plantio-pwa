@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var cssnano = require('gulp-cssnano');
-var sass = require('gulp-sass');
+var sass = require('gulp-sass')(require('sass'));
 var terser = require('gulp-terser');
 var babel = require('gulp-babel');
 var concat = require('gulp-concat');
