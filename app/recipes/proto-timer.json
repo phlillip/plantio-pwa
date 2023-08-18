@@ -1,0 +1,88 @@
+{
+  "name": "proto-timer",
+  "version": 1,
+  "weeks": [{
+    "w1": [{
+      "light": 64800,
+      "programs": [{
+        "p1": [{
+          "duration": 64800,
+          "temp_c": 17,
+          "temp_variance": 1,
+          "humidity": 100,
+          "nozzle_on": 120,
+          "nozzle_off": 600
+        }],
+        "p2": [{
+          "duration": 21600,
+          "temp_c": 17,
+          "temp_variance": 1,
+          "humidity": 60,
+          "nozzle_on": 60,
+          "nozzle_off": 1200
+        }]
+      }]
+    }],
+    "w2": [{
+      "light": 64800,
+      "programs": [{
+        "p1": [{
+          "duration": 32400,
+          "temp_c": 19,
+          "temp_variance": 1,
+          "humidity": 60,
+          "nozzle_on": 30,
+          "nozzle_off": 900
+        }],
+        "p2": [{
+          "duration": 32400,
+          "temp_c": 19,
+          "temp_variance": 1,
+          "humidity": 50,
+          "nozzle_on": 30,
+          "nozzle_off": 1200
+        }],
+        "p3": [{
+          "duration": 21600,
+          "temp_c": 19,
+          "temp_variance": 1,
+          "humidity": 60,
+          "nozzle_on": 15,
+          "nozzle_off": 800
+        }]
+      }]
+    }],
+    "w3": [{
+      "light": 64800,
+      "programs": [{
+        "p1": [{
+          "duration": 32400,
+          "temp_c": 21,
+          "temp_variance": 1,
+          "humidity": 60,
+          "nozzle_on": 30,
+          "nozzle_off": 900
+        }],
+        "p2": [{
+          "duration": 32400,
+          "temp_c": 21,
+          "temp_variance": 1,
+          "humidity": 50,
+          "nozzle_on": 30,
+          "nozzle_off": 1200
+        }],
+        "p3": [{
+          "duration": 21600,
+          "temp_c": 21,
+          "temp_variance": 1,
+          "humidity": 60,
+          "nozzle_on": 15,
+          "nozzle_off": 800
+        }]
+      }]
+    }]
+  }],
+  "light": 43200,
+  "feed": 1,
+  "temperature": 21
+}
