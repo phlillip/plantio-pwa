@@ -62,8 +62,14 @@ var connectPlantIO = function() {
 
       setTimeout(
         function tick() {
-          connectButton.classList.remove("connection-animation")
-          console.log('Connected!');
+          connectButton.classList.remove("connection-animation");
+          // Initialize Johnny-Five board 
+          const board = new Board();  
+          // When the board is ready 
+          board.on('ready', () => {
+              console.log('Connected!');
+          });
+
         }, 2000);
 
       resolve({

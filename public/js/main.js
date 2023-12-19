@@ -77,7 +77,12 @@ var connectPlantIO = function () {
       socketOpen = true;
       setTimeout(function tick() {
         connectButton.classList.remove("connection-animation");
-        console.log('Connected!');
+        // Initialize Johnny-Five board 
+        const board = new Board();
+        // When the board is ready 
+        board.on('ready', () => {
+          console.log('Connected!');
+        });
       }, 2000);
       resolve({
         connection: 'active'
@@ -648,7 +653,7 @@ let plant = {
     }
 
     // toggle light visuals
-    function power_light() {
+    function power_light(power) {
       document.getElementById('lightfade').classList.toggle('power');
       barlist = document.getElementsByClassName('bars');
       for (var i = 0; i < barlist.length; i++) {
@@ -678,7 +683,7 @@ let plant = {
           duration: 'UNKNOWN'
         });
         if (element == 'light') {
-          power_light();
+          power_light(power);
         } else if (element == 'feed') {
           power_feed();
         }

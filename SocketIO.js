@@ -6,6 +6,7 @@
  */
 const io = require('socket.io')(process.env.PORT || 3000)
 const shortid = require('shortid')
+const { Board, Led } = require('johnny-five')
 
 const os = require('os')
 const ifaces = os.networkInterfaces()
@@ -69,12 +70,18 @@ class SocketIO {
     let self = this
 
     return function(payload) {
-      console.log(payload);
+      console.log("Payload: ",payload);
       socket.broadcast.emit('hardware', payload);
 
-      //if(payload.type === 'light-on') JohnnyFive.lightOn()
-    //  if(payload.type === 'light-off') JohnnyFive.lightOff()
-      //if(payload.type === 'water-on') JohnnyFive.waterOn(payload.duration)
+      if(payload.type === 'light-on') {
+        JohnnyFive.lightOn()
+      }
+      if(payload.type === 'light-off') {
+        JohnnyFive.lightOff()
+      }
+      if(payload.type === 'water-on') {
+        JohnnyFive.waterOn(payload.duration)
+      }
 
     }
   }

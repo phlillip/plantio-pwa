@@ -25,24 +25,24 @@ let plant = {
 
     //const connectButton = document.querySelector('.connect');
     const continueButton = document.querySelector('.continue'),
-      selectSeedButton = document.querySelector('.take-seed'),
-      selectRecipeButton = document.querySelector('.take-recipe'),
-      skipButton = document.getElementById('skip'),
-      startGrowingButton = document.querySelector('.finished-onboarding'),
-      harvestModal = document.querySelector('.harvest-modal'),
-      collectHarvestButton = document.querySelector('.collect-harvest'),
-      menuBtn = document.getElementById('openMenu'),
-      dismissBtn = document.getElementById('dismiss');
+    selectSeedButton = document.querySelector('.take-seed'),
+    selectRecipeButton = document.querySelector('.take-recipe'),
+    skipButton = document.getElementById('skip'),
+    startGrowingButton = document.querySelector('.finished-onboarding'),
+    harvestModal = document.querySelector('.harvest-modal'),
+    collectHarvestButton = document.querySelector('.collect-harvest'),
+    menuBtn = document.getElementById('openMenu'),
+    dismissBtn = document.getElementById('dismiss');
 
 
 
     const contentContainer = document.querySelector('.content'),
-      recipeNav = document.getElementById('recipe-nav'),
-      gardenNav = document.getElementById('garden-nav'),
-      infoNav = document.getElementById('info-nav'),
-      statusPanel = document.querySelector('.status-panel'),
-      infoPanel = document.querySelector('.info-panel'),
-      systemPlantio = document.querySelector('.system-plantio')
+    recipeNav = document.getElementById('recipe-nav'),
+    gardenNav = document.getElementById('garden-nav'),
+    infoNav = document.getElementById('info-nav'),
+    statusPanel = document.querySelector('.status-panel'),
+    infoPanel = document.querySelector('.info-panel'),
+    systemPlantio = document.querySelector('.system-plantio')
 
     if (recipeNav !== null) {
       recipeNav.addEventListener('click', function() {
@@ -274,9 +274,8 @@ let plant = {
       return ms
     }
 
-
     // toggle light visuals
-    function power_light() {
+    function power_light(power) {
       document.getElementById('lightfade').classList.toggle('power');
       barlist = document.getElementsByClassName('bars');
       for (var i = 0; i < barlist.length; i++) {
@@ -307,7 +306,8 @@ let plant = {
           duration: 'UNKNOWN'
         });
         if (element == 'light') {
-          power_light()
+          power_light(power)
+
         } else if (element == 'feed') {
           power_feed()
         }
@@ -392,7 +392,7 @@ let plant = {
             "Recipe length in milliseconds: " + chosenRecipe.durationLength + ",\n" +
             "Recipe feed: " + chosenRecipe.feed + ",\n" +
             "Connection: " + socket + ",\n"
-          )
+            )
 
           setTimeout(
             function tick() {
